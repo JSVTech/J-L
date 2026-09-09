@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Moravské zprávy</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #151515;
+    background: #f4f4f4;
+}
+
+header {
+    background: white;
+    border-bottom: 1px solid #ddd;
+}
+
+.top {
+    max-width: 1180px;
+    margin: auto;
+    padding: 22px 20px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-size: 34px;
+    font-weight: 900;
+    letter-spacing: -1.5px;
+}
+
+.logo span {
+    color: #d71920;
+}
+
+.date {
+    color: #777;
+    font-size: 14px;
+}
+
+nav {
+    background: #111;
+}
+
+.nav-inner {
+    max-width: 1180px;
+    margin: auto;
+    display: flex;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 14px 20px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    background: #d71920;
+}
+
+.breaking {
+    max-width: 1180px;
+    margin: 18px auto 0;
+    padding: 0 20px;
+}
+
+.breaking span {
+    background: #d71920;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 6px 9px;
+    margin-right: 8px;
+}
+
+.container {
+    max-width: 1180px;
+    margin: 18px auto 60px;
+    padding: 0 20px;
+}
+
+.article {
+    background: white;
+    padding: 30px;
+}
+
+.category {
+    color: #d71920;
+    font-size: 13px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+h1 {
+    font-size: 43px;
+    line-height: 1.08;
+    margin: 0 0 14px;
+    max-width: 900px;
+}
+
+.meta {
+    color: #777;
+    font-size: 13px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 18px;
+    margin-bottom: 22px;
+}
+
+.hero {
+    width: 100%;
+    height: 520px;
+    object-fit: cover;
+    background: #ddd;
+}
+
+.caption {
+    color: #777;
+    font-size: 12px;
+    margin-top: 7px;
+}
+
+.perex {
+    font-size: 21px;
+    line-height: 1.5;
+    font-weight: bold;
+    margin: 25px 0;
+}
+
+.text {
+    font-size: 17px;
+    line-height: 1.7;
+    max-width: 850px;
+}
+
+.quote {
+    border-left: 5px solid #d71920;
+    padding: 12px 20px;
+    margin: 30px 0;
+    font-size: 20px;
+    font-style: italic;
+    background: #f7f7f7;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-top: 30px;
+}
+
+.gallery div {
+    height: 190px;
+    background: linear-gradient(135deg, #d9d9d9, #999);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+}
+
+.related {
+    margin-top: 45px;
+    border-top: 3px solid #111;
+    padding-top: 18px;
+}
+
+.related h2 {
+    margin-top: 0;
+}
+
+.related-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.card {
+    border: 1px solid #ddd;
+    padding: 18px;
+    background: #fafafa;
+}
+
+.card .tag {
+    color: #d71920;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.card h3 {
+    margin: 8px 0 0;
+    font-size: 17px;
+}
+
+footer {
+    background: #111;
+    color: #aaa;
+    text-align: center;
+    padding: 30px 20px;
+    font-size: 13px;
+}
+
+@media (max-width: 700px) {
+    .top {
+        display: block;
+    }
+
+    .date {
+        margin-top: 8px;
+    }
+
+    .nav-inner {
+        overflow-x: auto;
+    }
+
+    nav a {
+        white-space: nowrap;
+    }
+
+    h1 {
+        font-size: 30px;
+    }
+
+    .article {
+        padding: 20px;
+    }
+
+    .hero {
+        height: 300px;
+    }
+
+    .gallery,
+    .related-grid {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="top">
+        <div class="logo">
+            MORAVSKÉ <span>ZPRÁVY</span>
+        </div>
+
+        <div class="date">
+            9. září 2026 · 14:32
+        </div>
+    </div>
+
+    <nav>
+        <div class="nav-inner">
+            <a href="#">DOMÁCÍ</a>
+            <a href="#">SPOLEČNOST</a>
+            <a href="#">ŽIVOT</a>
+            <a href="#">REGION</a>
+        </div>
+    </nav>
+</header>
+
+<div class="breaking">
+    <span>AKTUÁLNĚ</span>
+    Speciální vydání Moravských zpráv
+</div>
+
+<main class="container">
+
+<article class="article">
+
+    <div class="category">
+        Společnost
+    </div>
+
+    <h1>
+        Mladá žena z Boskovic přitahuje nečekanou pozornost. Odborníci si lámou hlavu
+    </h1>
+
+    <div class="meta">
+        Redakce Moravských zpráv · 9. září 2026, 14:32
+    </div>
+
+    <div class="hero">
+        FOTO LUČIE
+    </div>
+
+    <div class="caption">
+        Ilustrační fotografie. Moravské zprávy
+    </div>
+
+    <p class="perex">
+        Boskovice zažívají v posledních týdnech neobvyklý fenomén.
+        Jedna místní žena se totiž podle svědků stává středem pozornosti
+        pokaždé, když se objeví ve společnosti.
+    </p>
+
+    <div class="text">
+
+        <p>
+            Co přesně za tím stojí, není zatím jasné. Lidé z jejího okolí
+            však popisují kombinaci sebevědomí, osobitého humoru a schopnosti
+            během několika minut změnit obyčejný den v něco, na co se jen tak nezapomíná.
+        </p>
+
+        <p>
+            Zvláštní pozornost vzbudily také její nedávné cesty.
+            Rakousko, Salzburg, jezera a výlety se podle všeho staly
+            důležitou součástí příběhu, který začal jako obyčejné trávení volného času.
+        </p>
+
+        <div class="quote">
+            „Některé věci prostě nejdou naplánovat. A právě proto stojí za to.“
+        </div>
+
+        <p>
+            Redakce Moravských zpráv zároveň zjistila, že případ má ještě
+            jednu velmi neobvyklou stránku. V okolí se totiž začaly objevovat
+            drobné indicie v podobě poukázek, překvapení a výletů.
+        </p>
+
+        <p>
+            Zda jde o náhodu, nebo o promyšlený plán, zůstává otázkou.
+            Jedno je však jisté: tento příběh ještě zdaleka nekončí.
+        </p>
+
+    </div>
+
+    <div class="gallery">
+        <div>RAKOUSKO</div>
+        <div>SALZBURG</div>
+        <div>JEZERA</div>
+    </div>
+
+    <section class="related">
+
+        <h2>Související články</h2>
+
+        <div class="related-grid">
+
+            <div class="card">
+                <div class="tag">ŽIVOT</div>
+                <h3>
+                    Výlet, který měl být obyčejný. Nakonec vznikla vzpomínka na celý život
+                </h3>
+            </div>
+
+            <div class="card">
+                <div class="tag">REGION</div>
+                <h3>
+                    Boskovice ukrývají příběh, o kterém se zatím příliš nemluví
+                </h3>
+            </div>
+
+            <div class="card">
+                <div class="tag">SPOLEČNOST</div>
+                <h3>
+                    Tajná poukázka, nečekané překvapení a jeden důležitý odkaz
+                </h3>
+            </div>
+
+        </div>
+
+    </section>
+
+</article>
+
+</main>
+
+<footer>
+    © 2026 Moravské zprávy · Speciální vydání
+</footer>
+
+</body>
+</html>
