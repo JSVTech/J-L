@@ -10,11 +10,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Inter:wght@300;400;500;600&family=Caveat:wght@400;500&display=swap');
 
 :root {
-    --dark: #121827;
-    --pink: #d88383;
-    --light-pink: #fbf2ef;
-    --text: #252832;
-    --muted: #6e7078;
+    --dark: #111827;
+    --pink: #d98b8b;
+    --pink-light: #f8ece9;
+    --text: #242833;
+    --muted: #666b73;
     --white: #ffffff;
 }
 
@@ -40,10 +40,10 @@ body {
 
 header {
     height: 82px;
-    background: rgba(255,255,255,.97);
+    background: rgba(255,255,255,.98);
+    border-bottom: 1px solid #eee;
     display: flex;
     align-items: center;
-    border-bottom: 1px solid #eee;
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -85,7 +85,7 @@ header {
 
 nav {
     display: flex;
-    gap: 34px;
+    gap: 38px;
 }
 
 nav a {
@@ -97,13 +97,18 @@ nav a {
     position: relative;
 }
 
-nav a.active::after {
+nav a::after {
     content: "";
     position: absolute;
     left: 0;
     right: 0;
     bottom: -13px;
     height: 2px;
+    background: transparent;
+}
+
+nav a.active::after,
+nav a:hover::after {
     background: var(--pink);
 }
 
@@ -113,7 +118,7 @@ nav a.active::after {
 ========================= */
 
 .hero {
-    min-height: 680px;
+    min-height: 650px;
     position: relative;
     display: flex;
     align-items: center;
@@ -122,9 +127,10 @@ nav a.active::after {
     background:
         linear-gradient(
             90deg,
-            rgba(8,13,20,.72) 0%,
-            rgba(8,13,20,.42) 42%,
-            rgba(8,13,20,.10) 75%
+            rgba(8,13,20,.78) 0%,
+            rgba(8,13,20,.56) 33%,
+            rgba(8,13,20,.18) 65%,
+            rgba(8,13,20,.03) 100%
         ),
         url("banner.jpg");
 
@@ -141,165 +147,242 @@ nav a.active::after {
     font-size: 14px;
     letter-spacing: .22em;
     font-weight: 500;
-    margin-bottom: 18px;
+    margin-bottom: 15px;
 }
 
 .hero h1 {
     font-family: "Cormorant Garamond", serif;
-    font-size: clamp(62px, 7vw, 105px);
+    font-size: clamp(65px, 7vw, 105px);
     line-height: .92;
+    font-weight: 600;
     margin: 0;
-    max-width: 800px;
+    max-width: 760px;
+}
+
+.hero-subtitle {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 32px;
+    margin-top: 5px;
+}
+
+.hero-line {
+    width: 55px;
+    height: 2px;
+    background: var(--pink);
+    margin: 26px 0;
 }
 
 .hero-text {
-    margin-top: 25px;
-    max-width: 650px;
-    font-family: "Cormorant Garamond", serif;
-    font-size: 28px;
-    line-height: 1.3;
-}
-
-.hero-sub {
-    max-width: 650px;
-    margin-top: 18px;
-    font-size: 16px;
-    line-height: 1.7;
+    max-width: 580px;
+    font-size: 18px;
+    line-height: 1.55;
 }
 
 .hero-button {
     display: inline-block;
-    margin-top: 30px;
+    margin-top: 28px;
     background: var(--pink);
-    color: #fff;
+    color: white;
     text-decoration: none;
-    padding: 15px 25px;
+    padding: 15px 28px;
     font-size: 13px;
-    letter-spacing: .08em;
     font-weight: 600;
-    transition: .2s;
+    letter-spacing: .12em;
+    transition: .2s ease;
 }
 
 .hero-button:hover {
     transform: translateY(-2px);
-    opacity: .92;
+    opacity: .93;
 }
 
 
 /* =========================
-   INTRO
+   RUBRIKY
 ========================= */
 
-.intro {
-    width: min(1000px, 88%);
-    margin: 80px auto 60px;
-    text-align: center;
-}
-
-.intro-label {
-    color: var(--pink);
-    font-size: 13px;
-    font-weight: 600;
-    letter-spacing: .16em;
-}
-
-.intro h2 {
-    font-family: "Cormorant Garamond", serif;
-    color: var(--dark);
-    font-size: 52px;
-    line-height: 1.05;
-    margin: 12px 0 20px;
-}
-
-.intro p {
-    max-width: 760px;
-    margin: auto;
-    font-size: 16px;
-    line-height: 1.8;
-    color: #5d6068;
-}
-
-.intro-quote {
-    margin-top: 30px;
-    font-family: "Caveat", cursive;
-    font-size: 29px;
-    color: var(--pink);
-}
-
-
-/* =========================
-   CARDS
-========================= */
-
-.sections {
-    width: min(1250px, 90%);
-    margin: 0 auto 100px;
+.categories {
+    width: min(1440px, 95%);
+    margin: 32px auto 0;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 28px;
+    gap: 16px;
 }
 
-.card {
+.category-card {
     position: relative;
-    min-height: 420px;
+    min-height: 480px;
     overflow: hidden;
     text-decoration: none;
     color: white;
     display: flex;
     align-items: flex-end;
-    background: #ddd;
 }
 
-.card::before {
+.category-card img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .5s ease;
+}
+
+.category-card::after {
     content: "";
     position: absolute;
     inset: 0;
     background:
         linear-gradient(
             180deg,
-            rgba(0,0,0,.05),
-            rgba(0,0,0,.72)
+            rgba(0,0,0,.02) 30%,
+            rgba(0,0,0,.72) 100%
         );
-    z-index: 1;
 }
 
-.card img {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform .45s ease;
-}
-
-.card:hover img {
+.category-card:hover img {
     transform: scale(1.04);
 }
 
-.card-content {
+.category-content {
     position: relative;
     z-index: 2;
     padding: 30px;
 }
 
-.card-label {
-    font-size: 12px;
-    letter-spacing: .14em;
-    margin-bottom: 6px;
-}
-
-.card h3 {
+.category-content h2 {
+    margin: 0 0 4px;
     font-family: "Cormorant Garamond", serif;
-    font-size: 42px;
+    font-size: 46px;
     line-height: 1;
-    margin: 0 0 10px;
+    font-weight: 600;
 }
 
-.card p {
-    margin: 0;
+.category-content p {
+    margin: 0 0 17px;
     font-size: 14px;
-    line-height: 1.55;
-    color: rgba(255,255,255,.9);
+    color: rgba(255,255,255,.92);
+}
+
+.card-line {
+    display: inline-block;
+    width: 45px;
+    height: 2px;
+    background: var(--pink);
+    vertical-align: middle;
+    margin-right: 14px;
+}
+
+.card-arrow {
+    font-size: 25px;
+    vertical-align: middle;
+}
+
+
+/* =========================
+   QUOTE
+========================= */
+
+.quote-section {
+    padding: 60px 20px 45px;
+    text-align: center;
+}
+
+.quote-bg {
+    display: inline-block;
+    padding: 10px 55px;
+    background:
+        linear-gradient(
+            90deg,
+            rgba(248,236,233,0),
+            rgba(248,236,233,.9),
+            rgba(248,236,233,0)
+        );
+}
+
+.quote-text {
+    font-family: "Caveat", cursive;
+    font-size: clamp(36px, 4vw, 58px);
+    color: var(--dark);
+}
+
+.quote-heart {
+    color: var(--pink);
+    font-size: 56px;
+    margin-left: 12px;
+    vertical-align: middle;
+}
+
+
+/* =========================
+   FACTS
+========================= */
+
+.facts-section {
+    width: min(1440px, 92%);
+    margin: 0 auto;
+    padding: 20px 0 75px;
+}
+
+.facts-heading {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    margin-bottom: 42px;
+}
+
+.facts-heading::before,
+.facts-heading::after {
+    content: "";
+    height: 1px;
+    background: #e5a7a7;
+    flex: 1;
+}
+
+.facts-heading h2 {
+    margin: 0;
+    font-size: 15px;
+    letter-spacing: .2em;
+    color: var(--dark);
+    white-space: nowrap;
+}
+
+.facts-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+}
+
+.fact {
+    text-align: center;
+    padding: 10px 24px 0;
+    min-height: 145px;
+}
+
+.fact + .fact {
+    border-left: 1px solid #ececec;
+}
+
+.fact-icon {
+    font-size: 38px;
+    color: var(--pink);
+    line-height: 1;
+    margin-bottom: 16px;
+}
+
+.fact-title {
+    font-size: 12px;
+    letter-spacing: .05em;
+    font-weight: 700;
+    color: var(--dark);
+    text-transform: uppercase;
+    min-height: 35px;
+}
+
+.fact-text {
+    margin-top: 10px;
+    font-size: 14px;
+    line-height: 1.4;
+    color: #4e535b;
 }
 
 
@@ -308,20 +391,59 @@ nav a.active::after {
 ========================= */
 
 footer {
-    background: #111722;
-    color: #fff;
-    padding: 45px 20px;
+    position: relative;
+    min-height: 190px;
+    background:
+        linear-gradient(rgba(14,21,31,.92), rgba(14,21,31,.97)),
+        url("banner.jpg");
+    background-size: cover;
+    background-position: center 35%;
+    color: white;
+    display: flex;
+    align-items: center;
+}
+
+.footer-inner {
+    width: min(1440px, 92%);
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: end;
+}
+
+.footer-left {
+    font-size: 12px;
+    color: #c1c4c8;
+}
+
+.footer-center {
     text-align: center;
 }
 
 .footer-logo {
     font-family: "Cormorant Garamond", serif;
-    font-size: 34px;
+    font-size: 48px;
+    line-height: 1;
 }
 
-footer p {
-    color: #b6b8bd;
-    font-size: 12px;
+.footer-logo span {
+    color: var(--pink);
+}
+
+.footer-sub {
+    margin-top: 9px;
+    font-family: "Cormorant Garamond", serif;
+    font-style: italic;
+    font-size: 15px;
+    color: #d6d8db;
+}
+
+.footer-right {
+    text-align: right;
+    font-family: "Cormorant Garamond", serif;
+    font-style: italic;
+    font-size: 18px;
+    color: #e5e5e5;
 }
 
 
@@ -329,57 +451,112 @@ footer p {
    RESPONSIVE
 ========================= */
 
-@media (max-width: 900px) {
+@media (max-width: 1000px) {
 
-    nav {
-        display: none;
+    .facts-grid {
+        grid-template-columns: repeat(3, 1fr);
+        row-gap: 35px;
     }
 
-    .hero {
-        min-height: 600px;
-    }
-
-    .sections {
-        grid-template-columns: 1fr;
-    }
-
-    .card {
-        min-height: 350px;
+    .fact:nth-child(4) {
+        border-left: none;
     }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 850px) {
+
+    nav {
+        gap: 18px;
+    }
+
+    .categories {
+        grid-template-columns: 1fr;
+    }
+
+    .category-card {
+        min-height: 380px;
+    }
+
+    .footer-inner {
+        grid-template-columns: 1fr;
+        gap: 25px;
+        text-align: center;
+    }
+
+    .footer-left,
+    .footer-right {
+        text-align: center;
+    }
+}
+
+@media (max-width: 650px) {
 
     header {
-        height: 70px;
+        height: auto;
+        padding: 15px 0;
+    }
+
+    .header-inner {
+        flex-direction: column;
+        gap: 14px;
+    }
+
+    nav {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    nav a {
+        font-size: 11px;
     }
 
     .logo-main {
         font-size: 34px;
     }
 
-    .logo-sub {
-        font-size: 11px;
-    }
-
     .hero {
-        min-height: 540px;
+        min-height: 600px;
+        background-position: 63% center;
     }
 
     .hero h1 {
-        font-size: 56px;
+        font-size: 58px;
+    }
+
+    .hero-subtitle {
+        font-size: 27px;
     }
 
     .hero-text {
-        font-size: 23px;
+        max-width: 90%;
+        font-size: 16px;
     }
 
-    .intro h2 {
-        font-size: 42px;
+    .categories {
+        width: 92%;
     }
 
-    .card h3 {
-        font-size: 36px;
+    .category-card {
+        min-height: 350px;
+    }
+
+    .facts-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .fact {
+        border-left: none !important;
+        border-top: 1px solid #eee;
+        padding-top: 25px;
+    }
+
+    .facts-heading h2 {
+        font-size: 12px;
+    }
+
+    .quote-bg {
+        padding: 10px 20px;
     }
 }
 
@@ -424,16 +601,8 @@ footer p {
                 VÝLETY
             </a>
 
-            <a href="dovolene.html">
-                DOVOLENÉ
-            </a>
-
             <a href="ze-zivota.html">
                 ZE ŽIVOTA
-            </a>
-
-            <a href="archiv.html">
-                ARCHIV
             </a>
 
         </nav>
@@ -459,26 +628,19 @@ footer p {
             Začalo to pátkem.
         </h1>
 
+        <div class="hero-subtitle">
+            A stále se píše dál…
+        </div>
+
+        <div class="hero-line"></div>
+
         <div class="hero-text">
-            Je z toho něco, co stojí za to zmínit.
+            Příběh o výletech, obyčejných dnech a všech momentech,
+            které dávají životu větší smysl.
         </div>
 
-        <div class="hero-sub">
-
-            Dva různí lidé, přesto v mnoha věcech stejní.
-
-            <br><br>
-
-            Příběh o výletech, obyčejných dnech
-            a všem, co dělá život zajímavější.
-
-        </div>
-
-        <a
-            class="hero-button"
-            href="zacatky.html"
-        >
-            PŘEČÍST CELÝ PŘÍBĚH →
+        <a class="hero-button" href="zacatky.html">
+            ZAČÁTKY →
         </a>
 
     </div>
@@ -487,68 +649,33 @@ footer p {
 
 
 <!-- =========================
-     INTRO
+     RUBRIKY
 ========================= -->
 
-<section class="intro">
-
-    <div class="intro-label">
-        J & L
-    </div>
-
-    <h2>
-        Jeden web. Spousta společných momentů.
-    </h2>
-
-    <p>
-
-        Některé věci jsou velké, jiné úplně obyčejné.
-        Výlety, večery, dovolené, dobré jídlo, náhodné nápady
-        a momenty, které by byla škoda nechat jen v galerii telefonu.
-
-        Tohle je místo, kde zůstávají.
-
-    </p>
-
-    <div class="intro-quote">
-        „Pokračování se právě píše…“
-    </div>
-
-</section>
+<section class="categories">
 
 
-<!-- =========================
-     HLAVNÍ ODKAZY
-========================= -->
+    <!-- ZAČÁTKY -->
 
-<section class="sections">
-
-
-    <!-- ZE ŽIVOTA -->
-
-    <a
-        class="card"
-        href="ze-zivota.html"
-    >
+    <a class="category-card" href="zacatky.html">
 
         <img
-            src="my dva.jpg"
-            alt="Ze života"
+            src="bluequeen.jpg"
+            alt="Začátky"
         >
 
-        <div class="card-content">
+        <div class="category-content">
 
-            <div class="card-label">
-                KAŽDODENNÍ MOMENTY
-            </div>
-
-            <h3>
-                Ze života
-            </h3>
+            <h2>
+                Začátky
+            </h2>
 
             <p>
-                Věci, které se nevejdou do žádné jiné kategorie.
+                Jak to všechno začalo.
             </p>
+
+            <span class="card-line"></span>
+            <span class="card-arrow">→</span>
 
         </div>
 
@@ -557,65 +684,199 @@ footer p {
 
     <!-- VÝLETY -->
 
-    <a
-        class="card"
-        href="vylety.html"
-    >
+    <a class="category-card" href="vylety.html">
 
         <img
-            src="banner.jpg"
+            src="vylety.jpg"
             alt="Výlety"
         >
 
-        <div class="card-content">
+        <div class="category-content">
 
-            <div class="card-label">
-                CESTY & ZÁŽITKY
-            </div>
-
-            <h3>
+            <h2>
                 Výlety
-            </h3>
+            </h2>
 
             <p>
-                Kam jsme vyrazili a co se cestou zase stalo.
+                Nová místa, společné zážitky.
             </p>
+
+            <span class="card-line"></span>
+            <span class="card-arrow">→</span>
 
         </div>
 
     </a>
 
 
-    <!-- O NÁS -->
+    <!-- ZE ŽIVOTA -->
 
-    <a
-        class="card"
-        href="zacatky.html"
-    >
+    <a class="category-card" href="ze-zivota.html">
 
         <img
-            src="my dva.jpg"
-            alt="O nás"
+            src="max.jpg"
+            alt="Ze života"
         >
 
-        <div class="card-content">
+        <div class="category-content">
 
-            <div class="card-label">
-                JARDA & LUCIE
-            </div>
-
-            <h3>
-                O nás
-            </h3>
+            <h2>
+                Ze života
+            </h2>
 
             <p>
-                Dva různí lidé. Jeden trochu nečekaný příběh.
+                Všední dny, nečekané momenty.
             </p>
+
+            <span class="card-line"></span>
+            <span class="card-arrow">→</span>
 
         </div>
 
     </a>
 
+
+</section>
+
+
+<!-- =========================
+     CITÁT
+========================= -->
+
+<section class="quote-section">
+
+    <div class="quote-bg">
+
+        <span class="quote-text">
+            Nejde o to kam, ale s kým.
+        </span>
+
+        <span class="quote-heart">
+            ♡
+        </span>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     RYCHLÁ FAKTA O NÁS
+========================= -->
+
+<section class="facts-section">
+
+    <div class="facts-heading">
+        <h2>RYCHLÁ FAKTA O NÁS</h2>
+    </div>
+
+
+    <div class="facts-grid">
+
+
+        <div class="fact">
+
+            <div class="fact-icon">
+                ⛰
+            </div>
+
+            <div class="fact-title">
+                Společné výlety
+            </div>
+
+            <div class="fact-text">
+                Necháme tak, jak je.
+            </div>
+
+        </div>
+
+
+        <div class="fact">
+
+            <div class="fact-icon">
+                ♧
+            </div>
+
+            <div class="fact-title">
+                Nejčastější destinace
+            </div>
+
+            <div class="fact-text">
+                Boskovice balkón
+            </div>
+
+        </div>
+
+
+        <div class="fact">
+
+            <div class="fact-icon">
+                ♨
+            </div>
+
+            <div class="fact-title">
+                Nejlepší jídlo
+            </div>
+
+            <div class="fact-text">
+                Hlavně maso
+            </div>
+
+        </div>
+
+
+        <div class="fact">
+
+            <div class="fact-icon">
+                🐾
+            </div>
+
+            <div class="fact-title">
+                Nezbytná výbava
+            </div>
+
+            <div class="fact-text">
+                Pes, hudba, spontánnost, smích
+            </div>
+
+        </div>
+
+
+        <div class="fact">
+
+            <div class="fact-icon">
+                ♡
+            </div>
+
+            <div class="fact-title">
+                Romantika
+            </div>
+
+            <div class="fact-text">
+                Není náš kamarád
+            </div>
+
+        </div>
+
+
+        <div class="fact">
+
+            <div class="fact-icon">
+                ⇢
+            </div>
+
+            <div class="fact-title">
+                Plány do budoucna
+            </div>
+
+            <div class="fact-text">
+                Pokračovat...
+            </div>
+
+        </div>
+
+
+    </div>
 
 </section>
 
@@ -626,13 +887,32 @@ footer p {
 
 <footer>
 
-    <div class="footer-logo">
-        J & L ♡
-    </div>
+    <div class="footer-inner">
 
-    <p>
-        Dva lidi. Jeden příběh. Status neznámý.
-    </p>
+        <div class="footer-left">
+            © 2026 J & L
+        </div>
+
+
+        <div class="footer-center">
+
+            <div class="footer-logo">
+                J & L <span>♡</span>
+            </div>
+
+            <div class="footer-sub">
+                Dva lidi. Jeden příběh. Status neznámý.
+            </div>
+
+        </div>
+
+
+        <div class="footer-right">
+            „Collect moments,<br>
+            not things.“
+        </div>
+
+    </div>
 
 </footer>
 
