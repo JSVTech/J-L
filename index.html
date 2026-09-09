@@ -1,670 +1,969 @@
 <!DOCTYPE html>
 <html lang="cs">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lucie: Holka z Moravy, která žije naplno | Moravské zprávy</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
+<title>Začátky | J & L</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Inter:wght@300;400;500;600&family=Caveat:wght@400;500&display=swap');
+
+:root {
+    --dark: #121827;
+    --pink: #d88383;
+    --light-pink: #fbf2ef;
+    --text: #252832;
+    --muted: #6e7078;
+    --white: #ffffff;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background: #fff;
+    color: var(--text);
+    font-family: "Inter", sans-serif;
+    line-height: 1.65;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+header {
+    height: 82px;
+    background: rgba(255,255,255,.97);
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #eee;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-inner {
+    width: min(1440px, 92%);
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    text-decoration: none;
+    color: var(--dark);
+    line-height: 1;
+}
+
+.logo-main {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 42px;
+    font-weight: 600;
+}
+
+.logo-heart {
+    color: var(--pink);
+    font-family: "Caveat";
+    margin-left: 6px;
+}
+
+.logo-sub {
+    display: block;
+    font-family: "Cormorant Garamond", serif;
+    font-style: italic;
+    font-size: 13px;
+    margin-top: 3px;
+}
+
+nav {
+    display: flex;
+    gap: 34px;
+}
+
+nav a {
+    color: var(--dark);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: .04em;
+    position: relative;
+}
+
+nav a.active::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -13px;
+    height: 2px;
+    background: var(--pink);
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 590px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    color: white;
+
+    /*
+      ZATÍM používáme banner.jpg.
+      Až budeš chtít jinou titulní fotku přímo pro Začátky,
+      stačí změnit název tady.
+    */
+    background:
+        linear-gradient(
+            90deg,
+            rgba(8,13,20,.76) 0%,
+            rgba(8,13,20,.47) 42%,
+            rgba(8,13,20,.08) 75%
+        ),
+        url("banner.jpg");
+
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-content {
+    width: min(1440px, 90%);
+    margin: auto;
+}
+
+.chapter {
+    font-size: 14px;
+    letter-spacing: .22em;
+    font-weight: 500;
+}
+
+.hero h1 {
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(68px, 8vw, 115px);
+    line-height: .9;
+    margin: 18px 0;
+}
+
+.hero-lead {
+    max-width: 540px;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 28px;
+    line-height: 1.25;
+}
+
+.hero-line {
+    width: 70px;
+    height: 2px;
+    background: var(--pink);
+    margin: 28px 0 20px;
+}
+
+.hero-quote {
+    font-family: "Caveat", cursive;
+    font-size: 29px;
+    max-width: 520px;
+}
+
+/* =========================
+   ARTICLE LAYOUT
+========================= */
+
+.page {
+    width: min(1440px, 91%);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 350px;
+    gap: 60px;
+    padding: 55px 0 90px;
+}
+
+.article {
+    min-width: 0;
+}
+
+.category {
+    color: var(--pink);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: .09em;
+}
+
+.article h2 {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 57px;
+    line-height: 1;
+    color: var(--dark);
+    margin: 8px 0 4px;
+}
+
+.subtitle {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 28px;
+    margin: 0 0 25px;
+}
+
+.article p {
+    font-size: 16px;
+    margin: 0 0 19px;
+}
+
+.article strong {
+    font-weight: 600;
+}
+
+.article h3 {
+    font-family: "Cormorant Garamond", serif;
+    color: var(--dark);
+    font-size: 42px;
+    line-height: 1.1;
+    margin: 55px 0 20px;
+}
+
+/* =========================
+   ARTICLE PHOTOS
+========================= */
+
+.article-photo {
+    width: 100%;
+    display: block;
+    margin: 32px 0;
+    max-height: 570px;
+    object-fit: cover;
+}
+
+.photo-caption {
+    color: #8b8b8b;
+    font-size: 12px;
+    margin-top: -25px;
+    margin-bottom: 30px;
+}
+
+/* =========================
+   QUOTE
+========================= */
+
+.quote-box {
+    background: linear-gradient(90deg, #fff8f5, #fbefeb);
+    padding: 28px 40px;
+    margin: 45px 0;
+    text-align: center;
+    border-left: 3px solid var(--pink);
+}
+
+.quote-box span {
+    font-family: "Caveat", cursive;
+    font-size: 28px;
+    color: #4f515a;
+}
+
+/* =========================
+   SIDEBAR
+========================= */
+
+.sidebar {
+    background: linear-gradient(180deg, #fdf7f5, #fff);
+    padding: 30px;
+    align-self: start;
+    position: sticky;
+    top: 110px;
+}
+
+.sidebar-title {
+    color: var(--dark);
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: .15em;
+    margin-bottom: 28px;
+}
+
+.person {
+    display: grid;
+    grid-template-columns: 90px 1fr;
+    gap: 18px;
+    margin-bottom: 27px;
+    align-items: start;
+}
+
+.person img {
+    width: 90px;
+    height: 90px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.person h4 {
+    margin: 2px 0 5px;
+    font-size: 17px;
+    color: var(--dark);
+}
+
+.person p {
+    margin: 0;
+    font-size: 13px;
+    line-height: 1.55;
+    color: #565963;
+}
+
+.sidebar-quote {
+    text-align: center;
+    padding: 25px 4px 30px;
+    font-family: "Caveat", cursive;
+    font-size: 27px;
+    line-height: 1.2;
+}
+
+.sidebar-quote .pink {
+    color: var(--pink);
+}
+
+.heart {
+    color: var(--pink);
+    font-size: 35px;
+    display: block;
+    margin-top: 5px;
+}
+
+.facts {
+    border-top: 1px solid #e8c6c3;
+    padding-top: 22px;
+}
+
+.facts-title {
+    color: var(--dark);
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: .09em;
+    margin-bottom: 15px;
+}
+
+.fact {
+    margin: 10px 0;
+    font-size: 14px;
+    display: flex;
+    gap: 10px;
+}
+
+/* =========================
+   POLAROID
+========================= */
+
+.polaroid {
+    margin: 35px 5px 5px;
+    background: white;
+    padding: 10px 10px 20px;
+    box-shadow: 0 8px 30px rgba(0,0,0,.13);
+    transform: rotate(-3deg);
+}
+
+.polaroid img {
+    width: 100%;
+    display: block;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+}
+
+.polaroid-text {
+    font-family: "Caveat", cursive;
+    text-align: center;
+    font-size: 24px;
+    margin-top: 12px;
+}
+
+/* =========================
+   FINAL SECTION
+========================= */
+
+.now-section {
+    margin-top: 65px;
+    padding-top: 5px;
+}
+
+.final-text {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 23px !important;
+}
+
+.story-ending {
+    margin: 55px auto 15px;
+    text-align: center;
+}
+
+.story-ending::before {
+    content: "";
+    display: block;
+    width: 100px;
+    height: 2px;
+    background: var(--pink);
+    margin: 0 auto 20px;
+}
+
+.story-ending .ending-heart {
+    color: var(--pink);
+    font-size: 30px;
+}
+
+.story-ending p {
+    font-family: "Caveat", cursive;
+    font-size: 30px;
+    margin-top: 5px;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    background: #111722;
+    color: #fff;
+    padding: 45px 20px;
+    text-align: center;
+}
+
+footer .footer-logo {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 34px;
+}
+
+footer p {
+    color: #b6b8bd;
+    font-size: 12px;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+
+    nav {
+        display: none;
     }
 
-    body {
-      font-family: Georgia, "Times New Roman", serif;
-      background: #ffffff;
-      color: #171717;
-      line-height: 1.6;
+    .hero {
+        min-height: 520px;
     }
 
-    .top {
-      max-width: 1200px;
-      margin: auto;
-      padding: 18px 22px 12px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+    .hero-lead {
+        font-size: 23px;
     }
 
-    .logo {
-      font-size: 48px;
-      line-height: 1;
-      font-weight: bold;
-      letter-spacing: -2px;
+    .page {
+        grid-template-columns: 1fr;
+        gap: 40px;
     }
 
-    .logo span {
-      color: #c8101e;
-    }
-
-    .subtitle {
-      font-family: Arial, sans-serif;
-      font-size: 11px;
-      letter-spacing: 7px;
-      margin-top: 8px;
-      color: #444;
-    }
-
-    .login {
-      font-family: Arial, sans-serif;
-      color: #555;
-      font-size: 14px;
-    }
-
-    .navbar {
-      width: 100%;
-      background: #c80f1e;
-      font-family: Arial, sans-serif;
-      font-weight: bold;
-    }
-
-    .navbar-inner {
-      max-width: 1200px;
-      margin: auto;
-      display: flex;
-      align-items: center;
-      gap: 4px;
-      overflow-x: auto;
-    }
-
-    .navbar a {
-      text-decoration: none;
-      color: white;
-      padding: 14px 18px;
-      display: block;
-      white-space: nowrap;
-    }
-
-    .navbar a:hover {
-      background: #a90c18;
-    }
-
-    .breadcrumb {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 15px 22px;
-      font-family: Arial, sans-serif;
-      font-size: 14px;
-      color: #737373;
-      border-bottom: 1px solid #eee;
-    }
-
-    .wrapper {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 28px 22px;
-      display: grid;
-      grid-template-columns: minmax(0, 2.2fr) minmax(280px, 1fr);
-      gap: 42px;
-    }
-
-    .category {
-      color: #c8101e;
-      font-family: Arial, sans-serif;
-      font-size: 14px;
-      font-weight: bold;
-      text-transform: uppercase;
-      margin-bottom: 10px;
-    }
-
-    h1 {
-      font-size: 54px;
-      line-height: 1.03;
-      letter-spacing: -1.5px;
-      margin-bottom: 16px;
-    }
-
-    .perex {
-      font-family: Arial, sans-serif;
-      font-size: 22px;
-      font-weight: 600;
-      color: #444;
-      line-height: 1.35;
-      margin-bottom: 24px;
-    }
-
-    .hero-image {
-      width: 100%;
-      display: block;
-      border-radius: 2px;
-      max-height: 850px;
-      object-fit: cover;
-      object-position: center top;
-    }
-
-    .caption {
-      font-family: Arial, sans-serif;
-      font-size: 13px;
-      color: #888;
-      margin-top: 6px;
-      margin-bottom: 24px;
-    }
-
-    .lead {
-      font-size: 21px;
-      line-height: 1.6;
-      font-weight: bold;
-      margin-bottom: 25px;
-    }
-
-    .author-row {
-      border-top: 1px solid #eee;
-      border-bottom: 1px solid #eee;
-      padding: 18px 0;
-      margin: 20px 0 28px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-      font-family: Arial, sans-serif;
-    }
-
-    .author {
-      display: flex;
-      align-items: center;
-      gap: 13px;
-    }
-
-    .avatar {
-      width: 48px;
-      height: 48px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: #c8101e;
-      color: white;
-      font-weight: bold;
-    }
-
-    .author-name {
-      font-weight: bold;
-    }
-
-    .date {
-      color: #777;
-      font-size: 14px;
-    }
-
-    .share {
-      color: #777;
-      font-size: 14px;
-      white-space: nowrap;
-    }
-
-    .article p {
-      font-size: 20px;
-      margin-bottom: 24px;
+    .sidebar {
+        position: static;
     }
 
     .article h2 {
-      font-size: 34px;
-      line-height: 1.2;
-      margin: 38px 0 15px;
+        font-size: 46px;
+    }
+}
+
+@media (max-width: 600px) {
+
+    header {
+        height: 70px;
     }
 
-    .quote {
-      margin: 35px 0;
-      padding: 26px 30px;
-      border-left: 5px solid #c8101e;
-      background: #faf4f4;
-      font-size: 27px;
-      font-style: italic;
-      line-height: 1.4;
-    }
-
-    .sidebar-section {
-      background: #f7f7f7;
-      padding: 18px;
-      margin-bottom: 24px;
-    }
-
-    .sidebar-section h3 {
-      font-size: 24px;
-      margin-bottom: 18px;
-    }
-
-    .news-item {
-      display: grid;
-      grid-template-columns: 30px 90px 1fr;
-      gap: 10px;
-      align-items: start;
-      padding: 11px 0;
-      border-bottom: 1px solid #e3e3e3;
-    }
-
-    .number {
-      background: #c8101e;
-      color: white;
-      width: 30px;
-      height: 30px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: Arial, sans-serif;
-      font-weight: bold;
-    }
-
-    .thumb {
-      width: 90px;
-      height: 65px;
-      object-fit: cover;
-      background: #ddd;
-    }
-
-    .news-title {
-      font-size: 16px;
-      line-height: 1.25;
-    }
-
-    .small-item {
-      display: flex;
-      gap: 12px;
-      padding: 10px 0;
-      border-bottom: 1px solid #e3e3e3;
-      align-items: center;
-    }
-
-    .small-thumb {
-      width: 85px;
-      height: 60px;
-      object-fit: cover;
-      background: #ddd;
-    }
-
-    .small-item p {
-      font-size: 15px;
-      line-height: 1.3;
-    }
-
-    .side-quote {
-      background: #fff1f1;
-      padding: 25px;
-      margin-top: 22px;
-      font-size: 26px;
-      font-style: italic;
-      line-height: 1.35;
-    }
-
-    .side-quote strong {
-      color: #c8101e;
-      display: block;
-      font-size: 45px;
-      height: 35px;
-    }
-
-    footer {
-      margin-top: 50px;
-      background: #151515;
-      color: white;
-      padding: 35px 22px;
-      font-family: Arial, sans-serif;
-    }
-
-    .footer-inner {
-      max-width: 1200px;
-      margin: auto;
-    }
-
-    .footer-logo {
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 28px;
-      font-weight: bold;
-    }
-
-    .footer-logo span {
-      color: #e51d2b;
-    }
-
-    @media (max-width: 850px) {
-      .top {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
-      }
-
-      .logo {
-        font-size: 38px;
-      }
-
-      .wrapper {
-        grid-template-columns: 1fr;
-      }
-
-      h1 {
-        font-size: 40px;
-      }
-
-      .perex {
-        font-size: 19px;
-      }
-
-      .sidebar {
-        margin-top: 10px;
-      }
-    }
-
-    @media (max-width: 500px) {
-      h1 {
+    .logo-main {
         font-size: 34px;
-      }
-
-      .wrapper {
-        padding-left: 15px;
-        padding-right: 15px;
-      }
-
-      .breadcrumb {
-        padding-left: 15px;
-        padding-right: 15px;
-      }
-
-      .article p {
-        font-size: 18px;
-      }
-
-      .author-row {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .news-item {
-        grid-template-columns: 30px 75px 1fr;
-      }
-
-      .thumb {
-        width: 75px;
-      }
     }
-  </style>
+
+    .logo-sub {
+        font-size: 11px;
+    }
+
+    .hero {
+        min-height: 490px;
+        background-position: center;
+    }
+
+    .hero h1 {
+        font-size: 64px;
+    }
+
+    .hero-lead {
+        font-size: 21px;
+    }
+
+    .hero-quote {
+        font-size: 24px;
+    }
+
+    .page {
+        width: 90%;
+        padding-top: 38px;
+    }
+
+    .article h2 {
+        font-size: 42px;
+    }
+
+    .article h3 {
+        font-size: 36px;
+    }
+
+    .subtitle {
+        font-size: 24px;
+    }
+
+    .quote-box {
+        padding: 22px;
+    }
+
+    .person {
+        grid-template-columns: 75px 1fr;
+    }
+
+    .person img {
+        width: 75px;
+        height: 75px;
+    }
+}
+</style>
 </head>
 
 <body>
 
-  <header>
-    <div class="top">
-      <div>
-        <div class="logo">
-          Moravské <span>zprávy</span>
-        </div>
-        <div class="subtitle">
-          LIDÉ PŘÍBĚHY INSPIRACE Z MORAVY
-        </div>
-      </div>
+<!-- ==========================================
+     HEADER
+========================================== -->
 
-      <div class="login">
-        Přihlásit se &nbsp;&nbsp; 🔍 Hledat
-      </div>
+<header>
+    <div class="header-inner">
+
+        <a class="logo" href="index.html">
+            <span class="logo-main">J & L <span class="logo-heart">♡</span></span>
+            <span class="logo-sub">Dva lidi. Jeden příběh. Stále se píše...</span>
+        </a>
+
+        <nav>
+            <a href="index.html">DOMŮ</a>
+            <a href="#" class="active">ZAČÁTKY</a>
+            <a href="#">VÝLETY</a>
+            <a href="#">DOVOLENÉ</a>
+            <a href="#">ZE ŽIVOTA</a>
+            <a href="#">ARCHIV</a>
+        </nav>
+
+    </div>
+</header>
+
+
+<!-- ==========================================
+     HERO
+========================================== -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <div class="chapter">KAPITOLA 1</div>
+
+        <h1>Začátky</h1>
+
+        <div class="hero-lead">
+            Jak to všechno začalo. Jeden pátek, který změnil víc, než jsme čekali.
+        </div>
+
+        <div class="hero-line"></div>
+
+        <div class="hero-quote">
+            „Některé věci v životě prostě přijdou ve správný čas. Nebo?“
+        </div>
+
     </div>
 
-    <nav class="navbar">
-      <div class="navbar-inner">
-        <a href="#">🏠</a>
-        <a href="#">Zprávy</a>
-        <a href="#">Regiony</a>
-        <a href="#">Lidé</a>
-        <a href="#">Životní styl</a>
-        <a href="#">Cestování</a>
-        <a href="#">Kultura</a>
-        <a href="#">Zajímavosti</a>
-        <a href="#">Názory</a>
-      </div>
-    </nav>
-  </header>
+</section>
 
-  <div class="breadcrumb">
-    Moravské zprávy &nbsp;›&nbsp; Lidé &nbsp;›&nbsp; Příběhy
-    &nbsp;›&nbsp; Lucie: Holka z Moravy, která žije naplno
-  </div>
 
-  <main class="wrapper">
+<!-- ==========================================
+     CONTENT
+========================================== -->
+
+<main class="page">
 
     <article class="article">
 
-      <div class="category">Lidé</div>
+        <!-- DIVOKÝ PÁTEK -->
 
-      <h1>
-        Lucie: Holka z Moravy, která žije naplno
-      </h1>
+        <div class="category">ZAČÁTKY</div>
 
-      <div class="perex">
-        Cestování, zážitky, práce, psi a život podle vlastních pravidel.
-        Příběh obyčejné holky, která rozhodně obyčejná není.
-      </div>
+        <h2>Divoký pátek</h2>
 
-      <img
-        src="lucie.jpg"
-        alt="Lucie"
-        class="hero-image"
-      >
-
-      <div class="caption">
-        Lucie – energie, úsměv a život naplno. Foto: archiv Lucie
-      </div>
-
-      <p class="lead">
-        Lucie je důkazem, že i v dnešní uspěchané době lze žít tak,
-        jak se člověk skutečně cítí. Miluje zážitky, svůj klid,
-        cestování a chvíle s lidmi, které má ráda.
-      </p>
-
-      <div class="author-row">
-
-        <div class="author">
-          <div class="avatar">MZ</div>
-
-          <div>
-            <div class="author-name">Redakce Moravské zprávy</div>
-            <div class="date">9. září 2026, 20:30</div>
-          </div>
+        <div class="subtitle">
+            Nečekaně a bez plánu.
         </div>
 
-        <div class="share">
-          Sdílet článek: &nbsp; 🔵 ⚫ 🔗
-        </div>
+        <p>
+            Znali jsme se už delší dobu z práce. Prakticky každý den jsem si k Lucce
+            chodil sednout, abychom si mohli povídat a hlavně se spolu smát.
+            Vždycky se našlo nějaké téma a postupně bylo čím dál víc vidět,
+            že si navzájem dokážeme udělat pracovní den o něco příjemnější.
+        </p>
 
-      </div>
+        <p>
+            Lucka se mi líbila už od začátku. Jenže v mojí hlavě byla něco jako
+            <strong>business class v Emirates</strong> – pěkný se na ni dívat,
+            ale člověk tak nějak automaticky počítá s tím, že na ni nemá.
+            Takže jsem vlastně ani nic nezkoušel a upřímně jsem si ze začátku
+            myslel, že se se mnou nebude chtít ani moc bavit.
+        </p>
 
-      <p>
-        Na první pohled možná působí jako holka, která má všechno
-        přesně nalajnované. Realita je ale trochu jiná. Lucie si jde
-        především vlastní cestou a málokdy dělá něco jen proto,
-        že se to od ní očekává.
-      </p>
+        <p>
+            Opak byl pravdou. Čím víc jsme se poznávali, tím víc jsem zjišťoval,
+            kolik toho máme společného. Ať už šlo o humor, názory nebo pohled
+            na svět, pořád se objevovalo něco dalšího, v čem jsme si rozuměli.
+        </p>
 
-      <p>
-        Má ráda svůj prostor, svůj klid a chvíle, kdy nemusí řešit
-        vůbec nikoho. Zároveň ale miluje cestování, nové zážitky
-        a chvíle, na které se vzpomíná ještě dlouho potom.
-      </p>
+        <img
+            class="article-photo"
+            src="gin.jpg"
+            alt="Gin tonic a dýmka"
+        >
 
-      <h2>
-        Raději zážitky než věci
-      </h2>
+        <p>
+            Pak přišel <strong>ten pátek</strong>.
+        </p>
 
-      <p>
-        Luxus pro ni nemusí znamenat drahou kabelku ani naleštěné auto.
-        Mnohem důležitější je místo, kde se člověk cítí dobře,
-        dobré jídlo, výlet, dovolená nebo prostě obyčejný večer,
-        který se nečekaně povede.
-      </p>
+        <p>
+            Po práci jsme společně s partou vyrazili na dýmku a pár drinků.
+            Poprvé jsem Lucku viděl mimo pracovní prostředí a z obyčejného večera
+            se poměrně rychle stalo něco, co jsem rozhodně nečekal.
+        </p>
 
-      <div class="quote">
-        „Nejlepší věci jsou většinou ty, které člověk vůbec neplánuje.“
-      </div>
+        <p>
+            Dodnes vlastně přesně nevím, jak k tomu došlo. Lucka odešla na toaletu
+            a já se tam chvíli po ní vydal taky. Otevřela dveře, nějak jsme se
+            k sobě dostali blíž… a přišla <strong>první pusa</strong>.
+        </p>
 
-      <h2>
-        Cestování jako únik od běžného života
-      </h2>
+        <p>
+            V tu chvíli mi bylo úplně jedno, jestli jsem přišel na dýmku,
+            na drink nebo kde vlastně jsem. Jediné, co jsem věděl jistě,
+            bylo, že bych se na ten záchod docela rád ještě jednou vrátil.
+        </p>
 
-      <p>
-        Když má možnost někam vyrazit, dlouho se přemlouvat nemusí.
-        Hory, jezera, města i obyčejné výlety po okolí mají jedno
-        společné – na chvíli člověka vytáhnou z každodenního stereotypu.
-      </p>
+        <p>
+            A taky že vrátil.
+        </p>
 
-      <p>
-        A právě tyhle okamžiky jsou pro Lucii možná důležitější než
-        samotná destinace. Dobrá společnost, trochu humoru a možnost
-        na chvíli vypnout.
-      </p>
+        <p>
+            Naše nenápadná „záchodová akce“ se během večera ještě několikrát
+            zopakovala. Z obyčejného pátečního posezení se tak stal jeden
+            z nejzajímavějších večerů mého života.
+        </p>
 
-      <h2>
-        Život podle sebe
-      </h2>
+        <p>
+            A přestože jsme tehdy vůbec netušili, co z toho bude, jedno bylo
+            jasné – <strong>od toho pátku už to mezi námi nebylo úplně stejné.</strong>
+        </p>
 
-      <p>
-        Kdo Lucii zná, ví, že přesvědčit ji k něčemu, co sama nechce,
-        není úplně jednoduchý úkol. A možná právě v tom je její kouzlo.
-        Nedělá věci proto, aby se zavděčila ostatním.
-      </p>
 
-      <p>
-        Někdy je společenská, někdy chce být sama. Někdy plánuje,
-        jindy se rozhodne na poslední chvíli. A přesně tak jí to
-        pravděpodobně vyhovuje nejvíc.
-      </p>
+        <!-- JAK TO ŠLO DÁL -->
+
+        <h3>Jak to šlo dál?</h3>
+
+        <p>
+            Po tom pátku jsme si začali psát mnohem intenzivněji. Jenže krátce
+            nato Lucka odešla z práce a najednou zmizela jedna věc, na kterou
+            jsem si až podezřele rychle zvykl – že ji každý den vidím.
+        </p>
+
+        <p>
+            A právě tehdy mi začalo docházet,
+            <strong>jak moc mi vlastně chybí.</strong>
+        </p>
+
+        <p>
+            Jednou jsem jí dokonce zavolal přímo z práce. Oficiální verze byla,
+            že mě zajímá, jak se má a jak se jí líbí v nové práci.
+            Ta méně oficiální a podstatně pravdivější verze byla jednodušší –
+            <strong>prostě jsem ji potřeboval slyšet.</strong>
+        </p>
+
+        <p>
+            Od té chvíle jsem víceméně jen vymýšlel důvody a příležitosti,
+            jak zařídit, abychom se zase mohli vidět.
+        </p>
+
+        <p>
+            Byla zima, blížily se Vánoce a jedna taková příležitost nakonec
+            přišla. Lucka byla na vánočních trzích a já měl možnost ji vyzvednout
+            a odvézt domů. Ještě předtím jsem narychlo sháněl nějaký menší dárek.
+            Nic velkého – chtěl jsem jen, aby měla pod stromečkem
+            <strong>alespoň něco, co si může otevřít ode mě.</strong>
+        </p>
+
+        <p>
+            Když jsme se potom loučili, dostal jsem pusu.
+        </p>
+
+        <p>
+            A když jsem odjížděl, jednu věc jsem věděl naprosto jistě:
+            <strong>V Boskovicích rozhodně nejsem naposled.</strong>
+        </p>
+
+
+        <h3>Kafe, auto a večery bez hodinek</h3>
+
+        <p>
+            A taky jsem nebyl.
+        </p>
+
+        <p>
+            Za Luckou jsem začal jezdit častěji. Potkávali jsme se třeba na
+            benzince, dali si kávu a potom dokázali sedět v autě a povídat si
+            dlouho do večera. Nebyl potřeba žádný speciální program.
+            Stačilo nám být spolu, kecat o všem možném a nějak nevnímat,
+            kolik je hodin.
+        </p>
+
+        <p>
+            Bylo vidět, že je za ty návštěvy ráda. A já se toho společného času
+            zase <strong>nemohl nabažit.</strong>
+        </p>
+
+        <p>
+            Postupně už nezůstalo jen u občasné návštěvy. Začal jsem jezdit
+            častěji, někdy dokonce i během týdne, a jedním z našich pravidelných
+            míst se stala místní <strong>Blue Queen</strong>.
+        </p>
+
+        <p>
+            Právě tam vznikly naše pravidelné <strong>tatarák sessions</strong>.
+            Tatarák, Lucka se sklenkou vína a večer, u kterého bylo prakticky
+            předem jasné, že rozhodně nebude „jen na hodinku“.
+        </p>
+
+        <img
+            class="article-photo"
+            src="bluequeen.jpg"
+            alt="Blue Queen"
+        >
+
+
+        <h3>O zážitek víc</h3>
+
+        <p>
+            Pak přišla další premiéra. Pozval jsem Lucku k sobě domů.
+        </p>
+
+        <p>
+            Přišla.
+        </p>
+
+        <p>
+            A řekněme, že od toho večera jsme spolu měli zase
+            <strong>o jeden společný zážitek víc.</strong>
+        </p>
+
+        <p>
+            Postupně jsem za ní jezdil dál a něco se nenápadně měnilo.
+            Už jsem nebyl jen ten člověk, který přijede, stráví s ní pár hodin
+            a zase odjede.
+        </p>
+
+        <p>
+            Začal jsem poznávat její domov, její soukromí a hlavně
+            <strong>ji samotnou úplně jinak než předtím.</strong>
+        </p>
+
+        <p>
+            A z návštěv, které původně vznikaly jen proto, že jsem hledal
+            jakoukoliv možnost ji znovu vidět, se pomalu stávala
+            <strong>běžná součást našich životů.</strong>
+        </p>
+
+
+        <!-- KDE JSME TEĎ -->
+
+        <section class="now-section">
+
+            <h3>Kde jsme teď?</h3>
+
+            <p>
+                Jsme ve fázi, kdy už oba známe příběhy toho druhého.
+                Víme, co máme za sebou, co od života chceme, v čem jsme úplně
+                rozdílní a v čem si naopak rozumíme možná víc,
+                než jsme původně čekali.
+            </p>
+
+            <p>
+                Trávíme spolu víkendy, jezdíme na výlety a pořád vymýšlíme něco,
+                co můžeme podniknout. Bowling, kulečník, šipky, minigolf…
+                a dokonce už došlo i na společný tanec.
+            </p>
+
+            <p>
+                Ten mimochodem probíhal na párty, kde asi třikrát vypadl jistič,
+                protože lednice svítila tak intenzivně, že kvůli ní DJ nakonec
+                musel vypnout projektor. Některé večery si člověk prostě nevymyslí.
+            </p>
+
+            <p>
+                Umíme se spolu smát úplným blbostem, ale zároveň se dokážeme
+                bavit o věcech, které už tak jednoduché nejsou. O životě,
+                o budoucnosti i o tom, co vlastně každý z nás chce.
+            </p>
+
+            <p>
+                A kde budeme za pár měsíců nebo za pár let?
+            </p>
+
+            <p>
+                <strong>To dnes neví ani jeden z nás.</strong>
+            </p>
+
+            <p class="final-text">
+                Jednu věc ale vím jistě. Za nás dva budu bojovat dál.
+                A ať už tenhle příběh jednou dopadne jakkoliv,
+                <strong>tohoto období svého života nikdy litovat nebudu.</strong>
+            </p>
+
+            <div class="story-ending">
+                <div class="ending-heart">♡</div>
+                <p>Pokračování se právě píše…</p>
+            </div>
+
+        </section>
 
     </article>
 
+
+    <!-- ======================================
+         SIDEBAR
+    ======================================= -->
+
     <aside class="sidebar">
 
-      <div class="sidebar-section">
-        <h3>Nejčtenější články</h3>
-
-        <div class="news-item">
-          <div class="number">1</div>
-          <img
-            class="thumb"
-            src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=300&q=80"
-            alt=""
-          >
-          <div class="news-title">
-            10 nejkrásnějších míst na jižní Moravě, která musíte navštívit
-          </div>
+        <div class="sidebar-title">
+            O NÁS
         </div>
 
-        <div class="news-item">
-          <div class="number">2</div>
-          <img
-            class="thumb"
-            src="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=300&q=80"
-            alt=""
-          >
-          <div class="news-title">
-            Kam na víno? Tipy na nejlepší vinařství v regionu
-          </div>
+        <div class="person">
+
+            <img
+                src="jarda o nas.jpg"
+                alt="Jarda"
+            >
+
+            <div>
+                <h4>Jarda</h4>
+                <p>
+                    Přemýšlí až moc, miluje výlety, dobré jídlo a nové zážitky.
+                    Hledá jistotu, i když někdy sám neví, co přesně potřebuje.
+                </p>
+            </div>
+
         </div>
 
-        <div class="news-item">
-          <div class="number">3</div>
-          <img
-            class="thumb"
-            src="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?auto=format&fit=crop&w=300&q=80"
-            alt=""
-          >
-          <div class="news-title">
-            Brno v pohybu: Co je nového ve městě
-          </div>
+
+        <div class="person">
+
+            <img
+                src="lucka o nas.jpg"
+                alt="Lucie"
+            >
+
+            <div>
+                <h4>Lucie</h4>
+                <p>
+                    Dělá věci po svém, potřebuje svůj prostor, miluje cestování,
+                    dobré jídlo a klid. Často překvapí, někdy zmate,
+                    ale většinou vykouzlí úsměv.
+                </p>
+            </div>
+
         </div>
 
-        <div class="news-item">
-          <div class="number">4</div>
-          <img
-            class="thumb"
-            src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd4297?auto=format&fit=crop&w=300&q=80"
-            alt=""
-          >
-          <div class="news-title">
-            Rakouská jezera: Tip na ideální víkendový výlet
-          </div>
+
+        <div class="sidebar-quote">
+            <span class="pink">Dva různí lidé,</span><br>
+            přesto v mnoha věcech stejní.
+            <span class="heart">♡</span>
         </div>
 
-        <div class="news-item">
-          <div class="number">5</div>
-          <img
-            class="thumb"
-            src="https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=300&q=80"
-            alt=""
-          >
-          <div class="news-title">
-            Psi, kteří mění život: Příběhy čtyřnohých parťáků
-          </div>
-        </div>
-      </div>
 
-      <div class="sidebar-section">
-        <h3>Mohlo by vás zajímat</h3>
+        <div class="facts">
 
-        <div class="small-item">
-          <img
-            class="small-thumb"
-            src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=300&q=80"
-            alt=""
-          >
-          <p>
-            Cestování jako životní styl: Kam vyrazit letos?
-          </p>
-        </div>
+            <div class="facts-title">
+                RYCHLÁ FAKTA
+            </div>
 
-        <div class="small-item">
-          <img
-            class="small-thumb"
-            src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=300&q=80"
-            alt=""
-          >
-          <p>
-            5 podniků na Moravě, kde se skvěle najíte
-          </p>
+            <div class="fact">
+                <span>●</span>
+                <span>Místo: Brno</span>
+            </div>
+
+            <div class="fact">
+                <span>▣</span>
+                <span>Den: Pátek</span>
+            </div>
+
+            <div class="fact">
+                <span>♢</span>
+                <span>Nápoj: Gin tonic / rum</span>
+            </div>
+
+            <div class="fact">
+                <span>♡</span>
+                <span>Nálada: Překvapivě výborná</span>
+            </div>
+
+            <div class="fact">
+                <span>☺</span>
+                <span>Výsledek: Pokračování...</span>
+            </div>
+
         </div>
 
-        <div class="small-item">
-          <img
-            class="small-thumb"
-            src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=300&q=80"
-            alt=""
-          >
-          <p>
-            Životní rovnováha: Jak si užívat přítomný okamžik
-          </p>
-        </div>
 
-        <div class="small-item">
-          <img
-            class="small-thumb"
-            src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&w=300&q=80"
-            alt=""
-          >
-          <p>
-            Malí psi, velké osobnosti: Příběh jednoho parťáka
-          </p>
-        </div>
-      </div>
+        <div class="polaroid">
 
-      <div class="side-quote">
-        <strong>“</strong>
-        Život je o zážitcích, ne o věcech.
-        <br><br>
-        <span style="font-size:16px; font-style:normal;">– Lucie</span>
-      </div>
+            <img
+                src="my dva.jpg"
+                alt="Jarda a Lucie"
+            >
+
+            <div class="polaroid-text">
+                Tohle je teprve začátek... ♡
+            </div>
+
+        </div>
 
     </aside>
 
-  </main>
+</main>
 
-  <footer>
-    <div class="footer-inner">
-      <div class="footer-logo">
-        Moravské <span>zprávy</span>
-      </div>
 
-      <p style="margin-top:10px;color:#aaa;font-size:13px;">
-        © 2026 Moravské zprávy
-      </p>
+<!-- ==========================================
+     FOOTER
+========================================== -->
+
+<footer>
+
+    <div class="footer-logo">
+        J & L ♡
     </div>
-  </footer>
+
+    <p>
+        Dva lidi. Jeden příběh. Status neznámý.
+    </p>
+
+</footer>
 
 </body>
 </html>
