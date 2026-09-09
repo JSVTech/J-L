@@ -1,385 +1,670 @@
 <!DOCTYPE html>
 <html lang="cs">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Moravské zprávy</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lucie: Holka z Moravy, která žije naplno | Moravské zprávy</title>
 
-<style>
-* {
-    box-sizing: border-box;
-}
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-body {
-    margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    color: #151515;
-    background: #f4f4f4;
-}
+    body {
+      font-family: Georgia, "Times New Roman", serif;
+      background: #ffffff;
+      color: #171717;
+      line-height: 1.6;
+    }
 
-header {
-    background: white;
-    border-bottom: 1px solid #ddd;
-}
-
-.top {
-    max-width: 1180px;
-    margin: auto;
-    padding: 22px 20px 16px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.logo {
-    font-size: 34px;
-    font-weight: 900;
-    letter-spacing: -1.5px;
-}
-
-.logo span {
-    color: #d71920;
-}
-
-.date {
-    color: #777;
-    font-size: 14px;
-}
-
-nav {
-    background: #111;
-}
-
-.nav-inner {
-    max-width: 1180px;
-    margin: auto;
-    display: flex;
-}
-
-nav a {
-    color: white;
-    text-decoration: none;
-    padding: 14px 20px;
-    font-size: 14px;
-    font-weight: bold;
-}
-
-nav a:hover {
-    background: #d71920;
-}
-
-.breaking {
-    max-width: 1180px;
-    margin: 18px auto 0;
-    padding: 0 20px;
-}
-
-.breaking span {
-    background: #d71920;
-    color: white;
-    font-size: 12px;
-    font-weight: bold;
-    padding: 6px 9px;
-    margin-right: 8px;
-}
-
-.container {
-    max-width: 1180px;
-    margin: 18px auto 60px;
-    padding: 0 20px;
-}
-
-.article {
-    background: white;
-    padding: 30px;
-}
-
-.category {
-    color: #d71920;
-    font-size: 13px;
-    font-weight: bold;
-    text-transform: uppercase;
-    margin-bottom: 10px;
-}
-
-h1 {
-    font-size: 43px;
-    line-height: 1.08;
-    margin: 0 0 14px;
-    max-width: 900px;
-}
-
-.meta {
-    color: #777;
-    font-size: 13px;
-    border-bottom: 1px solid #ddd;
-    padding-bottom: 18px;
-    margin-bottom: 22px;
-}
-
-.hero {
-    width: 100%;
-    height: 520px;
-    object-fit: cover;
-    background: #ddd;
-}
-
-.caption {
-    color: #777;
-    font-size: 12px;
-    margin-top: 7px;
-}
-
-.perex {
-    font-size: 21px;
-    line-height: 1.5;
-    font-weight: bold;
-    margin: 25px 0;
-}
-
-.text {
-    font-size: 17px;
-    line-height: 1.7;
-    max-width: 850px;
-}
-
-.quote {
-    border-left: 5px solid #d71920;
-    padding: 12px 20px;
-    margin: 30px 0;
-    font-size: 20px;
-    font-style: italic;
-    background: #f7f7f7;
-}
-
-.gallery {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 12px;
-    margin-top: 30px;
-}
-
-.gallery div {
-    height: 190px;
-    background: linear-gradient(135deg, #d9d9d9, #999);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-weight: bold;
-}
-
-.related {
-    margin-top: 45px;
-    border-top: 3px solid #111;
-    padding-top: 18px;
-}
-
-.related h2 {
-    margin-top: 0;
-}
-
-.related-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 18px;
-}
-
-.card {
-    border: 1px solid #ddd;
-    padding: 18px;
-    background: #fafafa;
-}
-
-.card .tag {
-    color: #d71920;
-    font-size: 11px;
-    font-weight: bold;
-}
-
-.card h3 {
-    margin: 8px 0 0;
-    font-size: 17px;
-}
-
-footer {
-    background: #111;
-    color: #aaa;
-    text-align: center;
-    padding: 30px 20px;
-    font-size: 13px;
-}
-
-@media (max-width: 700px) {
     .top {
-        display: block;
+      max-width: 1200px;
+      margin: auto;
+      padding: 18px 22px 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
 
-    .date {
-        margin-top: 8px;
+    .logo {
+      font-size: 48px;
+      line-height: 1;
+      font-weight: bold;
+      letter-spacing: -2px;
     }
 
-    .nav-inner {
-        overflow-x: auto;
+    .logo span {
+      color: #c8101e;
     }
 
-    nav a {
-        white-space: nowrap;
+    .subtitle {
+      font-family: Arial, sans-serif;
+      font-size: 11px;
+      letter-spacing: 7px;
+      margin-top: 8px;
+      color: #444;
+    }
+
+    .login {
+      font-family: Arial, sans-serif;
+      color: #555;
+      font-size: 14px;
+    }
+
+    .navbar {
+      width: 100%;
+      background: #c80f1e;
+      font-family: Arial, sans-serif;
+      font-weight: bold;
+    }
+
+    .navbar-inner {
+      max-width: 1200px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      overflow-x: auto;
+    }
+
+    .navbar a {
+      text-decoration: none;
+      color: white;
+      padding: 14px 18px;
+      display: block;
+      white-space: nowrap;
+    }
+
+    .navbar a:hover {
+      background: #a90c18;
+    }
+
+    .breadcrumb {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 15px 22px;
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+      color: #737373;
+      border-bottom: 1px solid #eee;
+    }
+
+    .wrapper {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 28px 22px;
+      display: grid;
+      grid-template-columns: minmax(0, 2.2fr) minmax(280px, 1fr);
+      gap: 42px;
+    }
+
+    .category {
+      color: #c8101e;
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+      font-weight: bold;
+      text-transform: uppercase;
+      margin-bottom: 10px;
     }
 
     h1 {
-        font-size: 30px;
+      font-size: 54px;
+      line-height: 1.03;
+      letter-spacing: -1.5px;
+      margin-bottom: 16px;
     }
 
-    .article {
-        padding: 20px;
+    .perex {
+      font-family: Arial, sans-serif;
+      font-size: 22px;
+      font-weight: 600;
+      color: #444;
+      line-height: 1.35;
+      margin-bottom: 24px;
     }
 
-    .hero {
-        height: 300px;
+    .hero-image {
+      width: 100%;
+      display: block;
+      border-radius: 2px;
+      max-height: 850px;
+      object-fit: cover;
+      object-position: center top;
     }
 
-    .gallery,
-    .related-grid {
+    .caption {
+      font-family: Arial, sans-serif;
+      font-size: 13px;
+      color: #888;
+      margin-top: 6px;
+      margin-bottom: 24px;
+    }
+
+    .lead {
+      font-size: 21px;
+      line-height: 1.6;
+      font-weight: bold;
+      margin-bottom: 25px;
+    }
+
+    .author-row {
+      border-top: 1px solid #eee;
+      border-bottom: 1px solid #eee;
+      padding: 18px 0;
+      margin: 20px 0 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      font-family: Arial, sans-serif;
+    }
+
+    .author {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+    }
+
+    .avatar {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #c8101e;
+      color: white;
+      font-weight: bold;
+    }
+
+    .author-name {
+      font-weight: bold;
+    }
+
+    .date {
+      color: #777;
+      font-size: 14px;
+    }
+
+    .share {
+      color: #777;
+      font-size: 14px;
+      white-space: nowrap;
+    }
+
+    .article p {
+      font-size: 20px;
+      margin-bottom: 24px;
+    }
+
+    .article h2 {
+      font-size: 34px;
+      line-height: 1.2;
+      margin: 38px 0 15px;
+    }
+
+    .quote {
+      margin: 35px 0;
+      padding: 26px 30px;
+      border-left: 5px solid #c8101e;
+      background: #faf4f4;
+      font-size: 27px;
+      font-style: italic;
+      line-height: 1.4;
+    }
+
+    .sidebar-section {
+      background: #f7f7f7;
+      padding: 18px;
+      margin-bottom: 24px;
+    }
+
+    .sidebar-section h3 {
+      font-size: 24px;
+      margin-bottom: 18px;
+    }
+
+    .news-item {
+      display: grid;
+      grid-template-columns: 30px 90px 1fr;
+      gap: 10px;
+      align-items: start;
+      padding: 11px 0;
+      border-bottom: 1px solid #e3e3e3;
+    }
+
+    .number {
+      background: #c8101e;
+      color: white;
+      width: 30px;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: Arial, sans-serif;
+      font-weight: bold;
+    }
+
+    .thumb {
+      width: 90px;
+      height: 65px;
+      object-fit: cover;
+      background: #ddd;
+    }
+
+    .news-title {
+      font-size: 16px;
+      line-height: 1.25;
+    }
+
+    .small-item {
+      display: flex;
+      gap: 12px;
+      padding: 10px 0;
+      border-bottom: 1px solid #e3e3e3;
+      align-items: center;
+    }
+
+    .small-thumb {
+      width: 85px;
+      height: 60px;
+      object-fit: cover;
+      background: #ddd;
+    }
+
+    .small-item p {
+      font-size: 15px;
+      line-height: 1.3;
+    }
+
+    .side-quote {
+      background: #fff1f1;
+      padding: 25px;
+      margin-top: 22px;
+      font-size: 26px;
+      font-style: italic;
+      line-height: 1.35;
+    }
+
+    .side-quote strong {
+      color: #c8101e;
+      display: block;
+      font-size: 45px;
+      height: 35px;
+    }
+
+    footer {
+      margin-top: 50px;
+      background: #151515;
+      color: white;
+      padding: 35px 22px;
+      font-family: Arial, sans-serif;
+    }
+
+    .footer-inner {
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .footer-logo {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    .footer-logo span {
+      color: #e51d2b;
+    }
+
+    @media (max-width: 850px) {
+      .top {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+      }
+
+      .logo {
+        font-size: 38px;
+      }
+
+      .wrapper {
         grid-template-columns: 1fr;
+      }
+
+      h1 {
+        font-size: 40px;
+      }
+
+      .perex {
+        font-size: 19px;
+      }
+
+      .sidebar {
+        margin-top: 10px;
+      }
     }
-}
-</style>
+
+    @media (max-width: 500px) {
+      h1 {
+        font-size: 34px;
+      }
+
+      .wrapper {
+        padding-left: 15px;
+        padding-right: 15px;
+      }
+
+      .breadcrumb {
+        padding-left: 15px;
+        padding-right: 15px;
+      }
+
+      .article p {
+        font-size: 18px;
+      }
+
+      .author-row {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .news-item {
+        grid-template-columns: 30px 75px 1fr;
+      }
+
+      .thumb {
+        width: 75px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<header>
+  <header>
     <div class="top">
+      <div>
         <div class="logo">
-            MORAVSKÉ <span>ZPRÁVY</span>
+          Moravské <span>zprávy</span>
         </div>
+        <div class="subtitle">
+          LIDÉ PŘÍBĚHY INSPIRACE Z MORAVY
+        </div>
+      </div>
 
-        <div class="date">
-            9. září 2026 · 14:32
-        </div>
+      <div class="login">
+        Přihlásit se &nbsp;&nbsp; 🔍 Hledat
+      </div>
     </div>
 
-    <nav>
-        <div class="nav-inner">
-            <a href="#">DOMÁCÍ</a>
-            <a href="#">SPOLEČNOST</a>
-            <a href="#">ŽIVOT</a>
-            <a href="#">REGION</a>
-        </div>
+    <nav class="navbar">
+      <div class="navbar-inner">
+        <a href="#">🏠</a>
+        <a href="#">Zprávy</a>
+        <a href="#">Regiony</a>
+        <a href="#">Lidé</a>
+        <a href="#">Životní styl</a>
+        <a href="#">Cestování</a>
+        <a href="#">Kultura</a>
+        <a href="#">Zajímavosti</a>
+        <a href="#">Názory</a>
+      </div>
     </nav>
-</header>
+  </header>
 
-<div class="breaking">
-    <span>AKTUÁLNĚ</span>
-    Speciální vydání Moravských zpráv
-</div>
+  <div class="breadcrumb">
+    Moravské zprávy &nbsp;›&nbsp; Lidé &nbsp;›&nbsp; Příběhy
+    &nbsp;›&nbsp; Lucie: Holka z Moravy, která žije naplno
+  </div>
 
-<main class="container">
+  <main class="wrapper">
 
-<article class="article">
+    <article class="article">
 
-    <div class="category">
-        Společnost
-    </div>
+      <div class="category">Lidé</div>
 
-    <h1>
-        Mladá žena z Boskovic přitahuje nečekanou pozornost. Odborníci si lámou hlavu
-    </h1>
+      <h1>
+        Lucie: Holka z Moravy, která žije naplno
+      </h1>
 
-    <div class="meta">
-        Redakce Moravských zpráv · 9. září 2026, 14:32
-    </div>
+      <div class="perex">
+        Cestování, zážitky, práce, psi a život podle vlastních pravidel.
+        Příběh obyčejné holky, která rozhodně obyčejná není.
+      </div>
 
-    <div class="hero">
-        FOTO LUČIE
-    </div>
+      <img
+        src="lucie.jpg"
+        alt="Lucie"
+        class="hero-image"
+      >
 
-    <div class="caption">
-        Ilustrační fotografie. Moravské zprávy
-    </div>
+      <div class="caption">
+        Lucie – energie, úsměv a život naplno. Foto: archiv Lucie
+      </div>
 
-    <p class="perex">
-        Boskovice zažívají v posledních týdnech neobvyklý fenomén.
-        Jedna místní žena se totiž podle svědků stává středem pozornosti
-        pokaždé, když se objeví ve společnosti.
-    </p>
+      <p class="lead">
+        Lucie je důkazem, že i v dnešní uspěchané době lze žít tak,
+        jak se člověk skutečně cítí. Miluje zážitky, svůj klid,
+        cestování a chvíle s lidmi, které má ráda.
+      </p>
 
-    <div class="text">
+      <div class="author-row">
 
-        <p>
-            Co přesně za tím stojí, není zatím jasné. Lidé z jejího okolí
-            však popisují kombinaci sebevědomí, osobitého humoru a schopnosti
-            během několika minut změnit obyčejný den v něco, na co se jen tak nezapomíná.
-        </p>
+        <div class="author">
+          <div class="avatar">MZ</div>
 
-        <p>
-            Zvláštní pozornost vzbudily také její nedávné cesty.
-            Rakousko, Salzburg, jezera a výlety se podle všeho staly
-            důležitou součástí příběhu, který začal jako obyčejné trávení volného času.
-        </p>
-
-        <div class="quote">
-            „Některé věci prostě nejdou naplánovat. A právě proto stojí za to.“
+          <div>
+            <div class="author-name">Redakce Moravské zprávy</div>
+            <div class="date">9. září 2026, 20:30</div>
+          </div>
         </div>
 
-        <p>
-            Redakce Moravských zpráv zároveň zjistila, že případ má ještě
-            jednu velmi neobvyklou stránku. V okolí se totiž začaly objevovat
-            drobné indicie v podobě poukázek, překvapení a výletů.
-        </p>
-
-        <p>
-            Zda jde o náhodu, nebo o promyšlený plán, zůstává otázkou.
-            Jedno je však jisté: tento příběh ještě zdaleka nekončí.
-        </p>
-
-    </div>
-
-    <div class="gallery">
-        <div>RAKOUSKO</div>
-        <div>SALZBURG</div>
-        <div>JEZERA</div>
-    </div>
-
-    <section class="related">
-
-        <h2>Související články</h2>
-
-        <div class="related-grid">
-
-            <div class="card">
-                <div class="tag">ŽIVOT</div>
-                <h3>
-                    Výlet, který měl být obyčejný. Nakonec vznikla vzpomínka na celý život
-                </h3>
-            </div>
-
-            <div class="card">
-                <div class="tag">REGION</div>
-                <h3>
-                    Boskovice ukrývají příběh, o kterém se zatím příliš nemluví
-                </h3>
-            </div>
-
-            <div class="card">
-                <div class="tag">SPOLEČNOST</div>
-                <h3>
-                    Tajná poukázka, nečekané překvapení a jeden důležitý odkaz
-                </h3>
-            </div>
-
+        <div class="share">
+          Sdílet článek: &nbsp; 🔵 ⚫ 🔗
         </div>
 
-    </section>
+      </div>
 
-</article>
+      <p>
+        Na první pohled možná působí jako holka, která má všechno
+        přesně nalajnované. Realita je ale trochu jiná. Lucie si jde
+        především vlastní cestou a málokdy dělá něco jen proto,
+        že se to od ní očekává.
+      </p>
 
-</main>
+      <p>
+        Má ráda svůj prostor, svůj klid a chvíle, kdy nemusí řešit
+        vůbec nikoho. Zároveň ale miluje cestování, nové zážitky
+        a chvíle, na které se vzpomíná ještě dlouho potom.
+      </p>
 
-<footer>
-    © 2026 Moravské zprávy · Speciální vydání
-</footer>
+      <h2>
+        Raději zážitky než věci
+      </h2>
+
+      <p>
+        Luxus pro ni nemusí znamenat drahou kabelku ani naleštěné auto.
+        Mnohem důležitější je místo, kde se člověk cítí dobře,
+        dobré jídlo, výlet, dovolená nebo prostě obyčejný večer,
+        který se nečekaně povede.
+      </p>
+
+      <div class="quote">
+        „Nejlepší věci jsou většinou ty, které člověk vůbec neplánuje.“
+      </div>
+
+      <h2>
+        Cestování jako únik od běžného života
+      </h2>
+
+      <p>
+        Když má možnost někam vyrazit, dlouho se přemlouvat nemusí.
+        Hory, jezera, města i obyčejné výlety po okolí mají jedno
+        společné – na chvíli člověka vytáhnou z každodenního stereotypu.
+      </p>
+
+      <p>
+        A právě tyhle okamžiky jsou pro Lucii možná důležitější než
+        samotná destinace. Dobrá společnost, trochu humoru a možnost
+        na chvíli vypnout.
+      </p>
+
+      <h2>
+        Život podle sebe
+      </h2>
+
+      <p>
+        Kdo Lucii zná, ví, že přesvědčit ji k něčemu, co sama nechce,
+        není úplně jednoduchý úkol. A možná právě v tom je její kouzlo.
+        Nedělá věci proto, aby se zavděčila ostatním.
+      </p>
+
+      <p>
+        Někdy je společenská, někdy chce být sama. Někdy plánuje,
+        jindy se rozhodne na poslední chvíli. A přesně tak jí to
+        pravděpodobně vyhovuje nejvíc.
+      </p>
+
+    </article>
+
+    <aside class="sidebar">
+
+      <div class="sidebar-section">
+        <h3>Nejčtenější články</h3>
+
+        <div class="news-item">
+          <div class="number">1</div>
+          <img
+            class="thumb"
+            src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=300&q=80"
+            alt=""
+          >
+          <div class="news-title">
+            10 nejkrásnějších míst na jižní Moravě, která musíte navštívit
+          </div>
+        </div>
+
+        <div class="news-item">
+          <div class="number">2</div>
+          <img
+            class="thumb"
+            src="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=300&q=80"
+            alt=""
+          >
+          <div class="news-title">
+            Kam na víno? Tipy na nejlepší vinařství v regionu
+          </div>
+        </div>
+
+        <div class="news-item">
+          <div class="number">3</div>
+          <img
+            class="thumb"
+            src="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?auto=format&fit=crop&w=300&q=80"
+            alt=""
+          >
+          <div class="news-title">
+            Brno v pohybu: Co je nového ve městě
+          </div>
+        </div>
+
+        <div class="news-item">
+          <div class="number">4</div>
+          <img
+            class="thumb"
+            src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd4297?auto=format&fit=crop&w=300&q=80"
+            alt=""
+          >
+          <div class="news-title">
+            Rakouská jezera: Tip na ideální víkendový výlet
+          </div>
+        </div>
+
+        <div class="news-item">
+          <div class="number">5</div>
+          <img
+            class="thumb"
+            src="https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=300&q=80"
+            alt=""
+          >
+          <div class="news-title">
+            Psi, kteří mění život: Příběhy čtyřnohých parťáků
+          </div>
+        </div>
+      </div>
+
+      <div class="sidebar-section">
+        <h3>Mohlo by vás zajímat</h3>
+
+        <div class="small-item">
+          <img
+            class="small-thumb"
+            src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=300&q=80"
+            alt=""
+          >
+          <p>
+            Cestování jako životní styl: Kam vyrazit letos?
+          </p>
+        </div>
+
+        <div class="small-item">
+          <img
+            class="small-thumb"
+            src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=300&q=80"
+            alt=""
+          >
+          <p>
+            5 podniků na Moravě, kde se skvěle najíte
+          </p>
+        </div>
+
+        <div class="small-item">
+          <img
+            class="small-thumb"
+            src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=300&q=80"
+            alt=""
+          >
+          <p>
+            Životní rovnováha: Jak si užívat přítomný okamžik
+          </p>
+        </div>
+
+        <div class="small-item">
+          <img
+            class="small-thumb"
+            src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&w=300&q=80"
+            alt=""
+          >
+          <p>
+            Malí psi, velké osobnosti: Příběh jednoho parťáka
+          </p>
+        </div>
+      </div>
+
+      <div class="side-quote">
+        <strong>“</strong>
+        Život je o zážitcích, ne o věcech.
+        <br><br>
+        <span style="font-size:16px; font-style:normal;">– Lucie</span>
+      </div>
+
+    </aside>
+
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-logo">
+        Moravské <span>zprávy</span>
+      </div>
+
+      <p style="margin-top:10px;color:#aaa;font-size:13px;">
+        © 2026 Moravské zprávy
+      </p>
+    </div>
+  </footer>
 
 </body>
 </html>
