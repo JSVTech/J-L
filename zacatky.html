@@ -30,17 +30,14 @@ body {
     margin: 0;
     background: #fff;
     color: var(--text);
-
-    /* HLAVNÍ FONT STRÁNKY */
     font-family: "Inter", sans-serif;
-
     line-height: 1.65;
 }
 
 
-/* =========================
+/* ==========================================
    HEADER
-========================= */
+========================================== */
 
 header {
     height: 82px;
@@ -89,33 +86,37 @@ header {
 
 nav {
     display: flex;
-    gap: 34px;
+    gap: 38px;
 }
 
 nav a {
     color: var(--dark);
     text-decoration: none;
-    font-family: "Inter", sans-serif;
     font-size: 13px;
     font-weight: 500;
     letter-spacing: .04em;
     position: relative;
 }
 
-nav a.active::after {
+nav a::after {
     content: "";
     position: absolute;
     left: 0;
     right: 0;
     bottom: -13px;
     height: 2px;
+    background: transparent;
+}
+
+nav a.active::after,
+nav a:hover::after {
     background: var(--pink);
 }
 
 
-/* =========================
+/* ==========================================
    HERO
-========================= */
+========================================== */
 
 .hero {
     min-height: 590px;
@@ -127,11 +128,11 @@ nav a.active::after {
     background:
         linear-gradient(
             90deg,
-            rgba(8,13,20,.76) 0%,
-            rgba(8,13,20,.47) 42%,
-            rgba(8,13,20,.08) 75%
+            rgba(8,13,20,.80) 0%,
+            rgba(8,13,20,.55) 42%,
+            rgba(8,13,20,.12) 75%
         ),
-        url("banner.jpg");
+        url("bluequeen.jpg");
 
     background-size: cover;
     background-position: center;
@@ -143,7 +144,6 @@ nav a.active::after {
 }
 
 .chapter {
-    font-family: "Inter", sans-serif;
     font-size: 14px;
     letter-spacing: .22em;
     font-weight: 500;
@@ -152,9 +152,9 @@ nav a.active::after {
 .hero h1 {
     font-family: "Cormorant Garamond", serif;
     font-size: clamp(68px, 8vw, 115px);
-    font-weight: 600;
     line-height: .9;
     margin: 18px 0;
+    font-weight: 600;
 }
 
 .hero-lead {
@@ -173,14 +173,14 @@ nav a.active::after {
 
 .hero-quote {
     font-family: "Caveat", cursive;
-    font-size: 29px;
+    font-size: 31px;
     max-width: 520px;
 }
 
 
-/* =========================
-   ARTICLE LAYOUT
-========================= */
+/* ==========================================
+   ARTICLE
+========================================== */
 
 .page {
     width: min(1440px, 91%);
@@ -197,7 +197,6 @@ nav a.active::after {
 
 .category {
     color: var(--pink);
-    font-family: "Inter", sans-serif;
     font-size: 13px;
     font-weight: 600;
     letter-spacing: .09em;
@@ -206,10 +205,10 @@ nav a.active::after {
 .article h2 {
     font-family: "Cormorant Garamond", serif;
     font-size: 57px;
-    font-weight: 600;
     line-height: 1;
     color: var(--dark);
     margin: 8px 0 4px;
+    font-weight: 600;
 }
 
 .subtitle {
@@ -219,7 +218,6 @@ nav a.active::after {
 }
 
 .article p {
-    font-family: "Inter", sans-serif;
     font-size: 16px;
     margin: 0 0 19px;
 }
@@ -232,15 +230,14 @@ nav a.active::after {
     font-family: "Cormorant Garamond", serif;
     color: var(--dark);
     font-size: 42px;
-    font-weight: 600;
     line-height: 1.1;
     margin: 55px 0 20px;
 }
 
 
-/* =========================
-   ARTICLE PHOTOS
-========================= */
+/* ==========================================
+   FOTKY V ČLÁNKU
+========================================== */
 
 .article-photo {
     width: 100%;
@@ -250,37 +247,10 @@ nav a.active::after {
     object-fit: cover;
 }
 
-.photo-caption {
-    color: #8b8b8b;
-    font-family: "Inter", sans-serif;
-    font-size: 12px;
-    margin-top: -25px;
-    margin-bottom: 30px;
-}
 
-
-/* =========================
-   QUOTE
-========================= */
-
-.quote-box {
-    background: linear-gradient(90deg, #fff8f5, #fbefeb);
-    padding: 28px 40px;
-    margin: 45px 0;
-    text-align: center;
-    border-left: 3px solid var(--pink);
-}
-
-.quote-box span {
-    font-family: "Caveat", cursive;
-    font-size: 28px;
-    color: #4f515a;
-}
-
-
-/* =========================
+/* ==========================================
    SIDEBAR
-========================= */
+========================================== */
 
 .sidebar {
     background: linear-gradient(180deg, #fdf7f5, #fff);
@@ -292,7 +262,6 @@ nav a.active::after {
 
 .sidebar-title {
     color: var(--dark);
-    font-family: "Inter", sans-serif;
     font-size: 15px;
     font-weight: 700;
     letter-spacing: .15em;
@@ -316,14 +285,13 @@ nav a.active::after {
 
 .person h4 {
     margin: 2px 0 5px;
-    font-family: "Inter", sans-serif;
-    font-size: 17px;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 21px;
     color: var(--dark);
 }
 
 .person p {
     margin: 0;
-    font-family: "Inter", sans-serif;
     font-size: 13px;
     line-height: 1.55;
     color: #565963;
@@ -355,7 +323,6 @@ nav a.active::after {
 
 .facts-title {
     color: var(--dark);
-    font-family: "Inter", sans-serif;
     font-weight: 700;
     font-size: 14px;
     letter-spacing: .09em;
@@ -364,16 +331,15 @@ nav a.active::after {
 
 .fact {
     margin: 10px 0;
-    font-family: "Inter", sans-serif;
     font-size: 14px;
     display: flex;
     gap: 10px;
 }
 
 
-/* =========================
+/* ==========================================
    POLAROID
-========================= */
+========================================== */
 
 .polaroid {
     margin: 35px 5px 5px;
@@ -398,9 +364,9 @@ nav a.active::after {
 }
 
 
-/* =========================
-   FINAL SECTION
-========================= */
+/* ==========================================
+   KONEC PŘÍBĚHU
+========================================== */
 
 .now-section {
     margin-top: 65px;
@@ -408,8 +374,8 @@ nav a.active::after {
 }
 
 .final-text {
-    font-family: "Inter", sans-serif;
-    font-size: 16px !important;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 23px !important;
 }
 
 .story-ending {
@@ -438,9 +404,9 @@ nav a.active::after {
 }
 
 
-/* =========================
+/* ==========================================
    FOOTER
-========================= */
+========================================== */
 
 footer {
     background: #111722;
@@ -456,27 +422,20 @@ footer .footer-logo {
 
 footer p {
     color: #b6b8bd;
-    font-family: "Inter", sans-serif;
-    font-size: 12px;
+    font-family: "Cormorant Garamond", serif;
+    font-style: italic;
+    font-size: 13px;
 }
 
 
-/* =========================
-   RESPONSIVE
-========================= */
+/* ==========================================
+   MOBIL
+========================================== */
 
 @media (max-width: 900px) {
 
     nav {
-        display: none;
-    }
-
-    .hero {
-        min-height: 520px;
-    }
-
-    .hero-lead {
-        font-size: 23px;
+        gap: 18px;
     }
 
     .page {
@@ -488,15 +447,39 @@ footer p {
         position: static;
     }
 
+    .hero {
+        min-height: 520px;
+    }
+
+    .hero-lead {
+        font-size: 23px;
+    }
+
     .article h2 {
         font-size: 46px;
     }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 650px) {
 
     header {
-        height: 70px;
+        height: auto;
+        padding: 15px 0;
+    }
+
+    .header-inner {
+        flex-direction: column;
+        gap: 14px;
+    }
+
+    nav {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    nav a {
+        font-size: 11px;
     }
 
     .logo-main {
@@ -521,7 +504,7 @@ footer p {
     }
 
     .hero-quote {
-        font-size: 24px;
+        font-size: 27px;
     }
 
     .page {
@@ -539,10 +522,6 @@ footer p {
 
     .subtitle {
         font-size: 24px;
-    }
-
-    .quote-box {
-        padding: 22px;
     }
 
     .person {
@@ -566,9 +545,11 @@ footer p {
 ========================================== -->
 
 <header>
+
     <div class="header-inner">
 
         <a class="logo" href="index.html">
+
             <span class="logo-main">
                 J & L <span class="logo-heart">♡</span>
             </span>
@@ -576,16 +557,32 @@ footer p {
             <span class="logo-sub">
                 Dva lidi. Jeden příběh. Status neznámý.
             </span>
+
         </a>
 
-<nav>
-    <a href="index.html">DOMŮ</a>
-    <a href="zacatky.html" class="active">ZAČÁTKY</a>
-    <a href="vylety.html">VÝLETY</a>
-    <a href="ze-zivota.html">ZE ŽIVOTA</a>
-</nav>
+
+        <nav>
+
+            <a href="index.html">
+                DOMŮ
+            </a>
+
+            <a href="zacatky.html" class="active">
+                ZAČÁTKY
+            </a>
+
+            <a href="vylety.html">
+                VÝLETY
+            </a>
+
+            <a href="ze-zivota.html">
+                ZE ŽIVOTA
+            </a>
+
+        </nav>
 
     </div>
+
 </header>
 
 
@@ -601,7 +598,9 @@ footer p {
             KAPITOLA 1
         </div>
 
-        <h1>Začátky</h1>
+        <h1>
+            Začátky
+        </h1>
 
         <div class="hero-lead">
             Jak to všechno začalo. Jeden pátek, který změnil víc, než jsme čekali.
@@ -619,10 +618,11 @@ footer p {
 
 
 <!-- ==========================================
-     CONTENT
+     OBSAH
 ========================================== -->
 
 <main class="page">
+
 
     <article class="article">
 
@@ -633,7 +633,9 @@ footer p {
             ZAČÁTKY
         </div>
 
-        <h2>Divoký pátek</h2>
+        <h2>
+            Divoký pátek
+        </h2>
 
         <div class="subtitle">
             Nečekaně a bez plánu.
@@ -647,6 +649,7 @@ footer p {
             že si navzájem dokážeme udělat pracovní den o něco příjemnější.
         </p>
 
+
         <p>
             Lucka se mi líbila už od začátku. Jenže v mojí hlavě byla něco jako
             <strong>business class v Emirates</strong> – pěkný se na ni dívat,
@@ -654,6 +657,7 @@ footer p {
             Takže jsem vlastně ani nic nezkoušel a upřímně jsem si ze začátku
             myslel, že se se mnou nebude chtít ani moc bavit.
         </p>
+
 
         <p>
             Opak byl pravdou. Čím víc jsme se poznávali, tím víc jsem zjišťoval,
@@ -673,11 +677,13 @@ footer p {
             Pak přišel <strong>ten pátek</strong>.
         </p>
 
+
         <p>
             Po práci jsme společně s partou vyrazili na dýmku a pár drinků.
             Poprvé jsem Lucku viděl mimo pracovní prostředí a z obyčejného večera
             se poměrně rychle stalo něco, co jsem rozhodně nečekal.
         </p>
+
 
         <p>
             Dodnes vlastně přesně nevím, jak k tomu došlo. Lucka odešla na toaletu
@@ -685,15 +691,18 @@ footer p {
             k sobě dostali blíž… a přišla <strong>první pusa</strong>.
         </p>
 
+
         <p>
             V tu chvíli mi bylo úplně jedno, jestli jsem přišel na dýmku,
             na drink nebo kde vlastně jsem. Jediné, co jsem věděl jistě,
             bylo, že bych se na ten záchod docela rád ještě jednou vrátil.
         </p>
 
+
         <p>
             A taky že vrátil.
         </p>
+
 
         <p>
             Naše nenápadná „záchodová akce“ se během večera ještě několikrát
@@ -701,15 +710,20 @@ footer p {
             z nejzajímavějších večerů mého života.
         </p>
 
+
         <p>
             A přestože jsme tehdy vůbec netušili, co z toho bude, jedno bylo
             jasné – <strong>od toho pátku už to mezi námi nebylo úplně stejné.</strong>
         </p>
 
 
+
         <!-- JAK TO ŠLO DÁL -->
 
-        <h3>Jak to šlo dál?</h3>
+        <h3>
+            Jak to šlo dál?
+        </h3>
+
 
         <p>
             Po tom pátku jsme si začali psát mnohem intenzivněji. Jenže krátce
@@ -717,10 +731,12 @@ footer p {
             jsem si až podezřele rychle zvykl – že ji každý den vidím.
         </p>
 
+
         <p>
             A právě tehdy mi začalo docházet,
             <strong>jak moc mi vlastně chybí.</strong>
         </p>
+
 
         <p>
             Jednou jsem jí dokonce zavolal přímo z práce. Oficiální verze byla,
@@ -729,10 +745,12 @@ footer p {
             <strong>prostě jsem ji potřeboval slyšet.</strong>
         </p>
 
+
         <p>
             Od té chvíle jsem víceméně jen vymýšlel důvody a příležitosti,
             jak zařídit, abychom se zase mohli vidět.
         </p>
+
 
         <p>
             Byla zima, blížily se Vánoce a jedna taková příležitost nakonec
@@ -742,9 +760,11 @@ footer p {
             <strong>alespoň něco, co si může otevřít ode mě.</strong>
         </p>
 
+
         <p>
             Když jsme se potom loučili, dostal jsem pusu.
         </p>
+
 
         <p>
             A když jsem odjížděl, jednu věc jsem věděl naprosto jistě:
@@ -752,13 +772,18 @@ footer p {
         </p>
 
 
-        <!-- KAFE -->
 
-        <h3>Kafe, auto a večery bez hodinek</h3>
+        <!-- KAFE, AUTO -->
+
+        <h3>
+            Kafe, auto a večery bez hodinek
+        </h3>
+
 
         <p>
             A taky jsem nebyl.
         </p>
+
 
         <p>
             Za Luckou jsem začal jezdit častěji. Potkávali jsme se třeba na
@@ -768,16 +793,19 @@ footer p {
             kolik je hodin.
         </p>
 
+
         <p>
             Bylo vidět, že je za ty návštěvy ráda. A já se toho společného času
             zase <strong>nemohl nabažit.</strong>
         </p>
+
 
         <p>
             Postupně už nezůstalo jen u občasné návštěvy. Začal jsem jezdit
             častěji, někdy dokonce i během týdne, a jedním z našich pravidelných
             míst se stala místní <strong>Blue Queen</strong>.
         </p>
+
 
         <p>
             Právě tam vznikly naše pravidelné <strong>tatarák sessions</strong>.
@@ -793,22 +821,29 @@ footer p {
         >
 
 
+
         <!-- O ZÁŽITEK VÍC -->
 
-        <h3>O zážitek víc</h3>
+        <h3>
+            O zážitek víc
+        </h3>
+
 
         <p>
             Pak přišla další premiéra. Pozval jsem Lucku k sobě domů.
         </p>
 
+
         <p>
             Přišla.
         </p>
+
 
         <p>
             A řekněme, že od toho večera jsme spolu měli zase
             <strong>o jeden společný zážitek víc.</strong>
         </p>
+
 
         <p>
             Postupně jsem za ní jezdil dál a něco se nenápadně měnilo.
@@ -816,10 +851,12 @@ footer p {
             a zase odjede.
         </p>
 
+
         <p>
             Začal jsem poznávat její domov, její soukromí a hlavně
             <strong>ji samotnou úplně jinak než předtím.</strong>
         </p>
+
 
         <p>
             A z návštěv, které původně vznikaly jen proto, že jsem hledal
@@ -828,11 +865,16 @@ footer p {
         </p>
 
 
+
         <!-- KDE JSME TEĎ -->
 
         <section class="now-section">
 
-            <h3>Kde jsme teď?</h3>
+
+            <h3>
+                Kde jsme teď?
+            </h3>
+
 
             <p>
                 Jsme ve fázi, kdy už oba známe příběhy toho druhého.
@@ -841,11 +883,13 @@ footer p {
                 než jsme původně čekali.
             </p>
 
+
             <p>
                 Trávíme spolu víkendy, jezdíme na výlety a pořád vymýšlíme něco,
                 co můžeme podniknout. Bowling, kulečník, šipky, minigolf…
                 a dokonce už došlo i na společný tanec.
             </p>
+
 
             <p>
                 Ten mimochodem probíhal na párty, kde asi třikrát vypadl jistič,
@@ -853,19 +897,23 @@ footer p {
                 musel vypnout projektor. Některé večery si člověk prostě nevymyslí.
             </p>
 
+
             <p>
                 Umíme se spolu smát úplným blbostem, ale zároveň se dokážeme
                 bavit o věcech, které už tak jednoduché nejsou. O životě,
                 o budoucnosti i o tom, co vlastně každý z nás chce.
             </p>
 
+
             <p>
                 A kde budeme za pár měsíců nebo za pár let?
             </p>
 
+
             <p>
                 <strong>To dnes neví ani jeden z nás.</strong>
             </p>
+
 
             <p class="final-text">
                 Jednu věc ale vím jistě. Za nás dva budu bojovat dál.
@@ -873,26 +921,40 @@ footer p {
                 <strong>tohoto období svého života nikdy litovat nebudu.</strong>
             </p>
 
+
             <div class="story-ending">
-                <div class="ending-heart">♡</div>
-                <p>Pokračování se právě píše…</p>
+
+                <div class="ending-heart">
+                    ♡
+                </div>
+
+                <p>
+                    Pokračování se právě píše…
+                </p>
+
             </div>
 
+
         </section>
+
 
     </article>
 
 
-    <!-- ======================================
-         SIDEBAR
-    ======================================= -->
+
+    <!-- ==========================================
+         O NÁS
+    ========================================== -->
 
     <aside class="sidebar">
+
 
         <div class="sidebar-title">
             O NÁS
         </div>
 
+
+        <!-- JARDA -->
 
         <div class="person">
 
@@ -902,16 +964,23 @@ footer p {
             >
 
             <div>
-                <h4>Jarda</h4>
+
+                <h4>
+                    Jarda
+                </h4>
 
                 <p>
                     Přemýšlí až moc, miluje výlety, dobré jídlo a nové zážitky.
                     Hledá jistotu, i když někdy sám neví, co přesně potřebuje.
                 </p>
+
             </div>
 
         </div>
 
+
+
+        <!-- LUCIE -->
 
         <div class="person">
 
@@ -921,17 +990,24 @@ footer p {
             >
 
             <div>
-                <h4>Lucie</h4>
+
+                <h4>
+                    Lucie
+                </h4>
 
                 <p>
                     Dělá věci po svém, potřebuje svůj prostor, miluje cestování,
                     dobré jídlo a klid. Často překvapí, někdy zmate,
                     ale většinou vykouzlí úsměv.
                 </p>
+
             </div>
 
         </div>
 
+
+
+        <!-- CITÁT -->
 
         <div class="sidebar-quote">
 
@@ -950,6 +1026,7 @@ footer p {
         </div>
 
 
+
         <!-- RYCHLÁ FAKTA -->
 
         <div class="facts">
@@ -958,25 +1035,30 @@ footer p {
                 RYCHLÁ FAKTA
             </div>
 
+
             <div class="fact">
                 <span>●</span>
                 <span>Místo: Brno</span>
             </div>
+
 
             <div class="fact">
                 <span>▣</span>
                 <span>Den: Pátek</span>
             </div>
 
+
             <div class="fact">
                 <span>♢</span>
                 <span>Nápoj: Gin tonic / rum</span>
             </div>
 
+
             <div class="fact">
                 <span>♡</span>
                 <span>Nálada: Překvapivě výborná</span>
             </div>
+
 
             <div class="fact">
                 <span>☺</span>
@@ -986,7 +1068,8 @@ footer p {
         </div>
 
 
-        <!-- SPOLEČNÁ FOTKA -->
+
+        <!-- POLAROID -->
 
         <div class="polaroid">
 
@@ -1001,7 +1084,9 @@ footer p {
 
         </div>
 
+
     </aside>
+
 
 </main>
 
