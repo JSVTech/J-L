@@ -30,9 +30,13 @@ body {
     margin: 0;
     background: #fff;
     color: var(--text);
+
+    /* HLAVNÍ FONT STRÁNKY */
     font-family: "Inter", sans-serif;
+
     line-height: 1.65;
 }
+
 
 /* =========================
    HEADER
@@ -71,7 +75,7 @@ header {
 
 .logo-heart {
     color: var(--pink);
-    font-family: "Caveat";
+    font-family: "Caveat", cursive;
     margin-left: 6px;
 }
 
@@ -91,6 +95,7 @@ nav {
 nav a {
     color: var(--dark);
     text-decoration: none;
+    font-family: "Inter", sans-serif;
     font-size: 13px;
     font-weight: 500;
     letter-spacing: .04em;
@@ -107,6 +112,7 @@ nav a.active::after {
     background: var(--pink);
 }
 
+
 /* =========================
    HERO
 ========================= */
@@ -118,11 +124,6 @@ nav a.active::after {
     align-items: center;
     color: white;
 
-    /*
-      ZATÍM používáme banner.jpg.
-      Až budeš chtít jinou titulní fotku přímo pro Začátky,
-      stačí změnit název tady.
-    */
     background:
         linear-gradient(
             90deg,
@@ -142,6 +143,7 @@ nav a.active::after {
 }
 
 .chapter {
+    font-family: "Inter", sans-serif;
     font-size: 14px;
     letter-spacing: .22em;
     font-weight: 500;
@@ -150,6 +152,7 @@ nav a.active::after {
 .hero h1 {
     font-family: "Cormorant Garamond", serif;
     font-size: clamp(68px, 8vw, 115px);
+    font-weight: 600;
     line-height: .9;
     margin: 18px 0;
 }
@@ -174,6 +177,7 @@ nav a.active::after {
     max-width: 520px;
 }
 
+
 /* =========================
    ARTICLE LAYOUT
 ========================= */
@@ -193,6 +197,7 @@ nav a.active::after {
 
 .category {
     color: var(--pink);
+    font-family: "Inter", sans-serif;
     font-size: 13px;
     font-weight: 600;
     letter-spacing: .09em;
@@ -201,6 +206,7 @@ nav a.active::after {
 .article h2 {
     font-family: "Cormorant Garamond", serif;
     font-size: 57px;
+    font-weight: 600;
     line-height: 1;
     color: var(--dark);
     margin: 8px 0 4px;
@@ -213,6 +219,7 @@ nav a.active::after {
 }
 
 .article p {
+    font-family: "Inter", sans-serif;
     font-size: 16px;
     margin: 0 0 19px;
 }
@@ -225,9 +232,11 @@ nav a.active::after {
     font-family: "Cormorant Garamond", serif;
     color: var(--dark);
     font-size: 42px;
+    font-weight: 600;
     line-height: 1.1;
     margin: 55px 0 20px;
 }
+
 
 /* =========================
    ARTICLE PHOTOS
@@ -243,10 +252,12 @@ nav a.active::after {
 
 .photo-caption {
     color: #8b8b8b;
+    font-family: "Inter", sans-serif;
     font-size: 12px;
     margin-top: -25px;
     margin-bottom: 30px;
 }
+
 
 /* =========================
    QUOTE
@@ -266,6 +277,7 @@ nav a.active::after {
     color: #4f515a;
 }
 
+
 /* =========================
    SIDEBAR
 ========================= */
@@ -280,6 +292,7 @@ nav a.active::after {
 
 .sidebar-title {
     color: var(--dark);
+    font-family: "Inter", sans-serif;
     font-size: 15px;
     font-weight: 700;
     letter-spacing: .15em;
@@ -303,12 +316,14 @@ nav a.active::after {
 
 .person h4 {
     margin: 2px 0 5px;
+    font-family: "Inter", sans-serif;
     font-size: 17px;
     color: var(--dark);
 }
 
 .person p {
     margin: 0;
+    font-family: "Inter", sans-serif;
     font-size: 13px;
     line-height: 1.55;
     color: #565963;
@@ -340,6 +355,7 @@ nav a.active::after {
 
 .facts-title {
     color: var(--dark);
+    font-family: "Inter", sans-serif;
     font-weight: 700;
     font-size: 14px;
     letter-spacing: .09em;
@@ -348,10 +364,12 @@ nav a.active::after {
 
 .fact {
     margin: 10px 0;
+    font-family: "Inter", sans-serif;
     font-size: 14px;
     display: flex;
     gap: 10px;
 }
+
 
 /* =========================
    POLAROID
@@ -379,6 +397,7 @@ nav a.active::after {
     margin-top: 12px;
 }
 
+
 /* =========================
    FINAL SECTION
 ========================= */
@@ -389,8 +408,8 @@ nav a.active::after {
 }
 
 .final-text {
-    font-family: "Cormorant Garamond", serif;
-    font-size: 23px !important;
+    font-family: "Inter", sans-serif;
+    font-size: 16px !important;
 }
 
 .story-ending {
@@ -418,6 +437,7 @@ nav a.active::after {
     margin-top: 5px;
 }
 
+
 /* =========================
    FOOTER
 ========================= */
@@ -436,8 +456,10 @@ footer .footer-logo {
 
 footer p {
     color: #b6b8bd;
+    font-family: "Inter", sans-serif;
     font-size: 12px;
 }
+
 
 /* =========================
    RESPONSIVE
@@ -532,10 +554,12 @@ footer p {
         height: 75px;
     }
 }
+
 </style>
 </head>
 
 <body>
+
 
 <!-- ==========================================
      HEADER
@@ -545,17 +569,22 @@ footer p {
     <div class="header-inner">
 
         <a class="logo" href="index.html">
-            <span class="logo-main">J & L <span class="logo-heart">♡</span></span>
-            <span class="logo-sub">Dva lidi. Jeden příběh. Stále se píše...</span>
+            <span class="logo-main">
+                J & L <span class="logo-heart">♡</span>
+            </span>
+
+            <span class="logo-sub">
+                Dva lidi. Jeden příběh. Status neznámý.
+            </span>
         </a>
 
         <nav>
             <a href="index.html">DOMŮ</a>
-            <a href="#" class="active">ZAČÁTKY</a>
-            <a href="#">VÝLETY</a>
-            <a href="#">DOVOLENÉ</a>
-            <a href="#">ZE ŽIVOTA</a>
-            <a href="#">ARCHIV</a>
+            <a href="zacatky.html" class="active">ZAČÁTKY</a>
+            <a href="vylety.html">VÝLETY</a>
+            <a href="dovolene.html">DOVOLENÉ</a>
+            <a href="ze-zivota.html">ZE ŽIVOTA</a>
+            <a href="archiv.html">ARCHIV</a>
         </nav>
 
     </div>
@@ -570,7 +599,9 @@ footer p {
 
     <div class="hero-content">
 
-        <div class="chapter">KAPITOLA 1</div>
+        <div class="chapter">
+            KAPITOLA 1
+        </div>
 
         <h1>Začátky</h1>
 
@@ -597,15 +628,19 @@ footer p {
 
     <article class="article">
 
+
         <!-- DIVOKÝ PÁTEK -->
 
-        <div class="category">ZAČÁTKY</div>
+        <div class="category">
+            ZAČÁTKY
+        </div>
 
         <h2>Divoký pátek</h2>
 
         <div class="subtitle">
             Nečekaně a bez plánu.
         </div>
+
 
         <p>
             Znali jsme se už delší dobu z práce. Prakticky každý den jsem si k Lucce
@@ -628,11 +663,13 @@ footer p {
             na svět, pořád se objevovalo něco dalšího, v čem jsme si rozuměli.
         </p>
 
+
         <img
             class="article-photo"
             src="gin.jpg"
             alt="Gin tonic a dýmka"
         >
+
 
         <p>
             Pak přišel <strong>ten pátek</strong>.
@@ -717,6 +754,8 @@ footer p {
         </p>
 
 
+        <!-- KAFE -->
+
         <h3>Kafe, auto a večery bez hodinek</h3>
 
         <p>
@@ -748,12 +787,15 @@ footer p {
             předem jasné, že rozhodně nebude „jen na hodinku“.
         </p>
 
+
         <img
             class="article-photo"
             src="bluequeen.jpg"
             alt="Blue Queen"
         >
 
+
+        <!-- O ZÁŽITEK VÍC -->
 
         <h3>O zážitek víc</h3>
 
@@ -853,6 +895,7 @@ footer p {
             O NÁS
         </div>
 
+
         <div class="person">
 
             <img
@@ -862,6 +905,7 @@ footer p {
 
             <div>
                 <h4>Jarda</h4>
+
                 <p>
                     Přemýšlí až moc, miluje výlety, dobré jídlo a nové zážitky.
                     Hledá jistotu, i když někdy sám neví, co přesně potřebuje.
@@ -880,6 +924,7 @@ footer p {
 
             <div>
                 <h4>Lucie</h4>
+
                 <p>
                     Dělá věci po svém, potřebuje svůj prostor, miluje cestování,
                     dobré jídlo a klid. Často překvapí, někdy zmate,
@@ -891,11 +936,23 @@ footer p {
 
 
         <div class="sidebar-quote">
-            <span class="pink">Dva různí lidé,</span><br>
+
+            <span class="pink">
+                Dva různí lidé,
+            </span>
+
+            <br>
+
             přesto v mnoha věcech stejní.
-            <span class="heart">♡</span>
+
+            <span class="heart">
+                ♡
+            </span>
+
         </div>
 
+
+        <!-- RYCHLÁ FAKTA -->
 
         <div class="facts">
 
@@ -931,6 +988,8 @@ footer p {
         </div>
 
 
+        <!-- SPOLEČNÁ FOTKA -->
+
         <div class="polaroid">
 
             <img
@@ -964,6 +1023,7 @@ footer p {
     </p>
 
 </footer>
+
 
 </body>
 </html>
