@@ -1,1 +1,641 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>J & L</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Inter:wght@300;400;500;600&family=Caveat:wght@400;500&display=swap');
+
+:root {
+    --dark: #121827;
+    --pink: #d88383;
+    --light-pink: #fbf2ef;
+    --text: #252832;
+    --muted: #6e7078;
+    --white: #ffffff;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background: #fff;
+    color: var(--text);
+    font-family: "Inter", sans-serif;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+header {
+    height: 82px;
+    background: rgba(255,255,255,.97);
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #eee;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-inner {
+    width: min(1440px, 92%);
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    text-decoration: none;
+    color: var(--dark);
+    line-height: 1;
+}
+
+.logo-main {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 42px;
+    font-weight: 600;
+}
+
+.logo-heart {
+    color: var(--pink);
+    font-family: "Caveat", cursive;
+    margin-left: 6px;
+}
+
+.logo-sub {
+    display: block;
+    font-family: "Cormorant Garamond", serif;
+    font-style: italic;
+    font-size: 13px;
+    margin-top: 3px;
+}
+
+nav {
+    display: flex;
+    gap: 34px;
+}
+
+nav a {
+    color: var(--dark);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: .04em;
+    position: relative;
+}
+
+nav a.active::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -13px;
+    height: 2px;
+    background: var(--pink);
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 680px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    color: white;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(8,13,20,.72) 0%,
+            rgba(8,13,20,.42) 42%,
+            rgba(8,13,20,.10) 75%
+        ),
+        url("banner.jpg");
+
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-content {
+    width: min(1440px, 90%);
+    margin: auto;
+}
+
+.hero-small {
+    font-size: 14px;
+    letter-spacing: .22em;
+    font-weight: 500;
+    margin-bottom: 18px;
+}
+
+.hero h1 {
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(62px, 7vw, 105px);
+    line-height: .92;
+    margin: 0;
+    max-width: 800px;
+}
+
+.hero-text {
+    margin-top: 25px;
+    max-width: 650px;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 28px;
+    line-height: 1.3;
+}
+
+.hero-sub {
+    max-width: 650px;
+    margin-top: 18px;
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+.hero-button {
+    display: inline-block;
+    margin-top: 30px;
+    background: var(--pink);
+    color: #fff;
+    text-decoration: none;
+    padding: 15px 25px;
+    font-size: 13px;
+    letter-spacing: .08em;
+    font-weight: 600;
+    transition: .2s;
+}
+
+.hero-button:hover {
+    transform: translateY(-2px);
+    opacity: .92;
+}
+
+
+/* =========================
+   INTRO
+========================= */
+
+.intro {
+    width: min(1000px, 88%);
+    margin: 80px auto 60px;
+    text-align: center;
+}
+
+.intro-label {
+    color: var(--pink);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: .16em;
+}
+
+.intro h2 {
+    font-family: "Cormorant Garamond", serif;
+    color: var(--dark);
+    font-size: 52px;
+    line-height: 1.05;
+    margin: 12px 0 20px;
+}
+
+.intro p {
+    max-width: 760px;
+    margin: auto;
+    font-size: 16px;
+    line-height: 1.8;
+    color: #5d6068;
+}
+
+.intro-quote {
+    margin-top: 30px;
+    font-family: "Caveat", cursive;
+    font-size: 29px;
+    color: var(--pink);
+}
+
+
+/* =========================
+   CARDS
+========================= */
+
+.sections {
+    width: min(1250px, 90%);
+    margin: 0 auto 100px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+}
+
+.card {
+    position: relative;
+    min-height: 420px;
+    overflow: hidden;
+    text-decoration: none;
+    color: white;
+    display: flex;
+    align-items: flex-end;
+    background: #ddd;
+}
+
+.card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(
+            180deg,
+            rgba(0,0,0,.05),
+            rgba(0,0,0,.72)
+        );
+    z-index: 1;
+}
+
+.card img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .45s ease;
+}
+
+.card:hover img {
+    transform: scale(1.04);
+}
+
+.card-content {
+    position: relative;
+    z-index: 2;
+    padding: 30px;
+}
+
+.card-label {
+    font-size: 12px;
+    letter-spacing: .14em;
+    margin-bottom: 6px;
+}
+
+.card h3 {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 42px;
+    line-height: 1;
+    margin: 0 0 10px;
+}
+
+.card p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.55;
+    color: rgba(255,255,255,.9);
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    background: #111722;
+    color: #fff;
+    padding: 45px 20px;
+    text-align: center;
+}
+
+.footer-logo {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 34px;
+}
+
+footer p {
+    color: #b6b8bd;
+    font-size: 12px;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+
+    nav {
+        display: none;
+    }
+
+    .hero {
+        min-height: 600px;
+    }
+
+    .sections {
+        grid-template-columns: 1fr;
+    }
+
+    .card {
+        min-height: 350px;
+    }
+}
+
+@media (max-width: 600px) {
+
+    header {
+        height: 70px;
+    }
+
+    .logo-main {
+        font-size: 34px;
+    }
+
+    .logo-sub {
+        font-size: 11px;
+    }
+
+    .hero {
+        min-height: 540px;
+    }
+
+    .hero h1 {
+        font-size: 56px;
+    }
+
+    .hero-text {
+        font-size: 23px;
+    }
+
+    .intro h2 {
+        font-size: 42px;
+    }
+
+    .card h3 {
+        font-size: 36px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+
+<!-- =========================
+     HEADER
+========================= -->
+
+<header>
+
+    <div class="header-inner">
+
+        <a class="logo" href="index.html">
+
+            <span class="logo-main">
+                J & L <span class="logo-heart">♡</span>
+            </span>
+
+            <span class="logo-sub">
+                Dva lidi. Jeden příběh. Status neznámý.
+            </span>
+
+        </a>
+
+
+        <nav>
+
+            <a href="index.html" class="active">
+                DOMŮ
+            </a>
+
+            <a href="zacatky.html">
+                ZAČÁTKY
+            </a>
+
+            <a href="vylety.html">
+                VÝLETY
+            </a>
+
+            <a href="dovolene.html">
+                DOVOLENÉ
+            </a>
+
+            <a href="ze-zivota.html">
+                ZE ŽIVOTA
+            </a>
+
+            <a href="archiv.html">
+                ARCHIV
+            </a>
+
+        </nav>
+
+    </div>
+
+</header>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <div class="hero-small">
+            JARDA & LUCIE
+        </div>
+
+        <h1>
+            Začalo to pátkem.
+        </h1>
+
+        <div class="hero-text">
+            Je z toho něco, co stojí za to zmínit.
+        </div>
+
+        <div class="hero-sub">
+
+            Dva různí lidé, přesto v mnoha věcech stejní.
+
+            <br><br>
+
+            Příběh o výletech, obyčejných dnech
+            a všem, co dělá život zajímavější.
+
+        </div>
+
+        <a
+            class="hero-button"
+            href="zacatky.html"
+        >
+            PŘEČÍST CELÝ PŘÍBĚH →
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     INTRO
+========================= -->
+
+<section class="intro">
+
+    <div class="intro-label">
+        J & L
+    </div>
+
+    <h2>
+        Jeden web. Spousta společných momentů.
+    </h2>
+
+    <p>
+
+        Některé věci jsou velké, jiné úplně obyčejné.
+        Výlety, večery, dovolené, dobré jídlo, náhodné nápady
+        a momenty, které by byla škoda nechat jen v galerii telefonu.
+
+        Tohle je místo, kde zůstávají.
+
+    </p>
+
+    <div class="intro-quote">
+        „Pokračování se právě píše…“
+    </div>
+
+</section>
+
+
+<!-- =========================
+     HLAVNÍ ODKAZY
+========================= -->
+
+<section class="sections">
+
+
+    <!-- ZE ŽIVOTA -->
+
+    <a
+        class="card"
+        href="ze-zivota.html"
+    >
+
+        <img
+            src="my dva.jpg"
+            alt="Ze života"
+        >
+
+        <div class="card-content">
+
+            <div class="card-label">
+                KAŽDODENNÍ MOMENTY
+            </div>
+
+            <h3>
+                Ze života
+            </h3>
+
+            <p>
+                Věci, které se nevejdou do žádné jiné kategorie.
+            </p>
+
+        </div>
+
+    </a>
+
+
+    <!-- VÝLETY -->
+
+    <a
+        class="card"
+        href="vylety.html"
+    >
+
+        <img
+            src="banner.jpg"
+            alt="Výlety"
+        >
+
+        <div class="card-content">
+
+            <div class="card-label">
+                CESTY & ZÁŽITKY
+            </div>
+
+            <h3>
+                Výlety
+            </h3>
+
+            <p>
+                Kam jsme vyrazili a co se cestou zase stalo.
+            </p>
+
+        </div>
+
+    </a>
+
+
+    <!-- O NÁS -->
+
+    <a
+        class="card"
+        href="zacatky.html"
+    >
+
+        <img
+            src="my dva.jpg"
+            alt="O nás"
+        >
+
+        <div class="card-content">
+
+            <div class="card-label">
+                JARDA & LUCIE
+            </div>
+
+            <h3>
+                O nás
+            </h3>
+
+            <p>
+                Dva různí lidé. Jeden trochu nečekaný příběh.
+            </p>
+
+        </div>
+
+    </a>
+
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    <div class="footer-logo">
+        J & L ♡
+    </div>
+
+    <p>
+        Dva lidi. Jeden příběh. Status neznámý.
+    </p>
+
+</footer>
+
+
+</body>
+</html>
