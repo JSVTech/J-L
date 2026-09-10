@@ -124,7 +124,7 @@
         /* HERO */
 
         .hero {
-            min-height: 620px;
+            min-height: 480px;
             position: relative;
             display: flex;
             align-items: center;
@@ -146,38 +146,33 @@
             width: 100%;
             max-width: 1220px;
             margin: auto;
-            padding: 90px 28px;
-        }
-
-        .eyebrow {
-            font-size: 11px;
-            letter-spacing: 4px;
-            text-transform: uppercase;
-            font-weight: 500;
-            color: #f3d3d3;
-            margin-bottom: 14px;
+            padding: 75px 85px;
         }
 
         .hero h1 {
             font-family: "Cormorant Garamond", serif;
-            font-size: clamp(72px, 9vw, 125px);
-            line-height: .9;
+            font-size: clamp(68px, 7vw, 100px);
+            line-height: 1;
             font-weight: 500;
             margin-bottom: 25px;
+            text-transform: none;
+            letter-spacing: 0;
         }
 
         .hero-subtitle {
-            max-width: 600px;
+            max-width: 700px;
             font-family: "Cormorant Garamond", serif;
             font-size: 26px;
-            line-height: 1.35;
+            line-height: 1.45;
+            letter-spacing: 0;
+            text-transform: none;
         }
 
         .hero-hand {
             font-family: "Caveat", cursive;
-            font-size: 31px;
+            font-size: 29px;
             color: #ffd0d0;
-            margin-top: 25px;
+            margin-top: 38px;
             transform: rotate(-1deg);
         }
 
@@ -216,16 +211,6 @@
 
         .intro strong {
             color: var(--dark);
-        }
-
-        .beer-note {
-            display: inline-block;
-            margin-top: 24px;
-            padding: 14px 28px;
-            background: var(--pink-light);
-            font-family: "Caveat", cursive;
-            font-size: 27px;
-            transform: rotate(-1deg);
         }
 
         /* TRIP OPENING */
@@ -357,8 +342,6 @@
             font-style: italic;
         }
 
-        /* TWO PHOTOS */
-
         .photo-grid-two {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -370,22 +353,6 @@
             height: 450px;
             object-fit: cover;
         }
-
-        /* THREE PHOTOS */
-
-        .photo-grid-three {
-            display: grid;
-            grid-template-columns: 1.3fr .85fr .85fr;
-            gap: 18px;
-            margin-top: 45px;
-        }
-
-        .photo-grid-three img {
-            height: 430px;
-            object-fit: cover;
-        }
-
-        /* JL MOMENT */
 
         .moment {
             margin-top: 35px;
@@ -418,8 +385,6 @@
             margin-top: 8px !important;
         }
 
-        /* QUOTE STRIPE */
-
         .quote-stripe {
             background: var(--pink-light);
             padding: 70px 28px;
@@ -440,7 +405,7 @@
             color: var(--pink);
         }
 
-        /* HALLSTATT GALLERY */
+        /* HALLSTATT */
 
         .hallstatt-gallery {
             display: grid;
@@ -465,7 +430,7 @@
             object-fit: cover;
         }
 
-        /* FAIL CARD */
+        /* FAIL */
 
         .fail-card {
             max-width: 820px;
@@ -573,8 +538,6 @@
             white-space: nowrap;
         }
 
-        /* SPECIAL STATS */
-
         .special-stats {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -612,8 +575,6 @@
         .special-card p {
             font-size: 14px;
         }
-
-        /* COMMON PHRASE */
 
         .common-phrase {
             max-width: 820px;
@@ -670,8 +631,6 @@
             font-size: 32px !important;
             color: var(--pink);
         }
-
-        /* FUTURE TRIPS PLACEHOLDER */
 
         .future {
             padding: 100px 28px;
@@ -770,8 +729,8 @@
                 bottom: 12px;
             }
 
-            .hero {
-                min-height: 540px;
+            .hero-inner {
+                padding: 65px 28px;
             }
 
             .trip-opening-inner,
@@ -794,14 +753,12 @@
             }
 
             .photo-grid-two,
-            .photo-grid-three,
             .hallstatt-gallery,
             .hallstatt-side {
                 grid-template-columns: 1fr;
             }
 
             .photo-grid-two img,
-            .photo-grid-three img,
             .hallstatt-big img,
             .hallstatt-side img {
                 height: auto;
@@ -835,7 +792,7 @@
         @media(max-width: 520px) {
 
             .hero h1 {
-                font-size: 72px;
+                font-size: 64px;
             }
 
             .hero-subtitle {
@@ -903,8 +860,6 @@
 <section class="hero">
     <div class="hero-inner">
 
-        <div class="eyebrow"/div>
-
         <h1>Výlety</h1>
 
         <div class="hero-subtitle">
@@ -936,13 +891,12 @@
     <p>
         Časem jich ale snad bude mnohem víc a tahle stránka
         se bude postupně zaplňovat dalšími místy, zážitky a příběhy.
-     
     </p>
-    
+
 </section>
 
 
-<!-- AUSTRIA INTRO -->
+<!-- RAKOUSKO -->
 
 <section class="trip-opening">
 
@@ -952,9 +906,7 @@
 
             <div class="trip-number">01.</div>
 
-            <h2 class="trip-title">
-                Rakousko
-            </h2>
+            <h2 class="trip-title">Rakousko</h2>
 
             <div class="trip-subtitle">
                 Salcbursko / první velký společný výlet ♡
@@ -980,18 +932,14 @@
                 která bychom možná chtěli vidět.
             </p>
 
-            <p>
-                Protože se přece nebudeme na dovolené honit.
-            </p>
+            <p>Protože se přece nebudeme na dovolené honit.</p>
 
             <p>
                 A jakožto opravdu vášniví turisté jsme podle mě zvládli
                 nachodit nejméně kilometrů v historii české turistiky v Rakousku.
             </p>
 
-            <p>
-                <strong>A vůbec nám to nevadilo.</strong>
-            </p>
+            <p><strong>A vůbec nám to nevadilo.</strong></p>
 
         </div>
 
@@ -1031,9 +979,7 @@
 
             <div class="text-wrap">
 
-                <div class="chapter-kicker">
-                    CESTA TAM
-                </div>
+                <div class="chapter-kicker">CESTA TAM</div>
 
                 <h2>Směr Rakousko.</h2>
 
@@ -1080,13 +1026,9 @@
 
         <div class="chapter-heading">
 
-            <div class="chapter-kicker">
-                DEN PRVNÍ
-            </div>
+            <div class="chapter-kicker">DEN PRVNÍ</div>
 
-            <h2>
-                400 € a jsme doma.
-            </h2>
+            <h2>400 € a jsme doma.</h2>
 
         </div>
 
@@ -1149,22 +1091,16 @@
 
         <div class="moment">
 
-            <div class="moment-label">
-                J & L MOMENT
-            </div>
+            <div class="moment-label">J & L MOMENT</div>
 
-            <h3>
-                „Je to tady jen kousek přes les.“
-            </h3>
+            <h3>„Je to tady jen kousek přes les.“</h3>
 
             <p>
                 Chlap z recepce byl mimochodem Slovák a doporučil nám
                 hotelovou pláž u jezera.
             </p>
 
-            <p>
-                Údajně to bylo jen kousek přes les.
-            </p>
+            <p>Údajně to bylo jen kousek přes les.</p>
 
             <p>
                 Z onoho „kousku přes les“ se vyklubal
@@ -1192,13 +1128,9 @@
 
         <div class="chapter-heading">
 
-            <div class="chapter-kicker">
-                DEN DRUHÝ
-            </div>
+            <div class="chapter-kicker">DEN DRUHÝ</div>
 
-            <h2>
-                Schafberg / 1783 m n. m.
-            </h2>
+            <h2>Schafberg / 1783 m n. m.</h2>
 
         </div>
 
@@ -1270,16 +1202,11 @@
 
         </div>
 
-
         <div class="moment">
 
-            <div class="moment-label">
-                J & L MOMENT
-            </div>
+            <div class="moment-label">J & L MOMENT</div>
 
-            <h3>
-                Dvě piva. Jedna zubačka. Žádný záchod.
-            </h3>
+            <h3>Dvě piva. Jedna zubačka. Žádný záchod.</h3>
 
             <p>
                 Cestou dolů nás čekal poměrně dramatický boj o to,
@@ -1304,9 +1231,7 @@
                 a spolucestujícím v zubačce nic na boty neteklo.
             </p>
 
-            <p class="moment-hand">
-                Mise splněna. ✓
-            </p>
+            <p class="moment-hand">Mise splněna. ✓</p>
 
         </div>
 
@@ -1315,7 +1240,7 @@
 </section>
 
 
-<!-- RESTAURANT -->
+<!-- RESTAURACE -->
 
 <section class="quote-stripe">
 
@@ -1323,9 +1248,7 @@
         „Příště radši salám a pomazánku.“
     </blockquote>
 
-    <p>
-        – gastronomické ponaučení výletu
-    </p>
+    <p>– gastronomické ponaučení výletu</p>
 
 </section>
 
@@ -1336,13 +1259,9 @@
 
         <div class="chapter-heading">
 
-            <div class="chapter-kicker">
-                VEČEŘE
-            </div>
+            <div class="chapter-kicker">VEČEŘE</div>
 
-            <h2>
-                Restaurace, kde jsme asi neměli být.
-            </h2>
+            <h2>Restaurace, kde jsme asi neměli být.</h2>
 
         </div>
 
@@ -1367,9 +1286,7 @@
                 protože nás musí usadit obsluha.
             </p>
 
-            <p>
-                Dobře. Tak dobře no.
-            </p>
+            <p>Dobře. Tak dobře no.</p>
 
             <p>
                 Objednali jsme jídlo a láhev vína.
@@ -1384,9 +1301,7 @@
                 jestli víno může být.
             </p>
 
-            <p>
-                <strong>Radši ano.</strong>
-            </p>
+            <p><strong>Radši ano.</strong></p>
 
             <p>
                 Následně jsme si všimli,
@@ -1398,9 +1313,7 @@
                 který říkal jediné:
             </p>
 
-            <p>
-                <strong>„Tady bejt nechcem.“</strong>
-            </p>
+            <p><strong>„Tady bejt nechcem.“</strong></p>
 
             <p>
                 Hotel jinak působil příjemně a trochu starším stylem,
@@ -1448,13 +1361,9 @@
 
         <div class="chapter-heading">
 
-            <div class="chapter-kicker">
-                DEN TŘETÍ
-            </div>
+            <div class="chapter-kicker">DEN TŘETÍ</div>
 
-            <h2>
-                Hallstatt.
-            </h2>
+            <h2>Hallstatt.</h2>
 
         </div>
 
@@ -1487,7 +1396,6 @@
             </p>
 
         </div>
-
 
         <div class="hallstatt-gallery">
 
@@ -1528,13 +1436,9 @@
 
         <div class="moment">
 
-            <div class="moment-label">
-                J & L MOMENT
-            </div>
+            <div class="moment-label">J & L MOMENT</div>
 
-            <h3>
-                Labuť vs. Lucie.
-            </h3>
+            <h3>Labuť vs. Lucie.</h3>
 
             <p>
                 Po prohlídce města jsme si dali kávu
@@ -1557,13 +1461,9 @@
 
         <div class="fail-card">
 
-            <div class="label">
-                NAVIGACE BY JARDA™
-            </div>
+            <div class="label">NAVIGACE BY JARDA™</div>
 
-            <h3>
-                Expedice Lidl
-            </h3>
+            <h3>Expedice Lidl</h3>
 
             <div class="fail-line">
                 Cíl: <strong>Lidl</strong>
@@ -1615,9 +1515,7 @@
                 že jsme pár metrů od cíle.
             </p>
 
-            <p>
-                A pak jsme dojeli.
-            </p>
+            <p>A pak jsme dojeli.</p>
 
             <p>
                 Na ceduli stálo:
@@ -1644,9 +1542,7 @@
                 A samozřejmě jsme si vzali i grilované kuře ve stánku.
             </p>
 
-            <p>
-                <strong>Prostě ta naše restaurace ne.</strong>
-            </p>
+            <p><strong>Prostě ta naše restaurace ne.</strong></p>
 
         </div>
 
@@ -1655,7 +1551,7 @@
 </section>
 
 
-<!-- POOL -->
+<!-- BAZÉN -->
 
 <section class="chapter white">
 
@@ -1674,13 +1570,9 @@
 
             <div class="text-wrap">
 
-                <div class="chapter-kicker">
-                    VEČER
-                </div>
+                <div class="chapter-kicker">VEČER</div>
 
-                <h2>
-                    Bazén, UNO a klid.
-                </h2>
+                <h2>Bazén, UNO a klid.</h2>
 
                 <p>
                     Po Hallstattu následoval opět pohodový večer.
@@ -1713,7 +1605,7 @@
 </section>
 
 
-<!-- SALZBURG -->
+<!-- SALCBURK -->
 
 <section class="chapter cream">
 
@@ -1723,8 +1615,9 @@
 
             <div class="photo-wrap">
 
+                <!-- NOVÝ NÁZEV FOTKY PEVNOSTI -->
                 <img
-                    src="salcburkhrad.jpg"
+                    src="hradburk.jpg"
                     alt="Pevnost Hohensalzburg"
                 >
 
@@ -1732,13 +1625,9 @@
 
             <div class="text-wrap">
 
-                <div class="chapter-kicker">
-                    DEN ČTVRTÝ
-                </div>
+                <div class="chapter-kicker">DEN ČTVRTÝ</div>
 
-                <h2>
-                    Salcburk.
-                </h2>
+                <h2>Salcburk.</h2>
 
                 <p>
                     Čtvrtý den poprchávalo
@@ -1774,9 +1663,7 @@
                 </p>
 
                 <p>
-                    <strong>
-                        „Koupíme salám a pomazánku.“
-                    </strong>
+                    <strong>„Koupíme salám a pomazánku.“</strong>
                 </p>
 
             </div>
@@ -1788,7 +1675,7 @@
 </section>
 
 
-<!-- LAST DAY -->
+<!-- POSLEDNÍ DEN -->
 
 <section class="chapter white">
 
@@ -1807,13 +1694,9 @@
 
             <div class="text-wrap">
 
-                <div class="chapter-kicker">
-                    POSLEDNÍ DEN
-                </div>
+                <div class="chapter-kicker">POSLEDNÍ DEN</div>
 
-                <h2>
-                    A zase domů.
-                </h2>
+                <h2>A zase domů.</h2>
 
                 <p>
                     Poslední den už jsme po check-outu
@@ -1854,13 +1737,9 @@
 
         <div class="stats-heading">
 
-            <div class="small">
-                STATISTIKY Z TERÉNU
-            </div>
+            <div class="small">STATISTIKY Z TERÉNU</div>
 
-            <h2>
-                J & L Travel Stats
-            </h2>
+            <h2>J & L Travel Stats</h2>
 
             <p>
                 Vědecky naprosto nepodložená data z našich cest.
@@ -1868,122 +1747,78 @@
 
         </div>
 
-
         <div class="stats-grid">
 
             <div class="stat">
                 <div class="stat-icon">🚽</div>
-                <div class="stat-question">
-                    Kdo potřebuje pořád čůrat?
-                </div>
-                <div class="stat-answer">
-                    Lucie
-                </div>
+                <div class="stat-question">Kdo potřebuje pořád čůrat?</div>
+                <div class="stat-answer">Lucie</div>
             </div>
-
 
             <div class="stat">
                 <div class="stat-icon">🚗</div>
-                <div class="stat-question">
-                    Kdo chce nejčastěji řídit?
-                </div>
-                <div class="stat-answer">
-                    Lucie
-                </div>
+                <div class="stat-question">Kdo chce nejčastěji řídit?</div>
+                <div class="stat-answer">Lucie</div>
             </div>
-
 
             <div class="stat">
                 <div class="stat-icon">🗺️</div>
                 <div class="stat-question">
                     Kdo připravuje itinerář, který pak stejně nedodržujeme?
                 </div>
-                <div class="stat-answer">
-                    Jarda
-                </div>
+                <div class="stat-answer">Jarda</div>
             </div>
-
 
             <div class="stat">
                 <div class="stat-icon">😴</div>
-                <div class="stat-question">
-                    Kdo častěji usne cestou?
-                </div>
-                <div class="stat-answer">
-                    Lucie
-                </div>
+                <div class="stat-question">Kdo častěji usne cestou?</div>
+                <div class="stat-answer">Lucie</div>
             </div>
-
 
             <div class="stat">
                 <div class="stat-icon">🍺</div>
-                <div class="stat-question">
-                    Kdo první navrhne, že si dáme pivo?
-                </div>
-                <div class="stat-answer">
-                    OBA
-                </div>
+                <div class="stat-question">Kdo první navrhne, že si dáme pivo?</div>
+                <div class="stat-answer">OBA</div>
             </div>
-
 
             <div class="stat">
                 <div class="stat-icon">🍽️</div>
-                <div class="stat-question">
-                    Kdo začne jako první řešit jídlo?
-                </div>
-                <div class="stat-answer">
-                    OBA
-                </div>
+                <div class="stat-question">Kdo začne jako první řešit jídlo?</div>
+                <div class="stat-answer">OBA</div>
             </div>
-
 
             <div class="stat">
                 <div class="stat-icon">🧳</div>
-                <div class="stat-question">
-                    Kdo si s sebou bere víc věcí?
-                </div>
-                <div class="stat-answer">
-                    Lucie
-                </div>
+                <div class="stat-question">Kdo si s sebou bere víc věcí?</div>
+                <div class="stat-answer">Lucie</div>
             </div>
-
 
             <div class="stat">
                 <div class="stat-icon">🛒</div>
                 <div class="stat-question">
                     Kdo řekne „jen se tam podíváme“ a pak něco koupí?
                 </div>
-                <div class="stat-answer">
-                    Lucie
-                </div>
+                <div class="stat-answer">Lucie</div>
             </div>
-
 
             <div class="stat">
                 <div class="stat-icon">💸</div>
                 <div class="stat-question">
                     Kdo po příjezdu na hotel dokáže během 5 minut přijít o 400 €?
                 </div>
-                <div class="stat-answer">
-                    Jarda 💀
-                </div>
+                <div class="stat-answer">Jarda 💀</div>
             </div>
-
 
             <div class="stat">
                 <div class="stat-icon">📍</div>
                 <div class="stat-question">
                     Kdo dokáže zaměnit Lidl za ulici Lidlstraße?
                 </div>
-                <div class="stat-answer">
-                    Jarda 😂
-                </div>
+                <div class="stat-answer">Jarda 😂</div>
             </div>
 
         </div>
 
-
-        <!-- SPECIAL STATS -->
 
         <div class="special-stats">
 
@@ -1991,13 +1826,9 @@
 
                 <div class="special-icon">🧭</div>
 
-                <span>
-                    Největší navigační fail
-                </span>
+                <span>Největší navigační fail</span>
 
-                <h3>
-                    Lidl → Lidlstraße
-                </h3>
+                <h3>Lidl → Lidlstraße</h3>
 
                 <p>
                     Navigace fungovala správně.
@@ -2006,14 +1837,11 @@
 
             </div>
 
-
             <div class="special-card">
 
                 <div class="special-icon">🚂</div>
 
-                <span>
-                    Největší krizovka
-                </span>
+                <span>Největší krizovka</span>
 
                 <h3>
                     Lucie + 2 piva + zubačka bez WC
@@ -2026,14 +1854,11 @@
 
             </div>
 
-
             <div class="special-card">
 
                 <div class="special-icon">🍽️</div>
 
-                <span>
-                    Největší gastronomické poučení
-                </span>
+                <span>Největší gastronomické poučení</span>
 
                 <h3>
                     Salám a pomazánka &gt; hotelová restaurace
@@ -2047,8 +1872,6 @@
 
         </div>
 
-
-        <!-- COMMON PHRASE -->
 
         <div class="common-phrase">
 
@@ -2067,7 +1890,7 @@
 </section>
 
 
-<!-- END OF AUSTRIA -->
+<!-- KONEC RAKOUSKA -->
 
 <section class="ending">
 
@@ -2103,8 +1926,8 @@
 
         <p>
             <strong>
-                Tenhle výlet rozhodně nebyl první.
-                A doufám, že ani poslední.
+                Byl to náš první velký společný výlet.
+                A doufám, že rozhodně ne poslední.
             </strong>
         </p>
 
@@ -2117,13 +1940,11 @@
 </section>
 
 
-<!-- FUTURE -->
+<!-- DALŠÍ VÝLETY -->
 
 <section class="future">
 
-    <h2>
-        Další zastávka?
-    </h2>
+    <h2>Další zastávka?</h2>
 
     <p>
         Zatím nevíme.
