@@ -45,7 +45,10 @@
             text-decoration: none;
         }
 
-        /* HEADER */
+
+        /* =========================
+           HEADER
+        ========================= */
 
         header {
             height: 82px;
@@ -119,7 +122,10 @@
             bottom: 21px;
         }
 
-        /* HERO */
+
+        /* =========================
+           HERO
+        ========================= */
 
         .hero {
             min-height: 560px;
@@ -131,6 +137,7 @@
                     rgba(12,17,26,.10) 80%
                 ),
                 url("max.jpg");
+
             background-size: cover;
             background-position: center;
             display: flex;
@@ -177,7 +184,10 @@
             transform: rotate(-1deg);
         }
 
-        /* MAIN */
+
+        /* =========================
+           INTRO
+        ========================= */
 
         main {
             overflow: hidden;
@@ -185,7 +195,7 @@
 
         .intro {
             width: min(900px, calc(100% - 40px));
-            margin: 100px auto 80px;
+            margin: 100px auto 90px;
             text-align: center;
         }
 
@@ -211,8 +221,13 @@
             margin: 0 auto 20px;
         }
 
-        .intro strong {
+        .big-line {
+            font-family: "Cormorant Garamond", serif;
+            font-size: 32px !important;
+            font-weight: 600;
+            line-height: 1.3;
             color: var(--dark);
+            margin: 30px 0 !important;
         }
 
         .hand-note {
@@ -223,7 +238,10 @@
             transform: rotate(-1deg);
         }
 
-        /* STORY SECTION */
+
+        /* =========================
+           TEXT STORY
+        ========================= */
 
         .story {
             width: min(1080px, calc(100% - 40px));
@@ -241,7 +259,8 @@
             margin-bottom: 4px;
         }
 
-        .story h2 {
+        .story h2,
+        .split-text h2 {
             font-family: "Cormorant Garamond", serif;
             font-size: clamp(43px, 5vw, 61px);
             font-weight: 500;
@@ -250,27 +269,16 @@
             color: var(--dark);
         }
 
-        .story p {
-            font-size: 16.5px;
-            margin: 0 0 19px;
+        .story p,
+        .split-text p {
+            font-size: 16px;
+            margin: 0 0 18px;
         }
 
-        .story strong {
+        .story strong,
+        .split-text strong {
             font-weight: 600;
             color: #191d26;
-        }
-
-        .center-text {
-            text-align: center;
-        }
-
-        .big-line {
-            font-family: "Cormorant Garamond", serif;
-            font-size: 33px !important;
-            font-weight: 600;
-            line-height: 1.4;
-            color: var(--dark);
-            margin: 35px 0 !important;
         }
 
         .photo-wide {
@@ -289,7 +297,10 @@
             margin-top: 8px;
         }
 
-        /* SPLIT SECTIONS */
+
+        /* =========================
+           PHOTO + TEXT
+        ========================= */
 
         .split {
             width: min(1120px, calc(100% - 40px));
@@ -315,20 +326,6 @@
             border-radius: 2px;
         }
 
-        .split-text h2 {
-            font-family: "Cormorant Garamond", serif;
-            font-size: clamp(43px, 5vw, 61px);
-            line-height: 1;
-            margin: 0 0 27px;
-            font-weight: 500;
-            color: var(--dark);
-        }
-
-        .split-text p {
-            font-size: 16px;
-            margin: 0 0 18px;
-        }
-
         .little-hand {
             margin-top: 30px;
             font-family: "Caveat", cursive;
@@ -336,7 +333,10 @@
             color: var(--pink);
         }
 
-        /* QUOTE */
+
+        /* =========================
+           QUOTE
+        ========================= */
 
         .quote-section {
             margin: 110px 0;
@@ -361,7 +361,10 @@
             color: var(--pink);
         }
 
-        /* JARDA VS LUCIE */
+
+        /* =========================
+           JARDA VS LUCIE
+        ========================= */
 
         .versus {
             background: #fff;
@@ -476,6 +479,12 @@
             color: #6f6f73;
         }
 
+        .special-row h3 {
+            font-family: "Cormorant Garamond", serif;
+            font-size: 48px;
+            margin: 12px 0 5px;
+        }
+
         .truth-grid {
             max-width: 600px;
             margin: 20px auto 5px;
@@ -528,7 +537,10 @@
             margin: 0;
         }
 
-        /* ENDING */
+
+        /* =========================
+           ENDING
+        ========================= */
 
         .ending {
             width: min(820px, calc(100% - 40px));
@@ -562,7 +574,10 @@
             font-size: 35px;
         }
 
-        /* FOOTER */
+
+        /* =========================
+           FOOTER
+        ========================= */
 
         footer {
             min-height: 190px;
@@ -609,7 +624,10 @@
             color: rgba(255,255,255,.7);
         }
 
-        /* MOBILE */
+
+        /* =========================
+           MOBILE
+        ========================= */
 
         @media (max-width: 850px) {
 
@@ -641,7 +659,6 @@
 
             .hero {
                 min-height: 650px;
-                background-position: center;
             }
 
             .hero h1 {
@@ -753,12 +770,20 @@
 
 <body>
 
+
+<!-- =========================
+     HEADER
+========================= -->
+
 <header>
+
     <div class="header-inner">
 
         <a class="brand" href="index.html">
             <div class="logo">J & L ♡</div>
-            <div class="tagline">Dva lidi. Jeden příběh. Status neznámý.</div>
+            <div class="tagline">
+                Dva lidi. Jeden příběh. Status neznámý.
+            </div>
         </a>
 
         <nav>
@@ -769,12 +794,21 @@
         </nav>
 
     </div>
+
 </header>
 
 
+<!-- =========================
+     HERO
+========================= -->
+
 <section class="hero">
+
     <div class="hero-inner">
-        <div class="chapter"></div>
+
+        <div class="chapter">
+            
+        </div>
 
         <h1>Ze života</h1>
 
@@ -786,96 +820,142 @@
         <div class="hero-hand">
             „To nejlepší se stejně většinou neplánuje. ♡“
         </div>
+
     </div>
+
 </section>
 
 
 <main>
 
-    <section class="intro">
-        <div class="eyebrow">ZE ŽIVOTA</div>
 
-        <h2>Ne všechno potřebuje plán.</h2>
+<!-- =========================
+     INTRO
+========================= -->
 
-        <p>
-            Výlety jsou fajn. Dovolené ještě lepší. Ale většina času,
-            který spolu trávíme, se stejně odehrává úplně obyčejně.
-        </p>
+<section class="intro">
 
-        <p>
-            Poslední dobou se kvůli náročné práci Lucie vídáme hlavně o víkendech.
-            O to víc se snažím, abychom si ten společný čas vždycky udělali
-            příjemný a oba si ho naplno užili.
-        </p>
+    <div class="eyebrow">
+        ZE ŽIVOTA
+    </div>
 
-        <p>
-            Ne vždycky ale máme chuť někam vyrážet nebo něco velkého podnikat.
-            Jsou totiž i víkendy, kdy Lucka jednoduše zavelí k delšímu spánku.
-        </p>
+    <h2>Ne všechno potřebuje plán.</h2>
 
-        <p class="big-line">
-            Prospíme půlku soboty.
-        </p>
+    <p>
+        Výlety jsou fajn. Dovolené ještě lepší.
+        Ale většina času, který spolu trávíme,
+        se stejně odehrává úplně obyčejně.
+    </p>
 
-        <p>
-            Já se samozřejmě moc nebráním.
-        </p>
+    <p>
+        Poslední dobou se kvůli náročné práci Lucie
+        vídáme hlavně o víkendech.
+        O to víc se snažím, abychom si ten společný čas
+        vždycky udělali příjemný a oba si ho naplno užili.
+    </p>
 
-        <p>
-            Většinou se během týdne domluvíme, jak bude víkend vypadat.
-            Buď přijedu už v pátek, nebo – bohužel pro mě – až v sobotu.
-            Často dopředu vymýšlím, co bychom mohli dělat nebo kam bychom mohli vyrazit.
-        </p>
+    <p>
+        Ne vždycky ale máme chuť někam vyrážet
+        nebo něco velkého podnikat.
+        Jsou totiž i víkendy, kdy Lucka jednoduše
+        zavelí k delšímu spánku.
+    </p>
 
-        <p>
-            Jenže jelikož se spolu na všem umíme perfektně domluvit,
-            zjistili jsme, že vlastně ani žádný plán nepotřebujeme.
-        </p>
+    <p class="big-line">
+        Prospíme půlku soboty.
+    </p>
 
-        <div class="hand-note">
-            I bez něj si dokážeme udělat hezký víkend. ♡
-        </div>
-    </section>
+    <p>
+        Já se samozřejmě moc nebráním.
+    </p>
 
+    <p>
+        Většinou se během týdne domluvíme,
+        jak bude víkend vypadat.
+        Buď přijedu už v pátek, nebo – bohužel pro mě – až v sobotu.
+        Často dopředu vymýšlím, co bychom mohli dělat
+        nebo kam bychom mohli vyrazit.
+    </p>
 
-    <section class="story">
-        <div class="story-number">01.</div>
-        <h2>Boskovice, Brno a naše víkendy</h2>
+    <p>
+        Jenže jelikož se spolu na všem umíme perfektně domluvit,
+        zjistili jsme, že vlastně ani žádný plán nepotřebujeme.
+    </p>
 
-        <p>
-            Občas skončíme v Boskovicích. Jindy jedeme ke mně do Brna.
-        </p>
+    <div class="hand-note">
+        I bez něj si dokážeme udělat hezký víkend. ♡
+    </div>
 
-        <p>
-            Když mířím do Boskovic, cestou se někdy zastavím pro nějaké jídlo,
-            vezmu vínko a páteční večer necháme čistě odpočinkový.
-        </p>
-
-        <p>
-            Hrajeme Uno, Desítku nebo AZ-kvíz. Případně skončíme u Výměny manželek
-            nebo nějakého hororu, u kterého se samozřejmě
-            <strong>ani jeden z nás rozhodně nebojí.</strong>
-        </p>
-
-        <p>
-            A když se nám doma sedět nechce, zajdeme si na drink,
-            pivko nebo třeba na bowling.
-        </p>
-
-        <img class="photo-wide" src="bowling.jpg" alt="Jarda a Lucie na bowlingu">
-
-        <div class="photo-caption">
-            Trocha zdravé soutěživosti nikdy neuškodí.
-        </div>
-    </section>
+</section>
 
 
-    <section class="story narrow">
+<!-- =========================
+     01 BOSKOVICE / BRNO
+========================= -->
+
+<section class="story">
+
+    <div class="story-number">01.</div>
+
+    <h2>Boskovice, Brno a naše víkendy</h2>
+
+    <p>
+        Občas skončíme v Boskovicích. Jindy jedeme ke mně do Brna.
+    </p>
+
+    <p>
+        Když mířím do Boskovic, cestou se někdy zastavím
+        pro nějaké jídlo, vezmu vínko a páteční večer
+        necháme čistě odpočinkový.
+    </p>
+
+    <p>
+        Hrajeme Uno, Desítku nebo AZ-kvíz.
+        Případně skončíme u Výměny manželek
+        nebo nějakého hororu, u kterého se samozřejmě
+        <strong>ani jeden z nás rozhodně nebojí.</strong>
+    </p>
+
+    <p>
+        A když se nám doma sedět nechce,
+        zajdeme si na drink, pivko nebo třeba na bowling.
+    </p>
+
+    <img
+        class="photo-wide"
+        src="bowling.jpg"
+        alt="Bowling"
+    >
+
+    <div class="photo-caption">
+        Trocha zdravé soutěživosti nikdy neuškodí.
+    </div>
+
+</section>
+
+
+<!-- =========================
+     02 INDUKCE
+========================= -->
+
+<section class="split">
+
+    <div class="split-photo">
+        <img
+            src="indukce.jpg"
+            alt="Indukční plotna"
+        >
+    </div>
+
+    <div class="split-text">
+
         <div class="story-number">02.</div>
+
         <h2>Když Jarda objevil indukci</h2>
 
         <p>
-            Jednou jsem se například rozhodl, že u Lucinky uvařím.
+            Jednou jsem se například rozhodl,
+            že u Lucinky uvařím.
         </p>
 
         <p class="big-line">
@@ -892,81 +972,123 @@
         </p>
 
         <p>
-            Když tam není oheň, prostě nevím, jak moc to valí.
+            Když tam není oheň,
+            prostě nevím, jak moc to valí.
         </p>
 
         <p>
             Naštěstí Lucka včas přiložila ruku k dílu,
-            takže místo objednávání záchranné pizzy jsme nakonec opravdu měli co jíst.
+            takže místo objednávání záchranné pizzy
+            jsme nakonec opravdu měli co jíst.
         </p>
 
-        <div class="hand-note">
+        <div class="little-hand">
             Indukce 1 : 0 Jarda. Zatím.
         </div>
-    </section>
+
+    </div>
+
+</section>
 
 
-    <section class="quote-section">
-        <blockquote>
-            „V tuhle chvíli nechci být nikde jinde.“
-        </blockquote>
-        <div class="heart">♡</div>
-    </section>
+<!-- =========================
+     QUOTE
+========================= -->
+
+<section class="quote-section">
+
+    <blockquote>
+        „V tuhle chvíli nechci být nikde jinde.“
+    </blockquote>
+
+    <div class="heart">♡</div>
+
+</section>
 
 
-    <section class="split">
+<!-- =========================
+     03 MAX / BALKÓN
+========================= -->
 
-        <div class="split-photo">
-            <img src="maxiik.jpg" alt="Max">
+<section class="split">
+
+    <div class="split-photo">
+        <img
+            src="maxiik.jpg"
+            alt="Max"
+        >
+    </div>
+
+    <div class="split-text">
+
+        <div class="story-number">03.</div>
+
+        <h2>Boskovice balkón</h2>
+
+        <p>
+            Nevěřili byste, jak skvělý pocit může být,
+            když si večer jen tak vezmete sklenku vína,
+            sednete si na balkón a povídáte si.
+        </p>
+
+        <p>
+            Žádný program. Žádný spěch. Nikam nemusíte.
+        </p>
+
+        <p>
+            A najednou máte v hlavě jen jedinou myšlenku:
+            <strong>v tuhle chvíli nechci být nikde jinde.</strong>
+        </p>
+
+        <p>
+            Stejný pocit mám pokaždé,
+            když přijedu k Lucii domů,
+            obejmu ji, dám jí pusu
+            a samozřejmě se přivítám i s dalším
+            velmi důležitým členem celé téhle sestavy.
+        </p>
+
+        <div class="little-hand">
+            Maxem. 🐶
         </div>
 
-        <div class="split-text">
-            <div class="story-number">03.</div>
-            <h2>Boskovice balkón</h2>
+    </div>
 
-            <p>
-                Nevěřili byste, jak skvělý pocit může být,
-                když si večer jen tak vezmete sklenku vína,
-                sednete si na balkón a povídáte si.
-            </p>
-
-            <p>
-                Žádný program. Žádný spěch. Nikam nemusíte.
-            </p>
-
-            <p>
-                A najednou máte v hlavě jen jedinou myšlenku:
-                <strong>v tuhle chvíli nechci být nikde jinde.</strong>
-            </p>
-
-            <p>
-                Stejný pocit mám pokaždé, když přijedu k Lucii domů,
-                obejmu ji, dám jí pusu a samozřejmě se přivítám
-                i s dalším velmi důležitým členem celé téhle sestavy.
-            </p>
-
-            <div class="little-hand">
-                Maxem. 🐶
-            </div>
-        </div>
-
-    </section>
+</section>
 
 
-    <section class="story narrow">
+<!-- =========================
+     04 SPOLEČNÁ FOTKA
+========================= -->
+
+<section class="split reverse">
+
+    <div class="split-photo">
+        <img
+            src="spolecnafotka.jpg"
+            alt="Společná fotka"
+        >
+    </div>
+
+    <div class="split-text">
+
         <div class="story-number">04.</div>
+
         <h2>Jedna obyčejná otázka</h2>
 
         <p>
-            Jeden dubnový večer měl pro mě jednu poměrně velkou přidanou hodnotu.
+            Jeden dubnový večer měl pro mě
+            jednu poměrně velkou přidanou hodnotu.
         </p>
 
         <p>
-            Pro někoho úplná maličkost. Pro mě moment, který si pamatuju dodnes.
+            Pro někoho úplná maličkost.
+            Pro mě moment, který si pamatuju dodnes.
         </p>
 
         <p>
-            Seděli jsme spolu na gauči a Lucka najednou řekla:
+            Seděli jsme spolu na gauči
+            a Lucka najednou řekla:
         </p>
 
         <p class="big-line">
@@ -982,7 +1104,8 @@
         </p>
 
         <p>
-            Možná to zní jako hloupost, ale mně to tehdy udělalo obrovskou radost.
+            Možná to zní jako hloupost,
+            ale mně to tehdy udělalo obrovskou radost.
         </p>
 
         <p>
@@ -994,103 +1117,147 @@
             Někdy jsou právě ty nejmenší věci ty,
             které pro druhého člověka znamenají nejvíc.
         </p>
-    </section>
+
+    </div>
+
+</section>
 
 
-    <section class="split reverse">
+<!-- =========================
+     05 COROLLA
+========================= -->
 
-        <div class="split-photo">
-            <img src="corolla.jpg" alt="Kufr Toyoty Corolla">
+<section class="split">
+
+    <div class="split-photo">
+        <img
+            src="corolla.jpg"
+            alt="Kufr Toyoty Corolla"
+        >
+    </div>
+
+    <div class="split-text">
+
+        <div class="story-number">05.</div>
+
+        <h2>Vejde se. Nevejde se.</h2>
+
+        <p>
+            O něco později jsme zase seděli spolu
+            a začali se úplně normálně bavit o tom,
+            co vlastně oba od života chceme.
+        </p>
+
+        <p>
+            A nějakým způsobem jsme se od normální konverzace
+            dostali až ke společnému vybírání kočárku.
+        </p>
+
+        <p>
+            <strong>Ano. Kočárku.</strong>
+        </p>
+
+        <p>
+            A protože Lucka byla přesvědčená,
+            že by se mi do kufru auta nevešel,
+            následovala samozřejmě jediná rozumná věc.
+        </p>
+
+        <p>
+            <strong>Šli jsme změřit kufr Corolly.</strong>
+        </p>
+
+        <p>
+            Já tvrdil, že se vejde.
+            Lucka tvrdila opak.
+        </p>
+
+        <p>
+            A tak se z obyčejného večera stalo
+            odborné technické měření zavazadlového prostoru
+            Toyoty Corolla 2020 kombi.
+        </p>
+
+        <div class="little-hand">
+            Protože přesně takhle vypadají důležité životní debaty u nás.
         </div>
 
-        <div class="split-text">
-            <div class="story-number">05.</div>
-            <h2>Vejde se. Nevejde se.</h2>
+    </div>
 
-            <p>
-                O něco později jsme zase seděli spolu a začali se úplně normálně
-                bavit o tom, co vlastně oba od života chceme.
-            </p>
+</section>
 
-            <p>
-                A nějakým způsobem jsme se od normální konverzace
-                dostali až ke společnému vybírání kočárku.
-            </p>
 
-            <p>
-                <strong>Ano. Kočárku.</strong>
-            </p>
+<!-- =========================
+     06 HLÍDÁNÍ MAXE
+========================= -->
 
-            <p>
-                A protože Lucka byla přesvědčená, že by se mi do kufru auta nevešel,
-                následovala samozřejmě jediná rozumná věc.
-            </p>
+<section class="split reverse">
 
-            <p>
-                <strong>Šli jsme změřit kufr Corolly.</strong>
-            </p>
+    <div class="split-photo">
+        <img
+            src="maxisko.jpg"
+            alt="Max při hlídání"
+        >
+    </div>
 
-            <p>
-                Já tvrdil, že se vejde.
-                Lucka tvrdila opak.
-            </p>
+    <div class="split-text">
 
-            <p>
-                A tak se z obyčejného večera stalo odborné technické měření
-                zavazadlového prostoru Toyoty Corolla kombi.
-            </p>
+        <div class="story-number">06.</div>
 
-            <div class="little-hand">
-                Protože přesně takhle vypadají důležité životní debaty u nás.
-            </div>
+        <h2>Povýšení: hlídání Maxe</h2>
+
+        <p>
+            Dokonce jsme se dostali už tak daleko,
+            že jsem Maxe hlídal úplně sám,
+            když byla Lucka na firemní akci.
+        </p>
+
+        <p>
+            A podle mě už tohle představuje
+            <strong>vrchol všech vrcholů.</strong>
+        </p>
+
+        <p>
+            Dostat důvěru na samostatné hlídání Maxe
+            je totiž minimálně ekvivalent
+            získání bezpečnostní prověrky.
+        </p>
+
+        <p>
+            Možná ještě o stupeň výš.
+        </p>
+
+        <div class="little-hand">
+            Přežili jsme oba. Mise úspěšná. ✓
         </div>
 
-    </section>
+    </div>
+
+</section>
 
 
-    <section class="split">
+<!-- =========================
+     07 ŠIPKY
+========================= -->
 
-        <div class="split-photo">
-            <img src="maxisko.jpg" alt="Max při hlídání">
-        </div>
+<section class="split">
 
-        <div class="split-text">
-            <div class="story-number">06.</div>
-            <h2>Povýšení: hlídání Maxe</h2>
+    <div class="split-photo">
+        <img
+            src="sipky.jpg"
+            alt="Šipky"
+        >
+    </div>
 
-            <p>
-                Dokonce jsme se dostali už tak daleko,
-                že jsem Maxe hlídal úplně sám, když byla Lucka na firemní akci.
-            </p>
+    <div class="split-text">
 
-            <p>
-                A podle mě už tohle představuje
-                <strong>vrchol všech vrcholů.</strong>
-            </p>
-
-            <p>
-                Dostat důvěru na samostatné hlídání Maxe
-                je totiž minimálně ekvivalent získání bezpečnostní prověrky.
-            </p>
-
-            <p>
-                Možná ještě o stupeň výš.
-            </p>
-
-            <div class="little-hand">
-                Přežili jsme oba. Mise úspěšná. ✓
-            </div>
-        </div>
-
-    </section>
-
-
-    <section class="story narrow">
         <div class="story-number">07.</div>
+
         <h2>Brněnský rituál</h2>
 
         <p>
-            Když jsme spolu v Brně, máme zase jeden svůj malý rituál.
+            Když jsme spolu v Brně,
+            máme zase jeden svůj malý rituál.
         </p>
 
         <p class="big-line">
@@ -1098,12 +1265,14 @@
         </p>
 
         <p>
-            Mám je doma na zdi a prakticky pokaždé si spolu musíme zahrát.
+            Mám je doma na zdi
+            a prakticky pokaždé si spolu musíme zahrát.
         </p>
 
         <p>
             Je přitom důležité zmínit jednu věc:
-            Lucie je stejně jako já <strong>hodně soutěživý člověk.</strong>
+            Lucie je stejně jako já
+            <strong>hodně soutěživý člověk.</strong>
         </p>
 
         <p>
@@ -1120,62 +1289,98 @@
         </p>
 
         <p>
-            Většinou tedy vyhrávám já, ale musím uznat,
+            Většinou tedy vyhrávám já,
+            ale musím uznat,
             že je docela dobrý soupeř.
         </p>
 
-        <div class="hand-note">
+        <div class="little-hand">
             Za tuhle větu mě pravděpodobně zabije.
         </div>
-    </section>
+
+    </div>
+
+</section>
 
 
-    <section class="split reverse">
+<!-- =========================
+     08 VÍKENDOVÝ RESET
+========================= -->
 
-        <div class="split-photo">
-            <img src="luciebazen.jpg" alt="Lucie odpočívá">
-        </div>
+<section class="split reverse">
 
-        <div class="split-text">
-            <div class="story-number">08.</div>
-            <h2>Aby byl víkend opravdu víkend</h2>
+    <div class="split-photo">
+        <img
+            src="luciebazen.jpg"
+            alt="Víkendový odpočinek"
+        >
+    </div>
 
-            <p>
-                Někdy doma něco připravím k jídlu,
-                jindy zajedeme za mým taťkou,
-                který nás vždycky rád vidí a většinou k tomu
-                přihodí i něco dobrého z grilu.
-            </p>
+    <div class="split-text">
 
-            <p>
-                A někdy neděláme vůbec nic.
-            </p>
+        <div class="story-number">08.</div>
 
-            <p>
-                Protože moc dobře vím, jak náročné pracovní týdny Lucie má.
-                Vím, kdy vstává, kolik času tráví v práci
-                a jak celý její týden vlastně vypadá.
-            </p>
+        <h2>Aby byl víkend opravdu víkend</h2>
 
-            <p>
-                Proto se snažím, aby alespoň během víkendu mohla na chvíli vypnout.
-            </p>
+        <p>
+            Někdy doma něco připravím k jídlu,
+            jindy zajedeme za mým taťkou,
+            který nás vždycky rád vidí
+            a většinou k tomu přihodí
+            i něco dobrého z grilu.
+        </p>
 
-            <p>
-                A aby v neděli odjížděla odpočatá,
-                spokojená a pokud možno připravená na další týden.
-            </p>
-        </div>
+        <p>
+            A někdy neděláme vůbec nic.
+        </p>
 
-    </section>
+        <p>
+            Protože moc dobře vím,
+            jak náročné pracovní týdny Lucie má.
+            Vím, kdy vstává,
+            kolik času tráví v práci
+            a jak celý její týden vlastně vypadá.
+        </p>
+
+        <p>
+            Proto se snažím,
+            aby alespoň během víkendu
+            mohla na chvíli vypnout.
+        </p>
+
+        <p>
+            A aby v neděli odjížděla odpočatá,
+            spokojená a pokud možno
+            připravená na další týden.
+        </p>
+
+    </div>
+
+</section>
 
 
-    <section class="story narrow center-text">
+<!-- =========================
+     09 SPÁNEK
+========================= -->
+
+<section class="split">
+
+    <div class="split-photo">
+        <img
+            src="spinka.jpg"
+            alt="Spánek"
+        >
+    </div>
+
+    <div class="split-text">
+
         <div class="story-number">09.</div>
+
         <h2>Problém jménem spánek</h2>
 
         <p>
-            Ze začátku vedle mě Lucka prakticky nebyla schopná spát.
+            Ze začátku vedle mě Lucka
+            prakticky nebyla schopná spát.
         </p>
 
         <p>
@@ -1197,315 +1402,348 @@
 
         <p>
             Naštěstí to poslední dobou vypadá,
-            že si moje noční zvukové projevy našly správný rytmus,
+            že si moje noční zvukové projevy
+            našly správný rytmus,
             který ji místo probouzení dokáže uspat.
         </p>
 
-        <div class="hand-note">
+        <div class="little-hand">
             Takže technicky vzato už nechrápu.<br>
             Poskytuji zvukovou kulisu ke spánku.
         </div>
-    </section>
+
+    </div>
+
+</section>
 
 
+<!-- =========================
+     JARDA VS LUCIE
+========================= -->
 
-    <!-- JARDA VS LUCIE -->
+<section class="versus">
 
-    <section class="versus">
+    <div class="versus-inner">
 
-        <div class="versus-inner">
+        <div class="versus-head">
 
-            <div class="versus-head">
-                <div class="small">VĚDECKY NAPROSTO NEPODLOŽENÝ TEST</div>
-
-                <h2>Jarda vs. Lucie</h2>
-
-                <p>
-                    Kdo z nás je vlastně horší? ♡
-                </p>
+            <div class="small">
+                VĚDECKY NAPROSTO NEPODLOŽENÝ TEST
             </div>
 
+            <h2>Jarda vs. Lucie</h2>
 
-            <div class="vs-labels">
-                <div class="vs-name">Jarda</div>
-                <div class="vs-middle-label">DISCIPLÍNA</div>
-                <div class="vs-name">Lucie</div>
+            <p>
+                Kdo z nás je vlastně horší? ♡
+            </p>
+
+        </div>
+
+
+        <div class="vs-labels">
+            <div class="vs-name">Jarda</div>
+            <div class="vs-middle-label">DISCIPLÍNA</div>
+            <div class="vs-name">Lucie</div>
+        </div>
+
+
+        <div class="vs-row">
+            <div class="answer"></div>
+            <div class="question">
+                <span class="emoji">😴</span>
+                Kdo déle spí?
+            </div>
+            <div class="answer">Lucie</div>
+        </div>
+
+
+        <div class="vs-row">
+            <div class="answer">Jarda 💀</div>
+            <div class="question">
+                <span class="emoji">🧠</span>
+                Kdo víc overthinkuje?
+            </div>
+            <div class="answer"></div>
+        </div>
+
+
+        <div class="vs-row">
+            <div class="answer dark">OBA</div>
+            <div class="question">
+                <span class="emoji">🏆</span>
+                Kdo je soutěživější?
+            </div>
+            <div class="answer dark">OBA</div>
+        </div>
+
+
+        <div class="vs-row">
+            <div class="answer">Jarda*</div>
+            <div class="question">
+                <span class="emoji">🎯</span>
+                Kdo je lepší v šipkách?
+            </div>
+            <div class="answer">*nesouhlasí</div>
+        </div>
+
+
+        <div class="vs-row">
+            <div class="answer">Jarda</div>
+            <div class="question">
+                <span class="emoji">🗺️</span>
+                Kdo častěji vymýšlí program?
+            </div>
+            <div class="answer"></div>
+        </div>
+
+
+        <div class="vs-row">
+            <div class="answer"></div>
+            <div class="question">
+                <span class="emoji">🛋️</span>
+                Kdo častěji zavelí „dnes nic neděláme“?
+            </div>
+            <div class="answer">Lucie</div>
+        </div>
+
+
+        <div class="vs-row">
+            <div class="answer">Pivo</div>
+            <div class="question">
+                <span class="emoji">🍷</span>
+                Víno vs. pivo?
+            </div>
+            <div class="answer">Víno</div>
+        </div>
+
+
+        <div class="vs-row">
+            <div class="answer dark">OBA</div>
+            <div class="question">
+                <span class="emoji">🥩</span>
+                Kdo má větší slabost pro dobré jídlo?
+            </div>
+            <div class="answer dark">OBA</div>
+        </div>
+
+
+        <div class="vs-row">
+            <div class="answer"></div>
+            <div class="question">
+                <span class="emoji">🐶</span>
+                Koho poslouchá Max víc?
+            </div>
+            <div class="answer">Lucie</div>
+        </div>
+
+
+        <div class="vs-row">
+            <div class="answer">Jarda ✓</div>
+            <div class="question">
+                <span class="emoji">🚗</span>
+                Kdo tvrdil, že se kočárek vejde do Corolly?
+            </div>
+            <div class="answer"></div>
+        </div>
+
+
+        <div class="vs-row">
+            <div class="answer"></div>
+            <div class="question">
+                <span class="emoji">⏰</span>
+                Kdo chodí spát dřív?
+            </div>
+            <div class="answer">Lucie</div>
+        </div>
+
+
+        <div class="vs-row">
+            <div class="answer"></div>
+            <div class="question">
+                <span class="emoji">👻</span>
+                Kdo se víc bojí u hororu?
+            </div>
+            <div class="answer">Lucie</div>
+        </div>
+
+
+        <div class="vs-row">
+            <div class="answer">Jarda</div>
+            <div class="question">
+                <span class="emoji">🧭</span>
+                Kdo má lepší orientační smysl?
+            </div>
+            <div class="answer"></div>
+        </div>
+
+
+        <div class="vs-row">
+            <div class="answer"></div>
+            <div class="question">
+                <span class="emoji">📸</span>
+                Kdo častěji fotí?
+            </div>
+            <div class="answer">Lucie</div>
+        </div>
+
+
+        <div class="vs-row">
+            <div class="answer"></div>
+            <div class="question">
+                <span class="emoji">😡</span>
+                Kdo se rychleji naštve?
+            </div>
+            <div class="answer">Lucie</div>
+        </div>
+
+
+        <div class="vs-row">
+            <div class="answer"></div>
+            <div class="question">
+                <span class="emoji">🕊️</span>
+                Kdo potřebuje víc svého klidu?
+            </div>
+            <div class="answer">Lucie 😂</div>
+        </div>
+
+
+        <div class="vs-row">
+            <div class="answer">Jarda</div>
+            <div class="question">
+                <span class="emoji">❤️</span>
+                Kdo je větší romantik?
+            </div>
+            <div class="answer">
+                Romantika<br>opustila chat
+            </div>
+        </div>
+
+
+        <!-- KDO MÁ PRAVDU -->
+
+        <div class="special-row">
+
+            <div class="special-title">
+                NEJDŮLEŽITĚJŠÍ DISCIPLÍNA
             </div>
 
+            <h3>
+                Kdo má vždycky pravdu?
+            </h3>
 
-            <div class="vs-row">
-                <div class="answer"></div>
-                <div class="question">
-                    <span class="emoji">😴</span>
-                    Kdo déle spí?
-                </div>
-                <div class="answer">Lucie</div>
-            </div>
+            <div class="truth-grid">
 
-
-            <div class="vs-row">
-                <div class="answer">Jarda 💀</div>
-                <div class="question">
-                    <span class="emoji">🧠</span>
-                    Kdo víc overthinkuje?
-                </div>
-                <div class="answer"></div>
-            </div>
-
-
-            <div class="vs-row">
-                <div class="answer dark">OBA</div>
-                <div class="question">
-                    <span class="emoji">🏆</span>
-                    Kdo je soutěživější?
-                </div>
-                <div class="answer dark">OBA</div>
-            </div>
-
-
-            <div class="vs-row">
-                <div class="answer">Jarda*</div>
-                <div class="question">
-                    <span class="emoji">🎯</span>
-                    Kdo je lepší v šipkách?
-                </div>
-                <div class="answer">*nesouhlasí</div>
-            </div>
-
-
-            <div class="vs-row">
-                <div class="answer">Jarda</div>
-                <div class="question">
-                    <span class="emoji">🗺️</span>
-                    Kdo častěji vymýšlí program?
-                </div>
-                <div class="answer"></div>
-            </div>
-
-
-            <div class="vs-row">
-                <div class="answer"></div>
-                <div class="question">
-                    <span class="emoji">🛋️</span>
-                    Kdo častěji zavelí „dnes nic neděláme“?
-                </div>
-                <div class="answer">Lucie</div>
-            </div>
-
-
-            <div class="vs-row">
-                <div class="answer">Pivo</div>
-                <div class="question">
-                    <span class="emoji">🍷</span>
-                    Víno vs. pivo?
-                </div>
-                <div class="answer">Víno</div>
-            </div>
-
-
-            <div class="vs-row">
-                <div class="answer dark">OBA</div>
-                <div class="question">
-                    <span class="emoji">🥩</span>
-                    Kdo má větší slabost pro dobré jídlo?
-                </div>
-                <div class="answer dark">OBA</div>
-            </div>
-
-
-            <div class="vs-row">
-                <div class="answer"></div>
-                <div class="question">
-                    <span class="emoji">🐶</span>
-                    Koho poslouchá Max víc?
-                </div>
-                <div class="answer">Lucie</div>
-            </div>
-
-
-            <div class="vs-row">
-                <div class="answer">Jarda ✓</div>
-                <div class="question">
-                    <span class="emoji">🚗</span>
-                    Kdo tvrdil, že se kočárek vejde do Corolly?
-                </div>
-                <div class="answer"></div>
-            </div>
-
-
-            <div class="vs-row">
-                <div class="answer"></div>
-                <div class="question">
-                    <span class="emoji">⏰</span>
-                    Kdo chodí spát dřív?
-                </div>
-                <div class="answer">Lucie</div>
-            </div>
-
-
-            <div class="vs-row">
-                <div class="answer"></div>
-                <div class="question">
-                    <span class="emoji">👻</span>
-                    Kdo se víc bojí u hororu?
-                </div>
-                <div class="answer">Lucie</div>
-            </div>
-
-
-            <div class="vs-row">
-                <div class="answer">Jarda</div>
-                <div class="question">
-                    <span class="emoji">🧭</span>
-                    Kdo má lepší orientační smysl?
-                </div>
-                <div class="answer"></div>
-            </div>
-
-
-            <div class="vs-row">
-                <div class="answer"></div>
-                <div class="question">
-                    <span class="emoji">📸</span>
-                    Kdo častěji fotí?
-                </div>
-                <div class="answer">Lucie</div>
-            </div>
-
-
-            <div class="vs-row">
-                <div class="answer"></div>
-                <div class="question">
-                    <span class="emoji">😡</span>
-                    Kdo se rychleji naštve?
-                </div>
-                <div class="answer">Lucie</div>
-            </div>
-
-
-            <div class="vs-row">
-                <div class="answer"></div>
-                <div class="question">
-                    <span class="emoji">🕊️</span>
-                    Kdo potřebuje víc svého klidu?
-                </div>
-                <div class="answer">Lucie 😂</div>
-            </div>
-
-
-            <div class="vs-row">
-                <div class="answer">Jarda</div>
-                <div class="question">
-                    <span class="emoji">❤️</span>
-                    Kdo je větší romantik?
-                </div>
-                <div class="answer">Romantika<br>opustila chat</div>
-            </div>
-
-
-            <div class="special-row">
-
-                <div class="special-title">
-                    NEJDŮLEŽITĚJŠÍ DISCIPLÍNA
+                <div>
+                    <strong>Jarda říká:</strong>
+                    <span>Jarda</span>
                 </div>
 
-                <h3 style="
-                    font-family:'Cormorant Garamond',serif;
-                    font-size:48px;
-                    margin:12px 0 5px;
-                ">
-                    Kdo má vždycky pravdu?
-                </h3>
-
-                <div class="truth-grid">
-
-                    <div>
-                        <strong>Jarda říká:</strong>
-                        <span>Jarda</span>
-                    </div>
-
-                    <div>
-                        <strong>Lucie říká:</strong>
-                        <span>Lucie</span>
-                    </div>
-
-                </div>
-
-                <div class="no-agreement">
-                    „V této kategorii nebylo možné dosáhnout dohody.“
+                <div>
+                    <strong>Lucie říká:</strong>
+                    <span>Lucie</span>
                 </div>
 
             </div>
 
-
-            <div class="winner">
-
-                <div class="winner-label">
-                    KONEČNÉ SKÓRE
-                </div>
-
-                <h3>VÍTĚZ: NEROZHODNUTO</h3>
-
-                <p>
-                    „Stejně by se jeden z nás s výsledkem nesmířil.“
-                </p>
-
+            <div class="no-agreement">
+                „V této kategorii nebylo možné dosáhnout dohody.“
             </div>
 
         </div>
-    </section>
 
 
-    <section class="ending">
+        <!-- VÍTĚZ -->
 
-        <div class="eyebrow">A TAKHLE NĚJAK VYPADÁME MY</div>
+        <div class="winner">
 
-        <h2>Obyčejné chvíle.</h2>
+            <div class="winner-label">
+                KONEČNÉ SKÓRE
+            </div>
 
-        <p>
-            Máme spolu spoustu momentů, společných vtipů a krásných dnů.
-        </p>
+            <h3>
+                VÍTĚZ: NEROZHODNUTO
+            </h3>
 
-        <p>
-            Některé vzniknou díky výletu, na který se těšíme několik týdnů.
-            Jiné vzniknou úplně náhodou na gauči, na balkóně,
-            při partii šipek nebo během odborného měření kufru Corolly.
-        </p>
+            <p>
+                „Stejně by se jeden z nás s výsledkem nesmířil.“
+            </p>
 
-        <p>
-            A možná právě proto mám ty obyčejné chvíle tolik rád.
-        </p>
-
-        <p>
-            Protože nakonec vůbec nezáleží na tom,
-            jestli jsme někde stovky kilometrů od domova,
-            nebo jen sedíme večer vedle sebe.
-        </p>
-
-        <p>
-            <strong>Důležité je, že je nám spolu dobře.</strong>
-        </p>
-
-        <p>
-            Doufám, že tenhle příběh bude pokračovat ještě hodně dlouho.
-            A že ať už nás čeká cokoliv, jedna věc z našich společných dnů
-            nikdy nezmizí.
-        </p>
-
-        <p class="big-line">
-            Úsměv. ♡
-        </p>
-
-        <div class="ending-line"></div>
-
-        <div class="ending-heart">
-            „Pokračování se právě píše…“
         </div>
 
-    </section>
+    </div>
+
+</section>
+
+
+<!-- =========================
+     ZÁVĚR
+========================= -->
+
+<section class="ending">
+
+    <div class="eyebrow">
+        A TAKHLE NĚJAK VYPADÁME MY
+    </div>
+
+    <h2>Obyčejné chvíle.</h2>
+
+    <p>
+        Máme spolu spoustu momentů,
+        společných vtipů a krásných dnů.
+    </p>
+
+    <p>
+        Některé vzniknou díky výletu,
+        na který se těšíme několik týdnů.
+        Jiné vzniknou úplně náhodou na gauči,
+        na balkóně, při partii šipek
+        nebo během odborného měření kufru Corolly.
+    </p>
+
+    <p>
+        A možná právě proto mám
+        ty obyčejné chvíle tolik rád.
+    </p>
+
+    <p>
+        Protože nakonec vůbec nezáleží na tom,
+        jestli jsme někde stovky kilometrů od domova,
+        nebo jen sedíme večer vedle sebe.
+    </p>
+
+    <p>
+        <strong>
+            Důležité je, že je nám spolu dobře.
+        </strong>
+    </p>
+
+    <p>
+        Doufám, že tenhle příběh
+        bude pokračovat ještě hodně dlouho.
+        A že ať už nás čeká cokoliv,
+        jedna věc z našich společných dnů
+        nikdy nezmizí.
+    </p>
+
+    <p class="big-line">
+        Úsměv. ♡
+    </p>
+
+    <div class="ending-line"></div>
+
+    <div class="ending-heart">
+        „Pokračování se právě píše…“
+    </div>
+
+</section>
+
 
 </main>
 
+
+<!-- =========================
+     FOOTER
+========================= -->
 
 <footer>
 
@@ -1516,10 +1754,15 @@
         </div>
 
         <div class="footer-center">
-            <div class="footer-logo">J & L ♡</div>
+
+            <div class="footer-logo">
+                J & L ♡
+            </div>
+
             <div class="footer-tagline">
                 Dva lidi. Jeden příběh. Status neznámý.
             </div>
+
         </div>
 
         <div class="footer-quote">
@@ -1529,6 +1772,7 @@
     </div>
 
 </footer>
+
 
 </body>
 </html>
