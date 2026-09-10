@@ -45,7 +45,6 @@
             text-decoration: none;
         }
 
-
         /* =========================
            HEADER
         ========================= */
@@ -122,7 +121,6 @@
             bottom: 21px;
         }
 
-
         /* =========================
            HERO
         ========================= */
@@ -184,7 +182,6 @@
             transform: rotate(-1deg);
         }
 
-
         /* =========================
            INTRO
         ========================= */
@@ -237,7 +234,6 @@
             margin-top: 38px;
             transform: rotate(-1deg);
         }
-
 
         /* =========================
            TEXT STORY
@@ -297,6 +293,39 @@
             margin-top: 8px;
         }
 
+        /* =========================
+           VÍKENDOVÁ KOLÁŽ
+        ========================= */
+
+        .weekend-collage {
+            margin-top: 45px;
+            display: grid;
+            grid-template-columns: 1.15fr .85fr;
+            grid-template-rows: 280px 280px;
+            gap: 14px;
+        }
+
+        .weekend-collage .collage-main {
+            grid-row: 1 / 3;
+        }
+
+        .weekend-collage img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 2px;
+        }
+
+        .weekend-collage-bottom {
+            margin-top: 14px;
+        }
+
+        .weekend-collage-bottom img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 2px;
+        }
 
         /* =========================
            PHOTO + TEXT
@@ -333,7 +362,6 @@
             color: var(--pink);
         }
 
-
         /* =========================
            QUOTE
         ========================= */
@@ -360,7 +388,6 @@
             font-size: 32px;
             color: var(--pink);
         }
-
 
         /* =========================
            JARDA VS LUCIE
@@ -537,7 +564,6 @@
             margin: 0;
         }
 
-
         /* =========================
            ENDING
         ========================= */
@@ -573,7 +599,6 @@
             color: var(--pink);
             font-size: 35px;
         }
-
 
         /* =========================
            FOOTER
@@ -623,7 +648,6 @@
             font-style: italic;
             color: rgba(255,255,255,.7);
         }
-
 
         /* =========================
            MOBILE
@@ -681,6 +705,19 @@
                 height: auto;
                 max-height: 650px;
                 object-fit: cover;
+            }
+
+            .weekend-collage {
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: 240px 240px;
+            }
+
+            .weekend-collage .collage-main {
+                grid-row: 1 / 3;
+            }
+
+            .weekend-collage-bottom img {
+                height: 260px;
             }
 
             .vs-labels,
@@ -741,6 +778,20 @@
                 font-size: 23px;
             }
 
+            .weekend-collage {
+                grid-template-columns: 1fr;
+                grid-template-rows: none;
+            }
+
+            .weekend-collage .collage-main {
+                grid-row: auto;
+            }
+
+            .weekend-collage img,
+            .weekend-collage-bottom img {
+                height: 300px;
+            }
+
             .versus {
                 padding-left: 8px;
                 padding-right: 8px;
@@ -770,7 +821,6 @@
 
 <body>
 
-
 <!-- =========================
      HEADER
 ========================= -->
@@ -797,7 +847,6 @@
 
 </header>
 
-
 <!-- =========================
      HERO
 ========================= -->
@@ -806,9 +855,7 @@
 
     <div class="hero-inner">
 
-        <div class="chapter">
-            
-        </div>
+        <div class="chapter"></div>
 
         <h1>Ze života</h1>
 
@@ -825,9 +872,7 @@
 
 </section>
 
-
 <main>
-
 
 <!-- =========================
      INTRO
@@ -888,7 +933,6 @@
 
 </section>
 
-
 <!-- =========================
      01 BOSKOVICE / BRNO
 ========================= -->
@@ -917,22 +961,56 @@
     </p>
 
     <p>
-        A když se nám doma sedět nechce,
-        zajdeme si na drink, pivko nebo třeba na bowling.
+        <strong>A když se nám o víkendu nechce sedět doma,
+        vždycky se něco najde.</strong>
     </p>
 
-    <img
-        class="photo-wide"
-        src="bowling.jpg"
-        alt="Bowling"
-    >
+    <p>
+        Zajedeme třeba na menší výlet – do Lamacentra,
+        do Olomouce nebo prostě někam,
+        kam nás zrovna napadne vyrazit.
+        Jindy skončíme na minigolfu, bowlingu nebo biliáru.
+    </p>
+
+    <p>
+        A když se nám nechce vymýšlet vůbec nic?
+        <strong>Jedeme se podívat, co mají nového v nákupáku.</strong>
+        Což samozřejmě většinou znamená,
+        že se nevrátíme s prázdnou. 😄
+    </p>
+
+    <div class="weekend-collage">
+
+        <img
+            class="collage-main"
+            src="minigolf.jpg"
+            alt="Minigolf"
+        >
+
+        <img
+            src="bowling.jpg"
+            alt="Bowling"
+        >
+
+        <img
+            src="kulec.jpg"
+            alt="Biliár"
+        >
+
+    </div>
+
+    <div class="weekend-collage-bottom">
+        <img
+            src="drinkos.jpg"
+            alt="Společné drinky"
+        >
+    </div>
 
     <div class="photo-caption">
-        Trocha zdravé soutěživosti nikdy neuškodí.
+        Program se vždycky nějak najde. ♡
     </div>
 
 </section>
-
 
 <!-- =========================
      02 INDUKCE
@@ -990,7 +1068,6 @@
 
 </section>
 
-
 <!-- =========================
      QUOTE
 ========================= -->
@@ -1004,7 +1081,6 @@
     <div class="heart">♡</div>
 
 </section>
-
 
 <!-- =========================
      03 MAX / BALKÓN
@@ -1055,7 +1131,6 @@
     </div>
 
 </section>
-
 
 <!-- =========================
      04 SPOLEČNÁ FOTKA
@@ -1122,7 +1197,6 @@
 
 </section>
 
-
 <!-- =========================
      05 COROLLA
 ========================= -->
@@ -1186,7 +1260,6 @@
 
 </section>
 
-
 <!-- =========================
      06 HLÍDÁNÍ MAXE
 ========================= -->
@@ -1235,7 +1308,6 @@
 
 </section>
 
-
 <!-- =========================
      07 ŠIPKY
 ========================= -->
@@ -1280,9 +1352,7 @@
             <em>„Hlavně že jsme si zahráli.“</em>
         </p>
 
-        <p>
-            Ne.
-        </p>
+        <p>Ne.</p>
 
         <p>
             <strong>Tady se hraje o čest.</strong>
@@ -1301,7 +1371,6 @@
     </div>
 
 </section>
-
 
 <!-- =========================
      08 VÍKENDOVÝ RESET
@@ -1358,7 +1427,6 @@
 
 </section>
 
-
 <!-- =========================
      09 SPÁNEK
 ========================= -->
@@ -1383,9 +1451,7 @@
             prakticky nebyla schopná spát.
         </p>
 
-        <p>
-            Důvod?
-        </p>
+        <p>Důvod?</p>
 
         <p class="big-line">
             Moje údajně „lehké pochrupkávání“.
@@ -1416,7 +1482,6 @@
 
 </section>
 
-
 <!-- =========================
      JARDA VS LUCIE
 ========================= -->
@@ -1439,13 +1504,11 @@
 
         </div>
 
-
         <div class="vs-labels">
             <div class="vs-name">Jarda</div>
             <div class="vs-middle-label">DISCIPLÍNA</div>
             <div class="vs-name">Lucie</div>
         </div>
-
 
         <div class="vs-row">
             <div class="answer"></div>
@@ -1456,7 +1519,6 @@
             <div class="answer">Lucie</div>
         </div>
 
-
         <div class="vs-row">
             <div class="answer">Jarda 💀</div>
             <div class="question">
@@ -1465,7 +1527,6 @@
             </div>
             <div class="answer"></div>
         </div>
-
 
         <div class="vs-row">
             <div class="answer dark">OBA</div>
@@ -1476,7 +1537,6 @@
             <div class="answer dark">OBA</div>
         </div>
 
-
         <div class="vs-row">
             <div class="answer">Jarda*</div>
             <div class="question">
@@ -1485,7 +1545,6 @@
             </div>
             <div class="answer">*nesouhlasí</div>
         </div>
-
 
         <div class="vs-row">
             <div class="answer">Jarda</div>
@@ -1496,7 +1555,6 @@
             <div class="answer"></div>
         </div>
 
-
         <div class="vs-row">
             <div class="answer"></div>
             <div class="question">
@@ -1505,7 +1563,6 @@
             </div>
             <div class="answer">Lucie</div>
         </div>
-
 
         <div class="vs-row">
             <div class="answer">Pivo</div>
@@ -1516,7 +1573,6 @@
             <div class="answer">Víno</div>
         </div>
 
-
         <div class="vs-row">
             <div class="answer dark">OBA</div>
             <div class="question">
@@ -1525,7 +1581,6 @@
             </div>
             <div class="answer dark">OBA</div>
         </div>
-
 
         <div class="vs-row">
             <div class="answer"></div>
@@ -1536,7 +1591,6 @@
             <div class="answer">Lucie</div>
         </div>
 
-
         <div class="vs-row">
             <div class="answer">Jarda ✓</div>
             <div class="question">
@@ -1545,7 +1599,6 @@
             </div>
             <div class="answer"></div>
         </div>
-
 
         <div class="vs-row">
             <div class="answer"></div>
@@ -1556,7 +1609,6 @@
             <div class="answer">Lucie</div>
         </div>
 
-
         <div class="vs-row">
             <div class="answer"></div>
             <div class="question">
@@ -1565,7 +1617,6 @@
             </div>
             <div class="answer">Lucie</div>
         </div>
-
 
         <div class="vs-row">
             <div class="answer">Jarda</div>
@@ -1576,7 +1627,6 @@
             <div class="answer"></div>
         </div>
 
-
         <div class="vs-row">
             <div class="answer"></div>
             <div class="question">
@@ -1585,7 +1635,6 @@
             </div>
             <div class="answer">Lucie</div>
         </div>
-
 
         <div class="vs-row">
             <div class="answer"></div>
@@ -1596,7 +1645,6 @@
             <div class="answer">Lucie</div>
         </div>
 
-
         <div class="vs-row">
             <div class="answer"></div>
             <div class="question">
@@ -1605,7 +1653,6 @@
             </div>
             <div class="answer">Lucie 😂</div>
         </div>
-
 
         <div class="vs-row">
             <div class="answer">Jarda</div>
@@ -1617,9 +1664,6 @@
                 Romantika<br>opustila chat
             </div>
         </div>
-
-
-        <!-- KDO MÁ PRAVDU -->
 
         <div class="special-row">
 
@@ -1651,9 +1695,6 @@
 
         </div>
 
-
-        <!-- VÍTĚZ -->
-
         <div class="winner">
 
             <div class="winner-label">
@@ -1673,7 +1714,6 @@
     </div>
 
 </section>
-
 
 <!-- =========================
      ZÁVĚR
@@ -1737,9 +1777,7 @@
 
 </section>
 
-
 </main>
-
 
 <!-- =========================
      FOOTER
@@ -1772,7 +1810,6 @@
     </div>
 
 </footer>
-
 
 </body>
 </html>
