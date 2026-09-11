@@ -711,6 +711,248 @@ footer {
         gap: 25px;
     }
 }
+/* =========================
+   STATUS CHECK EASTER EGG
+========================= */
+
+.status-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(10, 14, 20, .72);
+    backdrop-filter: blur(3px);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 25px;
+    z-index: 5000;
+}
+
+.status-overlay.active {
+    display: flex;
+}
+
+.status-window {
+    width: min(560px, 95vw);
+    max-height: 90vh;
+    overflow-y: auto;
+    background: #fffdfd;
+    border: 1px solid #efbebe;
+    border-radius: 16px;
+    box-shadow: 0 25px 80px rgba(0,0,0,.35);
+    position: relative;
+}
+
+.status-top {
+    text-align: center;
+    padding: 15px 55px;
+    border-bottom: 1px solid #efcaca;
+    background: #fff7f7;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: .22em;
+    color: var(--dark);
+}
+
+.status-close {
+    position: absolute;
+    right: 18px;
+    top: 11px;
+    border: none;
+    background: transparent;
+    font-size: 28px;
+    line-height: 1;
+    cursor: pointer;
+    color: var(--dark);
+    z-index: 2;
+}
+
+.status-body {
+    padding: 28px 30px 32px;
+}
+
+.status-heading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+
+.status-heading span {
+    color: var(--pink);
+    font-size: 35px;
+}
+
+.status-heading h2 {
+    margin: 0;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 38px;
+    font-weight: 600;
+    color: var(--dark);
+}
+
+.status-loading {
+    text-align: center;
+    margin-top: 6px;
+    font-size: 13px;
+    color: var(--muted);
+}
+
+.status-progress {
+    height: 11px;
+    background: #f2dddd;
+    border-radius: 30px;
+    overflow: hidden;
+    margin-top: 18px;
+}
+
+.status-progress-bar {
+    width: 100%;
+    height: 100%;
+    background: var(--pink);
+    border-radius: 30px;
+}
+
+.status-percent {
+    text-align: right;
+    margin-top: 5px;
+    font-size: 12px;
+    color: var(--dark);
+}
+
+.status-list {
+    margin-top: 24px;
+    padding: 18px 20px;
+    border: 1px solid #efd4d4;
+    border-radius: 11px;
+    background: #fffafa;
+}
+
+.status-row {
+    display: grid;
+    grid-template-columns: 26px 1.1fr 1.4fr;
+    align-items: center;
+    gap: 8px;
+    padding: 7px 0;
+    font-size: 13px;
+}
+
+.status-row > span {
+    text-align: center;
+    color: var(--pink);
+    font-size: 18px;
+}
+
+.status-row strong {
+    font-weight: 500;
+    color: var(--text);
+}
+
+.status-row em {
+    font-style: normal;
+}
+
+.status-green {
+    color: #2f9665;
+}
+
+.status-pink {
+    color: #d0526d;
+}
+
+.status-orange {
+    color: #da9b42;
+}
+
+.status-blue {
+    color: #6083a0;
+}
+
+.status-result {
+    margin-top: 22px;
+    padding-top: 20px;
+    border-top: 1px solid #ecd6d6;
+    text-align: center;
+}
+
+.status-complete {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: .08em;
+    color: var(--dark);
+}
+
+.status-result h3 {
+    margin: 15px 0 8px;
+    padding: 17px;
+    border-radius: 10px;
+    background: var(--pink-light);
+    border: 1px solid #efc6c6;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 28px;
+    color: var(--dark);
+}
+
+.status-result p {
+    margin: 0;
+    font-size: 13px;
+    line-height: 1.55;
+    color: var(--muted);
+}
+
+.status-again {
+    display: block;
+    margin: 22px auto 0;
+    padding: 13px 24px;
+    border: 1px solid #e8b9b9;
+    border-radius: 30px;
+    background: var(--pink-light);
+    color: #c94e67;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: .04em;
+    cursor: pointer;
+}
+
+.status-note {
+    margin-top: 18px;
+    text-align: right;
+    font-family: "Caveat", cursive;
+    font-size: 21px;
+    color: #8b7b7b;
+    transform: rotate(-2deg);
+}
+
+.status-trigger {
+    cursor: pointer;
+}
+
+.status-trigger:hover {
+    color: var(--pink);
+}
+
+body.status-open {
+    overflow: hidden;
+}
+
+@media (max-width: 650px) {
+
+    .status-body {
+        padding: 24px 18px;
+    }
+
+    .status-row {
+        grid-template-columns: 24px 1fr;
+    }
+
+    .status-row em {
+        grid-column: 2;
+        padding-bottom: 4px;
+    }
+
+    .status-heading h2 {
+        font-size: 31px;
+    }
+}
 </style>
 </head>
 
