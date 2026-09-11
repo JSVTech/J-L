@@ -555,7 +555,162 @@ footer {
         padding: 10px 20px;
     }
 }
+/* =========================
+   EASTER EGG - NÁVOD K POUŽITÍ
+========================= */
 
+.manual-section {
+    width: min(1200px, 90%);
+    margin: 0 auto 70px;
+    text-align: center;
+}
+
+.manual {
+    width: 100%;
+}
+
+.manual summary {
+    list-style: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 13px 28px;
+    border: 1px solid #e8bcbc;
+    border-radius: 40px;
+    background: #fff;
+    color: var(--dark);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: .08em;
+    cursor: pointer;
+    transition: .25s ease;
+}
+
+.manual summary::-webkit-details-marker {
+    display: none;
+}
+
+.manual summary:hover {
+    background: var(--pink-light);
+    transform: translateY(-2px);
+}
+
+.manual summary > span:first-child {
+    color: var(--pink);
+    font-size: 20px;
+}
+
+.manual-arrow {
+    color: var(--pink);
+    font-size: 18px;
+}
+
+.manual[open] .manual-arrow {
+    transform: rotate(180deg);
+}
+
+.manual-content {
+    margin-top: 25px;
+    border: 1px solid #edcaca;
+    border-radius: 14px;
+    background: #fffafa;
+    text-align: left;
+    overflow: hidden;
+}
+
+.manual-title {
+    padding: 22px 30px;
+    background: var(--pink-light);
+    font-family: "Cormorant Garamond", serif;
+    font-size: 27px;
+    font-weight: 600;
+    color: var(--dark);
+}
+
+.manual-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 35px 45px;
+}
+
+.manual-person {
+    padding: 0 35px;
+}
+
+.manual-person + .manual-person {
+    border-left: 1px solid #eadede;
+}
+
+.manual-person h3 {
+    margin: 0 0 18px;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 29px;
+    color: var(--dark);
+}
+
+.manual-person p {
+    margin: 8px 0;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.manual-bottom {
+    margin: 0 45px;
+    padding: 27px 35px;
+    border-top: 1px solid #eadede;
+    display: grid;
+    grid-template-columns: .8fr 1.5fr;
+    gap: 50px;
+}
+
+.manual-bottom strong {
+    color: var(--dark);
+    font-size: 13px;
+    letter-spacing: .05em;
+}
+
+.manual-bottom p {
+    margin: 8px 0 0;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 17px;
+    line-height: 1.5;
+}
+
+.manual-update {
+    text-align: center;
+    padding: 18px 25px 25px;
+    font-family: "Cormorant Garamond", serif;
+    font-style: italic;
+    color: var(--muted);
+    font-size: 15px;
+}
+
+@media (max-width: 750px) {
+
+    .manual-grid {
+        grid-template-columns: 1fr;
+        padding: 25px;
+    }
+
+    .manual-person {
+        padding: 15px 5px;
+    }
+
+    .manual-person + .manual-person {
+        border-left: none;
+        border-top: 1px solid #eadede;
+        margin-top: 15px;
+        padding-top: 30px;
+    }
+
+    .manual-bottom {
+        margin: 0 25px;
+        padding: 25px 5px;
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+}
 </style>
 </head>
 
@@ -907,7 +1062,78 @@ footer {
     </div>
 
 </section>
+<!-- =========================
+     EASTER EGG - NÁVOD K POUŽITÍ
+========================= -->
 
+<section class="manual-section">
+
+    <details class="manual">
+
+        <summary>
+            <span>⚙</span>
+            NÁVOD K POUŽITÍ
+            <span class="manual-arrow">⌄</span>
+        </summary>
+
+        <div class="manual-content">
+
+            <div class="manual-title">
+                ⚙ J & L — NÁVOD K POUŽITÍ
+            </div>
+
+            <div class="manual-grid">
+
+                <div class="manual-person">
+                    <h3>Jarda</h3>
+
+                    <p>Výchozí nastavení: <em>„Nechceš být mojí přítelkyní?“</em></p>
+                    <p>Procesy na pozadí: <strong>47 otevřených myšlenek</strong></p>
+                    <p>Oblíbená funkce: <strong>objímání</strong></p>
+                    <p>Známá chyba: <strong>overthinking</strong></p>
+                    <p>Režim spánku: <strong>nefunkční</strong></p>
+                </div>
+
+                <div class="manual-person">
+                    <h3>Lucie</h3>
+
+                    <p>Výchozí nastavení: <em>„Uvidíme.“</em></p>
+                    <p>Procesy na pozadí: <strong>nezjištěno</strong></p>
+                    <p>Oblíbená funkce: <strong>svůj klid</strong></p>
+                    <p>Známá chyba: <strong>romantický ani mazlící modul nebyl nalezen</strong></p>
+                    <p>Režim spánku: <strong>aktivuje se výrazně dřív než u Jardy</strong></p>
+                </div>
+
+            </div>
+
+            <div class="manual-bottom">
+
+                <div>
+                    <strong>KOMPATIBILITA</strong>
+                    <p>Neznámá. Testování stále probíhá.</p>
+                </div>
+
+                <div>
+                    <strong>⚠ UPOZORNĚNÍ VÝROBCE</strong>
+                    <p>
+                        Při delším používání může dojít ke spontánním výletům,
+                        otevření lahve vína, soutěžení v různých aktivitách,
+                        porušování osobního prostoru.
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="manual-update">
+                Výrobek je stále ve vývoji. Aktualizace probíhají nepravidelně
+                a bez předchozího upozornění.
+            </div>
+
+        </div>
+
+    </details>
+
+</section>
 
 <!-- =========================
      FOOTER
