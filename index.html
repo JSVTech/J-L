@@ -732,8 +732,9 @@ footer {
             </span>
 
             <span class="logo-sub">
-                Dva lidi. Jeden příběh. Status neznámý.
-            </span>
+    Dva lidi. Jeden příběh.
+    <span class="status-trigger" onclick="openStatus(event)">Status neznámý.</span>
+</span>
 
         </a>
 
@@ -1169,7 +1170,126 @@ footer {
     </div>
 
 </footer>
+<!-- =========================
+     J & L SYSTEM - STATUS CHECK
+========================= -->
 
+<div class="status-overlay" id="statusOverlay">
+
+    <div class="status-window">
+
+        <button class="status-close" onclick="closeStatus()">×</button>
+
+        <div class="status-top">
+            J & L SYSTEM
+        </div>
+
+        <div class="status-body">
+
+            <div class="status-heading">
+                <span>〽</span>
+                <h2>STATUS CHECK</h2>
+            </div>
+
+            <div class="status-loading">
+                Spouštím diagnostiku...
+            </div>
+
+            <div class="status-progress">
+                <div class="status-progress-bar"></div>
+            </div>
+
+            <div class="status-percent">100 %</div>
+
+
+            <div class="status-list">
+
+                <div class="status-row">
+                    <span>♥</span>
+                    <strong>Jarda → Lucie:</strong>
+                    <em class="status-green">Zájem potvrzen</em>
+                </div>
+
+                <div class="status-row">
+                    <span>♡</span>
+                    <strong>Lucie → Jarda:</strong>
+                    <em class="status-pink">? Stále zjišťuje, jestli ho vlastně chce</em>
+                </div>
+
+                <div class="status-row">
+                    <span>●</span>
+                    <strong>Kamarádství:</strong>
+                    <em class="status-green">Aktivní</em>
+                </div>
+
+                <div class="status-row">
+                    <span>●</span>
+                    <strong>Společné víkendy:</strong>
+                    <em class="status-green">Aktivní</em>
+                </div>
+
+                <div class="status-row">
+                    <span>●</span>
+                    <strong>Objímání:</strong>
+                    <em class="status-green">Aktivní</em>
+                </div>
+
+                <div class="status-row">
+                    <span>◷</span>
+                    <strong>Jardova žádost o vztah:</strong>
+                    <em class="status-orange">Čeká na schválení</em>
+                </div>
+
+                <div class="status-row">
+                    <span>↻</span>
+                    <strong>Lucčino „uvidíme“:</strong>
+                    <em class="status-pink">Automatické obnovení aktivní</em>
+                </div>
+
+                <div class="status-row">
+                    <span>⚙</span>
+                    <strong>Overthinking.exe:</strong>
+                    <em class="status-pink">Běží na pozadí</em>
+                </div>
+
+                <div class="status-row">
+                    <span>⌛</span>
+                    <strong>Budoucnost:</strong>
+                    <em class="status-blue">Načítání...</em>
+                </div>
+
+            </div>
+
+
+            <div class="status-result">
+
+                <div class="status-complete">
+                    ⚙ ANALÝZA DOKONČENA
+                </div>
+
+                <h3>STATUS STÁLE NEZNÁMÝ</h3>
+
+                <p>
+                    Systém nemá dostatek dat k vytvoření závěru.<br>
+                    Doporučujeme pokračovat v testování.
+                </p>
+
+            </div>
+
+
+            <button class="status-again" onclick="restartStatus()">
+                ↻ &nbsp; ZKONTROLOVAT ZNOVU
+            </button>
+
+            <div class="status-note">
+                Některé příběhy nemají rychlý konec...
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
 
 </body>
 </html>
